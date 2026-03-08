@@ -1,2 +1,2 @@
-# uni
+# 26S1 University Coursework
 Files from my current university semester
