@@ -1,17 +1,20 @@
 \documentclass{article}
 
-% Language setting
-% Replace `english' with e.g. `spanish' to change the document language
 \usepackage[english]{babel}
 
-% Set page size and margins
-% Replace `letterpaper' with `a4paper' for UK/EU standard size
 \usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 
 % Useful packages
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{amsthm}
+\usepackage{csquotes}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
 
 \title{Formal Verification of Lamport's Mutex algorithm for N processes.}
 \author{Max Moir}
@@ -19,30 +22,57 @@
 \begin{document}
 \maketitle
 
+\begin{abstract}
+The proposal (PDF with 1-3 pages excluding references; single-column text) should identify the problem you wish to address and the motivation for doing so. It should also identify prior attempts to solve the problem (or a related problem) and analyse why these attempts were insufficient. The proposal should also provide an outline of the intended method for resolving the problem. Please also discuss risks that may affect your project (for example, alert-level changes or unavailability of data/tools your project depends on) and how you will mitigate the risks.
+\end{abstract}
+
 \section{Introduction}
 
-The mutex problem, as originally posed by Dijkstra in \cite{dijkstra_solution_1965}, is a fundamental result in concurrent computing.
+The mutual exclusion problem, as originally introduced and solved by Dijkstra in \cite{dijkstra_solution_1965}, is a fundamental result in concurrent computing.
+In \cite{lamport_new_1974}, Leslie Lamport published a new solution to the problem, dubbed ``The Bakery Algorithm``, that he elaborted on in \cite{lamport_mutual_1986}.
+
+
+For $ n \leq 3 $ processes, the mutex problem can be easily verified using a model checker such as TLA+. 
+This project aims to prove Lamport's mutex algorithm generalised to any finite number of concurrent processes using a mathematical approach.
 
 \subsection{Problem Statement}
-blah blah
+
+The mutex problem is summarized by Dijkstra as follows.
+
+\begin{displayquote}
+To begin, consider N computers, each engaged in a process which, for our aims, can be regarded as cyclic.
+In each of the cycles a so-called "critical section" occurs and the computers have to be programmed in such a way that at any moment only one of these N cyclic processes is in its critical section.
+\end{displayquote}
+
+As detailed here, in order to prove the algorithm there are multiple properties it must be shown to always uphold. 
+
+\begin{definition}[Mutual Exclusion Property]
+No two processes can make an operation in their critical section concurrently
+\end{definition}
+
+\begin{definition}[Liveness Property]
+
+\end{definition}
+
 \subsection{Formal verification in Lean4}
 
-blah blah
+Lean4 is a functional programming language and theorem prover designed with a mathematical audience in mind.
+In recent years, it has been used to formally verify a number of problems in mathematics, including ...
+Currently, there are efforts in the Lean community to verify further problems, such as Andrew Wiles' proof of Fermat's Last Theorem.
+
+\section{Related Attempts}
+
+asdfasf
 
 \section{Methodology}
 
-This algorithm will be formally verified using a mathematical model representative of the system. 
+This project will used a proof based approach to formally verify the chosen properties are upheld within the modelo.
+
 The system will be modelled as a state machine, with each process moving between three states.
 These state transitions will be proven to uphold an invariant, ensuring that specific conditions are met. 
 The Mutex property will be one of these conditions, that no two processes can be in the critical section of their computation at the same time.
 
 
-\section{Related literature}
-
-safdas
-
-
-\section{Risks}
 
 \bibliographystyle{abbrv}
 \bibliography{sample}

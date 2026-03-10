@@ -5,4 +5,14 @@ E.~W. Dijkstra.
 \newblock Solution of a problem in concurrent programming control.
 \newblock {\em Communications of the ACM}, 8(9):569, Sept. 1965.
 
+\bibitem{lamport_new_1974}
+L.~Lamport.
+\newblock A new solution of {Dijkstra}'s concurrent programming problem.
+\newblock {\em Commun. ACM}, 17(8):453--455, Aug. 1974.
+
+\bibitem{lamport_mutual_1986}
+L.~Lamport.
+\newblock The mutual exclusion problem: {partII}—statement and solutions.
+\newblock {\em Journal of the ACM}, 33(2):327--348, Apr. 1986.
+
 \end{thebibliography}
