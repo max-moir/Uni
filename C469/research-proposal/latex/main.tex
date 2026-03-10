@@ -54,6 +54,8 @@ No two processes can make an operation in their critical section concurrently
 
 \end{definition}
 
+For the algorithm to be verified, these two properties must be shown to hold in any situation
+
 \subsection{Formal verification in Lean4}
 
 Lean4 is a functional programming language and theorem prover designed with a mathematical audience in mind.
@@ -66,7 +68,8 @@ asdfasf
 
 \section{Methodology}
 
-This project will used a proof based approach to formally verify the chosen properties are upheld within the modelo.
+This project will use a proof based approach to formally verify the chosen properties are upheld within the modelo.
+It will aim to establish a formal model in Lean4, with proofs for the relevant properties.
 
 The system will be modelled as a state machine, with each process moving between three states.
 These state transitions will be proven to uphold an invariant, ensuring that specific conditions are met. 
