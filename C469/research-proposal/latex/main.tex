@@ -36,9 +36,9 @@
 \section{Introduction}
 
 The mutual exclusion (mutex) problem, as originally introduced and solved by Dijkstra in \cite{dijkstra_solution_1965}, is a fundamental result in concurrent computing.
-Lamport's Bakery Algorithm (LBA) is a solution to the mutex problem published in  \cite{lamport_new_1974}, that Lamport elaborates on in \cite{lamport_mutual_1986}, analysing several solution variants.
+Lamport's Bakery Algorithm (LBA) is a solution to the mutex problem published in  \cite{lamport_new_1974}. Lamport elaborates on ip in \cite{lamport_mutual_1986}, analysing several solution variants.
 
-For $N \leq 5$ processes, the mutex problem can be verified using a model checker such as TLA+, but exhaustive state expansion is not tractable for higher \emph{N}. 
+For $N \leq 5$ processes, LBA can be verified using a model checker such as TLA+, but exhaustive state expansion is not tractable for higher \emph{N}. 
 The goal of this project is to develop a formal model of LBA generalised to any finite number of concurrent processes. 
 The model will be implemented in Lean4 to ensure that it maintains several required properties.
 
@@ -81,7 +81,7 @@ This project will use Lean4 to implement an invariance proof that LBA ensures mu
 
 Formal verification is a topical field in modern Computer Science. 
 Proving the correctness of programs is not only elegant in a theoretical sense, but is often necessary in mission-critical applications.
-Due to the difficulty in formalizing programs, reliability in industry is often left to unit and integration testing. 
+Due to the difficulty in formalizing programs, reliability in industry is often left to automated testing. 
 However, in specific circumstances where correctness must be ensured, formal proofs may be required. 
 
 This specific problem was chosen because it is a fundamental result in concurrent programming. Writing a formal proof for it acts as benchmark that displays the capabilities of formal verification.
@@ -103,7 +103,7 @@ This approach can scale for $ N > 5 $ processes, but is not as general as employ
 Another paper, \cite{ogataFormalAnalysisBakery2008}, proves LBA satisfies the mutual exclusion protocol in CafeOBJ.
 \cite{ogataFormalAnalysisBakery2008} uses an approach similar to one that this project will use, but its implementation is more limited. 
 It verifies that mutual exclusion holds, but does not verify other properties such as deadlock freedom, which this project aims to accomplish.
-
+The overall system may be modelled with a node for each process, as explained by Lamport in \cite{lamportDeconstructingBakeryBuild2022}.
 
 \section{Methodology}
 
