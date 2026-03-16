@@ -17,7 +17,7 @@
 \newtheorem{definition}{Definition}[section]
 
 
-\title{Formal Verification of Lamport's Mutex Algorithm for N processes}
+\title{Formal Verification of Lamport's Mutex Algorithm for \emph{N} processes}
 \author{
     Max Moir \\
     \textit{University of Canterbury} \\ 
@@ -35,11 +35,11 @@
 
 \section{Introduction}
 
-The mutual exclusion problem, as originally introduced and solved by Dijkstra in \cite{dijkstra_solution_1965}, is a fundamental result in concurrent computing.
-``Lamport's Bakery Algorithm`` is a solution to the mutex problem published in  \cite{lamport_new_1974}, which Lamport elaborates on in \cite{lamport_mutual_1986}, analysing several solution variants.
+The mutual exclusion (mutex) problem, as originally introduced and solved by Dijkstra in \cite{dijkstra_solution_1965}, is a fundamental result in concurrent computing.
+Lamport's Bakery Algorithm (LBA) is a solution to the mutex problem published in  \cite{lamport_new_1974}, that Lamport elaborates on in \cite{lamport_mutual_1986}, analysing several solution variants.
 
-For $n \leq 5$ processes, the mutex problem can be verified using a model checker such as TLA+, but exhaustive state expansion is not tractable for higher N. 
-The goal of this project is to develop a formal model of Lamport's Bakery Algorithm generalised to any finite number of concurrent processes. 
+For $N \leq 5$ processes, the mutex problem can be verified using a model checker such as TLA+, but exhaustive state expansion is not tractable for higher \emph{N}. 
+The goal of this project is to develop a formal model of LBA generalised to any finite number of concurrent processes. 
 The model will be implemented in Lean4 to ensure that it maintains several required properties.
 
 
@@ -48,8 +48,8 @@ The model will be implemented in Lean4 to ensure that it maintains several requi
 The mutex problem is summarized by Dijkstra in \cite{dijkstra_solution_1965} as follows.
 
 \blockquote{
-To begin, consider N computers, each engaged in a process which, for our aims, can be regarded as cyclic.
-In each of the cycles a so-called "critical section" occurs and the computers have to be programmed in such a way that at any moment only one of these N cyclic processes is in its critical section.
+To begin, consider \emph{N} computers, each engaged in a process which, for our aims, can be regarded as cyclic.
+In each of the cycles a so-called ``critical section'' occurs and the computers have to be programmed in such a way that at any moment only one of these \emph{N} cyclic processes is in its critical section.
 }
 
 \noindent 
@@ -67,15 +67,15 @@ This project will focus on the following two properties:
 
 \noindent
 For a proof to be valid, these two properties must be shown to hold for every process in all state combinations. 
-There are several variants of the bakery algorithm that satisfy stronger requirements, but these are outside the scope of this project.
+There are several variants of LBA that satisfy stronger requirements, but these are outside the scope of this project.
 
 \subsection{Formal verification in Lean4}
 
 Lean4 is a functional programming language and theorem prover with extensive mathematical tooling.
 Recently, it has been used to formalize and prove many problems in mathematics, including, for example, some of the Erdős problems.
-Currently, there are efforts in the Lean community to verify further problems, such as Andrew Wiles' proof of Fermat's Last Theorem. 
+Currently, there are efforts in the Lean4 community to verify further problems, such as Andrew Wiles' proof of Fermat's Last Theorem. 
 It can be used equally to ensure invariants within programs, and to prove mathematical theorems. 
-This project will use Lean4 to implement an invariance proof that Lamport's Bakery Algorithm ensures mutual exclusion and deadlock freedom.
+This project will use Lean4 to implement an invariance proof that LBA ensures mutual exclusion and deadlock freedom.
 
 \section{ Motivation }
 
@@ -84,39 +84,39 @@ Proving the correctness of programs is not only elegant in a theoretical sense, 
 Due to the difficulty in formalizing programs, reliability in industry is often left to unit and integration testing. 
 However, in specific circumstances where correctness must be ensured, formal proofs may be required. 
 
-This specific problem was chosen because it is a fundamental result in concurrent programming, and writing a formal proof for it acts as benchmark to show the capabilities of formal verification.
-Additionally, it is challenging to verify the correctness of the bakery algorithm for N processes without employing an inductive approach such as this one.  
+This specific problem was chosen because it is a fundamental result in concurrent programming. Writing a formal proof for it acts as benchmark that displays the capabilities of formal verification.
+Additionally, it is challenging to verify the correctness of LBA for \emph{N} processes without employing an inductive approach such as this one.  
 
 Lean4 was chosen for similar reasons.
 Recently, it has been receiving attention for the depth of its mathematical coverage.
-Its library mathlib, provides mathematical foundations and data structures that will be useful in the proof of this algorithm.
-The decision in choosing Lean4 was also motivated by this contemporary relevancy.
+Its library mathlib provides mathematical foundations and data structures that will be useful in the proof of this algorithm.
+The decision in choosing Lean4 was also motivated by its contemporary relevancy.
 
 \section{Related Works}
 
 In addition to the problem statements by Lamport and Dijkstra mentioned previously, there are several other papers that will likely be included in the literature survey.
-For example, in \cite{nigroCorrectnessVerificationMutual2024}, Nigro proves the mutual exclusion for $ N \le 5 $ processes using exhaustive model checking.
-This result is effective for limited processes but cannot show the bakery algorithm holds for larger finite numbers of processes, due to the state space expansion problem.
-Earlier this year, Nigro and Cicirelli published another formalization (\cite{nigroStatisticalModelChecking2026}) of the bakery algorithm which uses a statistical model checking approach.
+For example, in \cite{nigroCorrectnessVerificationMutual2024}, Nigro proves mutual exclusion for $ N \le 5 $ processes using exhaustive model checking.
+This result is effective for limited processes but cannot show LBA holds for larger finite numbers of processes, due to the state space expansion problem.
+Earlier this year, Nigro and Cicirelli published another formalization (\cite{nigroStatisticalModelChecking2026}) of LBA which uses a statistical model checking approach.
 This approach can scale for $ N > 5 $ processes, but is not as general as employing an inductive approach.
 
-Another paper, \cite{ogataFormalAnalysisBakery2008}, proves the bakery algorithm satisfies the mutual exclusion protocol in CafeOBJ.
-This paper uses an approach similar to one that this project will use, but its implementation is more limited. 
-It verifies that mutual exclusion holds, but does not verify other properties such as deadlock freedom - which this project aims to accomplish.
+Another paper, \cite{ogataFormalAnalysisBakery2008}, proves LBA satisfies the mutual exclusion protocol in CafeOBJ.
+\cite{ogataFormalAnalysisBakery2008} uses an approach similar to one that this project will use, but its implementation is more limited. 
+It verifies that mutual exclusion holds, but does not verify other properties such as deadlock freedom, which this project aims to accomplish.
 
 
 \section{Methodology}
 
 This project will use a distributed state machine with invariance proofs that ensure mutual exclusion and deadlock freedom.
-These properties can be maintained by creating an inductive invariant, which is proved in each state transitions.
+These properties can be maintained by creating an inductive invariant, which is proved in each state transition.
 The overall system may be modelled with a node for each process, as explained by Lamport in \cite{lamportDeconstructingBakeryBuild2022}.
 
-This project will implement the one-bit variant of the bakery algorithm, as defined in section 3.2 of \cite{lamport_mutual_1986}. 
-It is also noted in \cite{wooNoteLamportsMutual1990} that the ticket numbers of waiting processes in Lamport's Bakery Algorithm have the potential to grow indeterminately large.
-The paper poses a solution to this issue by moving ticket numbers around a ring of length 2N. This project will follow the same approach.
+This project will implement the one-bit variant of LBA, as defined in section 3.2 of \cite{lamport_mutual_1986}. 
+It is also noted in \cite{wooNoteLamportsMutual1990} that the ticket numbers of waiting processes in LBA have the potential to grow indeterminately large.
+The paper poses a solution to this issue by moving ticket numbers around a ring of length \emph{2N}. This project will follow the same approach.
 
 The model will consist of methods used to transition processes between states, with a validity invariant ensured after each change. 
-It will show that for any finite N independent processes, the mutual exclusion and deadlock freedom properties will always hold across the model's processes.
+It will show that for any finite \emph{N} independent processes, the mutual exclusion and deadlock freedom properties will always hold across the model's processes.
 
 
 \bibliographystyle{abbrv}
