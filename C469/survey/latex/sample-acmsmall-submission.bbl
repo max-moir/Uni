@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{1}
+\begin{thebibliography}{5}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -37,15 +37,55 @@
 \providecommand\natexlab[1]{#1}
 \providecommand\showeprint[2][]{arXiv:#2}
 
-\bibitem[Conti et~al\mbox{.}(2009)]%
-        {1555162}
-\bibfield{author}{\bibinfo{person}{Mauro Conti}, \bibinfo{person}{Roberto Di~Pietro}, \bibinfo{person}{Luigi~V. Mancini}, {and} \bibinfo{person}{Alessandro Mei}.} \bibinfo{year}{2009}\natexlab{}.
-\newblock \showarticletitle{(old) Distributed data source verification in wireless sensor networks}.
-\newblock \bibinfo{journal}{\emph{Inf. Fusion}} \bibinfo{volume}{10}, \bibinfo{number}{4} (\bibinfo{year}{2009}), \bibinfo{pages}{342--353}.
+\bibitem[Cousineau et~al\mbox{.}(2012)]%
+        {cousineau2012tla}
+\bibfield{author}{\bibinfo{person}{Denis Cousineau}, \bibinfo{person}{Damien Doligez}, \bibinfo{person}{Leslie Lamport}, \bibinfo{person}{Stephan Merz}, \bibinfo{person}{Daniel Ricketts}, {and} \bibinfo{person}{Hernan Vanzetto}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{{{TLA}}+ Proofs}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the 18th International Symposium on Formal Methods (FM 2012), Dimitra Giannakopoulou and Dominique Mery, editors. Springer-Verlag Lecture Notes in Computer Science}}  \bibinfo{volume}{7436} (\bibinfo{date}{Jan.} \bibinfo{year}{2012}), \bibinfo{pages}{147--154}.
 \newblock
-\showISSN{1566-2535}
+
+
+\bibitem[Hawblitzel et~al\mbox{.}(2015)]%
+        {hawblitzelIronFleetProvingPractical2015}
+\bibfield{author}{\bibinfo{person}{Chris Hawblitzel}, \bibinfo{person}{Jon Howell}, \bibinfo{person}{Manos Kapritsos}, \bibinfo{person}{Jacob~R. Lorch}, \bibinfo{person}{Bryan Parno}, \bibinfo{person}{Michael~L. Roberts}, \bibinfo{person}{Srinath Setty}, {and} \bibinfo{person}{Brian Zill}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{{{IronFleet}}: Proving Practical Distributed Systems Correct}. In \bibinfo{booktitle}{\emph{Proceedings of the 25th {{Symposium}} on {{Operating Systems Principles}}}} \emph{(\bibinfo{series}{{{SOSP}} '15})}. \bibinfo{publisher}{Association for Computing Machinery}, \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{1--17}.
+\newblock
+\showISBNx{978-1-4503-3834-9}
 \urldef\tempurl%
-\url{https://doi.org/10.1016/j.inffus.2009.01.002}
+\url{https://doi.org/10.1145/2815400.2815428}
+\showDOI{\tempurl}
+
+
+\bibitem[P{\^i}rlea et~al\mbox{.}(2025)]%
+        {pirleaVeilFrameworkAutomated2025a}
+\bibfield{author}{\bibinfo{person}{George P{\^i}rlea}, \bibinfo{person}{Vladimir Gladshtein}, \bibinfo{person}{Elad Kinsbruner}, \bibinfo{person}{Qiyuan Zhao}, {and} \bibinfo{person}{Ilya Sergey}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Veil: {{A Framework}} for~{{Automated}} and~{{Interactive Verification}} of~{{Transition Systems}}}. In \bibinfo{booktitle}{\emph{Computer {{Aided Verification}}: 37th {{International Conference}}, {{CAV}} 2025, {{Zagreb}}, {{Croatia}}, {{July}} 23-25, 2025, {{Proceedings}}, {{Part III}}}}. \bibinfo{publisher}{Springer-Verlag}, \bibinfo{address}{Berlin, Heidelberg}, \bibinfo{pages}{26--41}.
+\newblock
+\showISBNx{978-3-031-98681-9}
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-031-98682-6_2}
+\showDOI{\tempurl}
+
+
+\bibitem[Sergey et~al\mbox{.}(2017)]%
+        {sergeyProgrammingProvingDistributed2017}
+\bibfield{author}{\bibinfo{person}{Ilya Sergey}, \bibinfo{person}{James~R. Wilcox}, {and} \bibinfo{person}{Zachary Tatlock}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Programming and Proving with Distributed Protocols}.
+\newblock \bibinfo{journal}{\emph{Proc. ACM Program. Lang.}} \bibinfo{volume}{2}, \bibinfo{number}{POPL} (\bibinfo{date}{Dec.} \bibinfo{year}{2017}), \bibinfo{pages}{28:1--28:30}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3158116}
+\showDOI{\tempurl}
+
+
+\bibitem[Wilcox et~al\mbox{.}(2015)]%
+        {wilcoxVerdiFrameworkImplementing2015}
+\bibfield{author}{\bibinfo{person}{James~R. Wilcox}, \bibinfo{person}{Doug Woos}, \bibinfo{person}{Pavel Panchekha}, \bibinfo{person}{Zachary Tatlock}, \bibinfo{person}{Xi Wang}, \bibinfo{person}{Michael~D. Ernst}, {and} \bibinfo{person}{Thomas Anderson}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Verdi: A Framework for Implementing and Formally Verifying Distributed Systems}. In \bibinfo{booktitle}{\emph{Proceedings of the 36th {{ACM SIGPLAN Conference}} on {{Programming Language Design}} and {{Implementation}}}} \emph{(\bibinfo{series}{{{PLDI}} '15})}. \bibinfo{publisher}{Association for Computing Machinery}, \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{357--368}.
+\newblock
+\showISBNx{978-1-4503-3468-6}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/2737924.2737958}
 \showDOI{\tempurl}
 
 
