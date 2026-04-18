@@ -1,93 +1,22 @@
-%%
-%% This is file `sample-acmsmall-submission.tex',
-%% generated with the docstrip utility.
-%%
-%% The original source files were:
-%%
-%% samples.dtx  (with options: `all,journal,bibtex,acmsmall-submission')
-%% 
-%% IMPORTANT NOTICE:
-%% 
-%% For the copyright see the source file.
-%% 
-%% Any modified versions of this file must be renamed
-%% with new filenames distinct from sample-acmsmall-submission.tex.
-%% 
-%% For distribution of the original source see the terms
-%% for copying and modification in the file samples.dtx.
-%% 
-%% This generated file may be distributed as long as the
-%% original source files, as listed above, are part of the
-%% same distribution. (The sources need not necessarily be
-%% in the same archive or directory.)
-%%
-%%
-%% Commands for TeXCount
-%TC:macro \cite [option:text,text]
-%TC:macro \citep [option:text,text]
-%TC:macro \citet [option:text,text]
-%TC:envir table 0 1
-%TC:envir table* 0 1
-%TC:envir tabular [ignore] word
-%TC:envir displaymath 0 word
-%TC:envir math 0 word
-%TC:envir comment 0 0
-%%
-%% The first command in your LaTeX source must be the \documentclass
-%% command.
-%%
-%% For submission and review of your manuscript please change the
-%% command to \documentclass[manuscript, screen, review]{acmart}.
-%%
-%% When submitting camera ready or to TAPS, please change the command
-%% to \documentclass[sigconf]{acmart} or whichever template is required
-%% for your publication.
-%%
-%%
+
 \documentclass[acmsmall,screen,review]{acmart}
-%%
-%% \BibTeX command to typeset BibTeX logo in the docs
+
 \AtBeginDocument{%
   \providecommand\BibTeX{{%
     Bib\TeX}}}
 
-%% Rights management information.  This information is sent to you
-%% when you complete the rights form.  These commands have SAMPLE
-%% values in them; it is your responsibility as an author to replace
-%% the commands and values with those provided to you when you
-%% complete the rights form.
+%% Rights management information.
 \setcopyright{acmlicensed}
 \copyrightyear{2026}
 \acmYear{2026}
 \acmDOI{XXXXXXX.XXXXXXX}
 
-%%
 %% These commands are for a JOURNAL article.
 \acmJournal{JACM}
-\acmVolume{37}
-\acmNumber{4}
-\acmArticle{111}
-\acmMonth{8}
-
-%%
-%% Submission ID.
-%% Use this when submitting an article to a sponsored event. You'll
-%% receive a unique submission ID from the organizers
-%% of the event, and this ID should be used as the parameter to this command.
-%%\acmSubmissionID{123-A56-BU3}
-
-%%
-%% For managing citations, it is recommended to use bibliography
-%% files in BibTeX format.
-%%
-%% You can then either use BibTeX with the ACM-Reference-Format style,
-%% or BibLaTeX with the acmnumeric or acmauthoryear sytles, that include
-%% support for advanced citation of software artefact from the
-%% biblatex-software package, also separately available on CTAN.
-%%
-%% Look at the sample-*-biblatex.tex files for templates showcasing
-%% the biblatex styles.
-%%
+\acmVolume{000}
+\acmNumber{0}
+\acmArticle{000}
+\acmMonth{0}
 
 %%
 %% The majority of ACM publications use numbered citations and
@@ -135,10 +64,7 @@
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
-
-  Formal verification is a topical field in modern Computer Science. 
   Proving the correctness of programs is not only elegant in a theoretical sense, but is often necessary in mission-critical applications.
-  Due to the difficulty in formalizing programs, reliability in industry is often left to automated testing. 
   However, in specific circumstances where correctness must be ensured, formal proofs may be required. 
   This survey reviews the different approaches to verifying the correctness of distributed algorithms.
 
@@ -150,13 +76,13 @@
 %% Please copy and paste the code instead of the example below.
 %%
 \begin{CCSXML}
-<ccs2012>
-   <concept>
-       <concept_id>10003752.10003790.10002990</concept_id>
-       <concept_desc>Theory of computation~Logic and verification</concept_desc>
-       <concept_significance>500</concept_significance>
-       </concept>
- </ccs2012>
+  <ccs2012>
+    <concept>
+        <concept_id>10003752.10003790.10002990</concept_id>
+        <concept_desc>Theory of computation~Logic and verification</concept_desc>
+        <concept_significance>500</concept_significance>
+        </concept>
+  </ccs2012>
 \end{CCSXML}
 
 \ccsdesc[500]{Theory of computation~Logic and verification}
@@ -165,7 +91,7 @@
 %%
 %% Keywords. The author(s) should pick words that accurately describe
 %% the work being presented. Separate the keywords with commas.
-\keywords{distributed algorithms}
+\keywords{distributed systems, formal verification, proof assistants}
 
 %%
 %% This command processes the author and affiliation and title
@@ -174,152 +100,167 @@
 
 \section{Introduction}
 
-With increasing societal dependance on software, ensuring the effective operation of the tools we use has become more important.
+  With an increasing societal dependance on software, ensuring the effective operation of the tools we use has become more important.
+  % Motivations
+  %   Why its hard, why it matters, real world uses
+  %   Difficulties - Distributed systems are notorious for being difficult to verify. 
+  %   There are many edge cases and etc... that make these systems
+  One method for reasoning about the correctness of programs is formal verification.
+  Distributed systems underpin many of the applications that we use every day.
+  Distributed systems are notoriously difficult to verify due to ...
 
-% Motivations
-%   Why its hard, why it matters, real world uses
-%   Difficulties - Distributed systems are notorious for being difficult to verify. 
-%   There are many edge cases and etc... that make these systems
-One method for reasoning about the correctness of programs is formal verification.
-Distributed systems underpin many of the applications that we use every day.
-Distributed systems are notoriously difficult to verify due to ...
+  % Rise of proof assistant verification
+  % Recently, there has been a rise in verification with Interactive Theorem Provers.
 
-% Rise of proof assistant verification
-% Recently, there has been a rise in verification with Interactive Theorem Provers.
+  % What this survey contributes:
+  %   Overview of verification approaches
+  %   comparison 
+  %   challenges and open problems
+  This survey aims to explore attempts to formally verify distributed algorithms, both theoretically and in practice.
+  It provides a taxonomy of different theorem-based verfication approaches and frameworks, reviews several common tools, and contrasts with other verification approaches.
 
-% What this survey contributes:
-%   Overview of verification approaches
-%   comparison 
-%   challenges and open problems
-This survey aims to explore attempts to formally verify distributed algorithms, both theoretically and in practice.
-It provides a taxonomy of different theorem-based verfication approaches and frameworks, reviews several common tools, and contrasts with other verification approaches.
-
-% Scope
-Other approaches to the verification of distributed algorithms are outside the scope of this survey, except when used as comparison. 
+  % Scope
+  Other approaches to the verification of distributed algorithms are outside the scope of this survey, except when used as comparison. 
 
 
 \section{Preliminary}
 
 \subsection{Distributed Protocols}
-Distributed computing is ...
+  Distributed computing is a fundemental field in Computer Science.
+  It concerns the inter-communication between distinct autonomous components in a system.
+  This patterns shows up often, usually when there is a network of multiple devices.
+
+  A common challenge in distributed computing is fault tolerance. 
+  This underpins some of the problems that are often the targets of formal verification.
+  For example, consensus protocols such as Paxos and Raft.
+  Another example is Byzantine Fault Tolerance.
+
 
 \subsection{Interactive Theorem Provers}
+  % Common languages:
+  % Coq
+  % Lean
+  % Isabelle
+  % Dafny
+  Interactive Theorem Provers, or proof assistants, have seen a recent surge in popularity among computer scientists and mathematicians alike.
+  Proof assistants are tools used to assist with the human development of formal proofs.
+  These formal proofs can then be automatically checked by the machine, ensuring correctness at each stage of the process. 
+  Theorem provers are extremely useful in the formal verification of protocols, where they can be used to ensure specific properties of a sytem hold.
+  For this reason proof assistants such as Coq, Lean, Isabelle, and Dafny have become popular for verifying distributed algorithms.
 
 \subsection{Verification}
+  Verifying the correctness of a program requires that specific conditions about a system can be shown to hold in certain states.
+  These conditions can be arbitrairily chosen, but usually represent ...
+  The two most notable property categories of a system are ``Safety'' and ``Liveness''.
+  A safety property ensures protection against unfavourable events, whereas liveness properties make sure that the program functions as intended.
 
-
+  Fault tolerance is another notable aspect of ensuring a program works as intended.
+  Byzantine fault tolerance, specifically, is a common problem in
 
 
 \section{Approaches}
 
-Nam id fermentum dui. Suspendisse sagittis tortor a nulla mollis, in
-pulvinar ex pretium. Sed interdum orci quis metus euismod, et sagittis
-enim maximus. Vestibulum gravida massa ut felis suscipit
-congue. Quisque mattis elit a risus ultrices commodo venenatis eget
-dui. Etiam sagittis eleifend elementum.
+  Byzantine fault tolerance
 
-There are several common frameworks used in the verification of distributed protocols. 
-Each of which has its own benefits and detractions.
+  Compositional and modular verification
 
+  Proof techniques:
+  Invariant
+  refinement
 
-Common Frameworks:
-Verdi \cite{wilcoxVerdiFrameworkImplementing2015}
-Iron Fleet \cite{hawblitzelIronFleetProvingPractical2015}
-Diesel \cite{sergeyProgrammingProvingDistributed2017}
-Veil \cite{pirleaVeilFrameworkAutomated2025a}
-TLAPS \cite{cousineau2012tla}
+  \subsection{Tools}
+  \subsection{Common Frameworks}
+    There are several common frameworks used in the verification of distributed protocols. 
+    Each of which has its own benefits and detractions.
 
-Common Languages:
-Coq
-Lean
-Isabelle
-Dafny
+    % Common Frameworks:
+    Verdi \cite{wilcoxVerdiFrameworkImplementing2015}
+    Iron Fleet \cite{hawblitzelIronFleetProvingPractical2015}
+    Diesel \cite{sergeyProgrammingProvingDistributed2017}
+    Veil \cite{pirleaVeilFrameworkAutomated2025a}
+    TLAPS \cite{cousineau2012tla}
 
-Common Problems
-Paxos
-Raft
-
-Verified system examples
-
-Byzantine fault tolerance
-
-Compositional and modular verification
+  \subsection{Proof techniques}
+  \subsection{Proof techniques}
 
 
-Proof techniques:
-Invariant
-refinement
 
-Adjacents
+
+
 
 
 \section{Applications}
-Nam id fermentum dui. Suspendisse sagittis tortor a nulla , in
-pulvinar ex pretium. Sed interdum orci quis metus euismod, et sagittis
+  Nam id fermentum dui. Suspendisse sagittis tortor a nulla , in
+  pulvinar ex pretium. Sed interdum orci quis metus euismod, et sagittis
 
 \subsection{Verified protocols}
 
-Nam id fermentum dui. Suspendisse sagittis tortor a nulla , in
-pulvinar ex pretium. Sed interdum orci quis metus euismod, et sagittis
-enim maximus. Vestibulum gravida massa ut felis suscipit
-congue. Quisque mattis elit a risus ultrices commodo venenatis eget
-dui. Etiam sagittis eleifend elementum.
+  Nam id fermentum dui. Suspendisse sagittis tortor a nulla , in
+  pulvinar ex pretium. Sed interdum orci quis metus euismod, et sagittis
+  enim maximus. Vestibulum gravida massa ut felis suscipit
+  congue. Quisque mattis elit a risus ultrices commodo venenatis eget
+  dui. Etiam sagittis eleifend elementum.
 
-\subsection{Verified systems}
+  BFT \cite{zhaoCompositionalVerificationComposite2024}
 
-Nam id fermentum dui. Suspendisse sagittis tortor a nulla , in
-pulvinar ex pretium. Sed interdum orci quis metus euismod, et sagittis
-enim maximus. Vestibulum gravida massa ut felis suscipit
-congue. Quisque mattis elit a risus ultrices commodo venenatis eget
-dui. Etiam sagittis eleifend elementum.
 
-r plants. Non-safety-critical applications include a web browser and few social applications: a conferencing system, a social media platform.
-In spite of the potential of today’s verification technology and its successes as documented here, formal verification is still not mainstream. The key obstacle is the high entry level: each project needs one or more verification experts. Companies may feel that it will be easier to find many testers than a few verification-savvy developers.
-Another concern is the rate of change of modern software systems. It is now common to practice “continuous development”, producing new versions once or more daily. In principle every such version requires re-verification. The good news, reported by several projects (seL4, Cocon, Amazon s2n, iFACTS, and Dutch tunnel) is that re-verification costs much less than the original verification. seL4 reports that verifying a new and large feature (a new data structure for API calls) cost less than 10% of the initial effort. The re-verification of small changes in iFACTS was completed in seconds, while its initial verification run took three hours.
-An alternative to re-verification is reuse of verified elements. Reviewing the projects revealed a number of cases of successful reuse, for example in OS projects (mCertiKos 6.5.10, Hyper-V, and PikeOS). Particularly interesting is the reuse by VeriCert of
+\subsection{Verified software}
+
+  AWS \cite{brookerSystemsCorrectnessPractices2025}
+  Mongo \cite{schultzFormalVerificationDistributed2022}
+
+  Nam id fermentum dui. Suspendisse sagittis tortor a nulla , in
+  pulvinar ex pretium. Sed interdum orci quis metus euismod, et sagittis
+  enim maximus. Vestibulum gravida massa ut  suscipit
+
 \section{Alternative Verification Approaches}
 
-Model checking, 
-
+  Model checking, 
+  congue. Quisque mattis elit a risus  commodo venenatis eget
+  dui. Etiam sagittis eleifend elementum.
 
 \section{Future Directions}
 
-Nam id fermentum dui. Suspendisse sagittis tortor a nulla , in
-pulvinar ex pretium. Sed interdum orci quis metus euismod, et sagittis
-enim maximus. Vestibulum gravida massa ut felis suscipit
-congue. Quisque mattis elit a risus ultrices commodo venenatis eget
-dui. Etiam sagittis eleifend elementum.
+
+  One of the common criticisims of formal verification is that the effort of verifying a system is unpractical and unnecessary.
+  ...
+  AI 
+
 
 
 \section{Conclusion}
 
-Nam id fermentum dui.  sagittis tortor a nulla mollis, in
-pulvinar ex pretium. Sed interdum orci quis metus euismod, et sagittis
-enim maximus. Vestibulum gravida massa ut felis suscipit
-congue. Quisque mattis elit a risus ultrices commodo venenatis eget
-dui. Etiam sagittis eleifend elementum. Test 01
+  Nam id fermentum dui.  sagittis tortor a nulla mollis, in
+  pulvinar ex pretium. Sed interdum orci quis metus euismod, et sagittis
+  enim maximus. Vestibulum gravida massa ut felis suscipit
+  congue. Quisque mattis elit a risus ultrices commodo venenatis eget
+  dui. Etiam sagittis eleifend elementum. Test 01
 
 \section{Methodology}
 
 \subsection{Literature Search Strategy}
 
-To identify relevant papers, we used a systematic literature search strategy. 
-We chose to query two databases, the ACM digital library and IEEE Xplore. 
-These databases were accessed on April 17 2026.
+  To identify relevant papers, we used a systematic literature search strategy. 
+  We chose to query two databases, the ACM digital library and IEEE Xplore. 
+  These databases were accessed on April 17 2026.
 
-To ensure the quality of of this review, we decided to follow the PRISMA framework to inform our search strategy.
-The search strategy can be summarized into multiple steps.
-First, we curated relevant keywords and constructed seach queries to compile relevant papers based on the guiding questions of the survey.
-This led to the following seach query:
+  To ensure the quality of of this review, we decided to follow the PRISMA framework to inform our search strategy.
+  The search strategy can be summarized into multiple steps.
+  First, we curated relevant keywords and constructed seach queries to compile relevant papers based on the guiding questions of the survey.
+  This led to the following seach query:
 
-("proof assistant" OR "theorem prover" OR "mechanized verification" OR "formal verification") AND ("distributed protocol" OR "distributed algorithm")
+  ("proof assistant" OR "theorem prover" OR "mechanized verification" OR "formal verification") AND ("distributed protocol" OR "distributed algorithm")
 
-This query yeilded 213 results from the ACM Digital Library and 49 results from IEEE Xplore.
+  This query yeilded 213 results from the ACM Digital Library and 49 results from IEEE Xplore.
 
 \subsection{Inclusion and Exclusion Criteria}
-These results were then screened based on standard inclusion and exclusion requirements.
-This reduced the result count to 37 for ACM and XX for IEEE Xplore. 
-From this point, the results were expanded by adding commonly cited papers.
+
+  These results were then screened based on standard inclusion and exclusion requirements.
+  Papers primarily focusing on model checking and duplicates were removed.
+  In addition, only papers that explicitly concerned distributed systems and proof assistants were included.
+  This reduced the result count to 37 for ACM and XX for IEEE Xplore. 
+  From this point, papers commonly cited in these results were added.
+  From these, the most relevant papers were selected from the remainders.
 
 
 

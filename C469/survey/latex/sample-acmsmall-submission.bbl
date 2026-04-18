@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{5}
+\begin{thebibliography}{8}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -37,6 +37,18 @@
 \providecommand\natexlab[1]{#1}
 \providecommand\showeprint[2][]{arXiv:#2}
 
+\bibitem[Brooker and Desai(2025)]%
+        {brookerSystemsCorrectnessPractices2025}
+\bibfield{author}{\bibinfo{person}{Marc Brooker} {and} \bibinfo{person}{Ankush Desai}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Systems {{Correctness Practices}} at {{Amazon Web Services}}}.
+\newblock \bibinfo{journal}{\emph{Commun. ACM}} \bibinfo{volume}{68}, \bibinfo{number}{6} (\bibinfo{date}{June} \bibinfo{year}{2025}), \bibinfo{pages}{38--42}.
+\newblock
+\showISSN{0001-0782}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3729175}
+\showDOI{\tempurl}
+
+
 \bibitem[Cousineau et~al\mbox{.}(2012)]%
         {cousineau2012tla}
 \bibfield{author}{\bibinfo{person}{Denis Cousineau}, \bibinfo{person}{Damien Doligez}, \bibinfo{person}{Leslie Lamport}, \bibinfo{person}{Stephan Merz}, \bibinfo{person}{Daniel Ricketts}, {and} \bibinfo{person}{Hernan Vanzetto}.} \bibinfo{year}{2012}\natexlab{}.
@@ -67,6 +79,17 @@
 \showDOI{\tempurl}
 
 
+\bibitem[Schultz et~al\mbox{.}(2022)]%
+        {schultzFormalVerificationDistributed2022}
+\bibfield{author}{\bibinfo{person}{William Schultz}, \bibinfo{person}{Ian Dardik}, {and} \bibinfo{person}{Stavros Tripakis}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Formal Verification of a Distributed Dynamic Reconfiguration Protocol}. In \bibinfo{booktitle}{\emph{Proceedings of the 11th {{ACM SIGPLAN International Conference}} on {{Certified Programs}} and {{Proofs}}}} \emph{(\bibinfo{series}{{{CPP}} 2022})}. \bibinfo{publisher}{Association for Computing Machinery}, \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{143--152}.
+\newblock
+\showISBNx{978-1-4503-9182-5}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3497775.3503688}
+\showDOI{\tempurl}
+
+
 \bibitem[Sergey et~al\mbox{.}(2017)]%
         {sergeyProgrammingProvingDistributed2017}
 \bibfield{author}{\bibinfo{person}{Ilya Sergey}, \bibinfo{person}{James~R. Wilcox}, {and} \bibinfo{person}{Zachary Tatlock}.} \bibinfo{year}{2017}\natexlab{}.
@@ -86,6 +109,17 @@
 \showISBNx{978-1-4503-3468-6}
 \urldef\tempurl%
 \url{https://doi.org/10.1145/2737924.2737958}
+\showDOI{\tempurl}
+
+
+\bibitem[Zhao et~al\mbox{.}(2024)]%
+        {zhaoCompositionalVerificationComposite2024}
+\bibfield{author}{\bibinfo{person}{Qiyuan Zhao}, \bibinfo{person}{George P{\^i}rlea}, \bibinfo{person}{Karolina Grzeszkiewicz}, \bibinfo{person}{Seth Gilbert}, {and} \bibinfo{person}{Ilya Sergey}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Compositional {{Verification}} of {{Composite Byzantine Protocols}}}. In \bibinfo{booktitle}{\emph{Proceedings of the 2024 on {{ACM SIGSAC Conference}} on {{Computer}} and {{Communications Security}}}} \emph{(\bibinfo{series}{{{CCS}} '24})}. \bibinfo{publisher}{Association for Computing Machinery}, \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{34--48}.
+\newblock
+\showISBNx{979-8-4007-0636-3}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3658644.3690355}
 \showDOI{\tempurl}
 
 
