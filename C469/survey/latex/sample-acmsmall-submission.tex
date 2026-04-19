@@ -71,18 +71,18 @@
 
 \section{Introduction}
 
-  In an increasingly interconnected world, distributed algorithms play an integral part in much of the software we use on a daily basis.
-  Ensuring these algorithms function as intended protects against failures that may be technically, economically, or even medically, critical.
+  In an increasingly interconnected world, distributed algorithms play an integral role in much of the software we use daily.
+  Ensuring these algorithms function as intended protects against failures that may be technically, economically, or even medically critical.
   
 \subsection{Motivation}
 
   Distributed systems are famously difficult to implement correctly. 
   Their divided and concurrent nature can often lead to subtle bugs that are difficult to reproduce.
-  Additionally, errors can propogate throughout a system, and partial failures can lead to unexpected negative outcomes.
-  For this reason, it is often unrealistic to acheive total coverage with traditional testing.
-  Formal verfication can provide a strong guarantee of correctness in these situations.
-  Interactive theorem proving as a verification method is specificly strong for distributed systems, as it can verify correctness in all states without iteratively exploring them.
-  Theorem proving also allows for flexibility in the paramaterization of systems, such as verifying an algorithm for any N nodes.
+  Additionally, errors can propagate throughout a system, and partial failures can lead to unexpected negative outcomes.
+  For this reason, it is often unrealistic to achieve total coverage with traditional testing.
+  Formal verification can provide a strong guarantee of correctness in these situations.
+  Interactive theorem proving as a verification method is specifically strong for distributed systems, as it can verify correctness in all states without iteratively exploring them.
+  Theorem proving also allows for flexibility in the paramaterization of systems, such as verifying an algorithm for any number of nodes, N.
 
 \subsection{Contributions}
   % What this survey contributes:
@@ -90,19 +90,20 @@
   %   comparison 
   %   challenges and open problems
   For this reason, this survey will explore the verification of distributed algorithms with interactive theorem provers.
-  It provides a taxonomy of different theorem-based verfication approaches and frameworks, reviews several common tools, and contrasts with other verification approaches.
-  In addition, this survey will compare the theorem proving verification approach against other common methods, such as manual proofs and model checking.
+  It provides a taxonomy of different theorem-based verification approaches and frameworks, reviews several common tools, and contrasts with other verification approaches.
+  In addition, this survey will contrast the theorem-proving verification approach against other common methods, such as manual proofs and model checking.
 \section{Methodology}
 
 \subsection{Literature Search Strategy}
 
   To identify relevant literature, this survey employed a systematic literature search strategy. 
-  Two major academic databases were selected, the ACM digital library and IEEE Xplore. 
-  These databases were chosen due to their broad coverage of research in fomral verification and distributed systems, and were accessed on April 17 2026.
+  Two major academic databases were selected: the ACM Digital Library and IEEE Xplore. 
+  These databases were chosen for their broad coverage of research in formal verification and distributed systems.
+  They were accessed on April 17 2026.
 
   To ensure the quality of the review, the PRISMA framework was used to inform the search strategy.
   The strategy consisted of constructing a query followed by database searching and screening.
-  First, relevant keywords were curated based on the topic of this survey and a seach query was constructed.
+  First, relevant keywords were curated based on the topic of this survey, and a search query was constructed.
   The query used is as follows.
 
   \begin{quote}
@@ -112,29 +113,29 @@
   \end{quote}
 
 
-  Selected papers were limited to peer-reviewed English language publications.
+  Selected papers were limited to peer-reviewed English-language publications.
   There was no strict lower bound imposed on the publication date, although results were naturally concentrated in the last 20 years.
-  This query yeilded 213 results from the ACM Digital Library and 49 results from IEEE Xplore, which were exported for further screening.
+  This query yielded 213 results from the ACM Digital Library and 49 results from IEEE Xplore, which were exported for further screening.
 
 \subsection{Inclusion and Exclusion Criteria}
 
   These results were then screened by title and abstract with standard inclusion and exclusion requirements.
-  Included papers focused on verfication of distributed algorithms using theorem proving.
+  Included papers focused on verification of distributed algorithms using theorem proving.
   Duplicate papers within and between databases were removed. 
   Additionally, papers were excluded if model checking or manual proof were the primary verification technique.
   This reduced the number of results to 37 for ACM and 15 for IEEE Xplore. 
 
 \subsection{Citation Chaining}
-  Finally, the reference lists of the selected papers were scanned and fundamental or commonly referenced papers were added.
-  Google scholar was used as a supplementary tool for citation chaining.
-  Any additional papers identified this way were included only if they met the above criteria, or primarily concerned a related topic to be explained.
+  Finally, the reference lists of the selected papers were scanned,and fundamental or commonly referenced papers were added.
+  Google Scholar was used as a supplementary tool for citation chaining.
+  Any additional papers identified this way were included only if they met the above criteria or were primarily concerned with a related topic to be explained.
 
 \section{Preliminary}
 
 \subsection{Distributed Algorithms}
   Distributed computing is a fundamental field in Computer Science.
-  It concerns the inter-communication between distinct autonomous components in a system.
-  This patterns shows up often, usually when there is a network of multiple devices.
+  It concerns the intercommunication between distinct autonomous components in a system.
+  These patterns often arise, usually when there is a network of multiple devices.
 
   There are several common challenges in distributed computing that are often the targets of formal verification.
   For example, consensus protocols such as Paxos 
@@ -142,75 +143,85 @@
 
 
 \subsection{Interactive Theorem Provers}
+  Interactive Theorem Provers, or proof assistants, have seen a recent surge in popularity among computer scientists and mathematicians alike.
+  Proof assistants are tools that assist the human development of formal proofs.
+  These formal proofs can then be automatically checked by the machine, ensuring correctness at each stage of the process. 
+  Theorem provers are extremely useful in the formal verification of protocols, where they can be used to ensure specific properties of a system hold.
+  For this reason, proof assistants such as Coq, Lean, Isabelle, and Dafny have become popular for verifying distributed algorithms.
   % Common languages:
   % Coq
   % Lean
   % Isabelle
   % Dafny
-  Interactive Theorem Provers, or proof assistants, have seen a recent surge in popularity among computer scientists and mathematicians alike.
-  Proof assistants are tools used to assist with the human development of formal proofs.
-  These formal proofs can then be automatically checked by the machine, ensuring correctness at each stage of the process. 
-  Theorem provers are extremely useful in the formal verification of protocols, where they can be used to ensure specific properties of a sytem hold.
-  For this reason proof assistants such as Coq, Lean, Isabelle, and Dafny have become popular for verifying distributed algorithms.
-
 \subsection{Verification}
   Verifying the correctness of a program requires that specific conditions about a system can be shown to hold in certain states.
-  These conditions can be arbitrairily chosen, but usually represent ...
+  These conditions can be arbitrarily chosen, but usually represent ...
   The two most notable property categories of a system are ``Safety'' and ``Liveness''.
   A safety property ensures protection against unfavourable events, whereas liveness properties make sure that the program functions as intended.
 
   Fault tolerance is another notable aspect of ensuring a program works as intended.
   Byzantine fault tolerance, specifically, is a common problem in
 
-
-
-
 \section{Approaches to Verifying Distributed Algorithms}
 
   \subsection{Proof techniques}
+
+    The primary proof technique used in the mechanized theorem proving approach for formal verification is inductive invariants.
+    When using this approach 
+
     Inductive invariants
-    Temporal logic based
+
+    Temporal logic-based
+
     Refinement based
     Compositional
     \cite{zhaoCompositionalVerificationComposite2024}
     Automation
 
   \subsection{Tools and Common frameworks}
-    There are many languages and frameworks used for the verification of distributed systems.
+    There are many languages and frameworks used to verify distributed systems.
     The most commonly used tool in the literature is Rocq, formerly Coq.
     There are multiple frameworks implemented for Rocq that specifically focus on distributed systems, 
     such as Verdi \cite{wilcoxVerdiFrameworkImplementing2015}, and Diesel \cite{sergeyProgrammingProvingDistributed2017}.
     These ...
 
-
-    Another theorem prover
-    TLAPS \cite{cousineau2012tla}
+    Another regularly used theorem prover is TLAPS \cite{cousineau2012tla}
     
     Iron Fleet \cite{hawblitzelIronFleetProvingPractical2015}
 
     A more contemporary tool is Lean4.
-    There is less research in verification with lean4, as it is a younger tool.
+    There is less research in verification with Lean4, as it is a younger tool.
     In 2025, the Veil \cite{pirleaVeilFrameworkAutomated2025a} framework was introduced as a basis to verify distributed protocols specifically.
+
+    These languages and frameworks all have advantages and disadvantages.
+    
 
 
 \section{Case Studies}
   \subsection{ Consensus Algorithms}
-    Consensus algorithms are used to agree on one result in a group of multiple, possibly unreliable, participants. 
-    Two well known solutions to the consensus problem are the Paxos and Raft protocols.
-    The Paxos protocol, originally specified by Lamport \cite{digitalequipmentcorporationParttimeParliament2019}, is one method to facillitate consensus.
+    Consensus algorithms are used to agree on one result in a group of multiple participants.
+    
+    They typically assume that participants can crash, but will not act maliciously.
+    Two well-known solutions to the consensus problem are the Paxos and Raft protocols.
+    The Paxos protocol, originally specified by Lamport \cite{digitalequipmentcorporationParttimeParliament2019}, is one method to facilitate consensus.
 
-    Consensus is an important problem in application too. 
-    For example, in blockchain systems consensus is required between distributed, and potentially malicious, 
+    Consensus is also an important problem in application. 
+    For example, in blockchain systems, consensus is required between distributed, and potentially faulty, 
     machines to ensure users can agree on the state of the system.
     In their 2018 paper \cite{pirleaMechanisingBlockchainConsensus2018},
-    Pirlea and Sergey present blockchain-based distributed consensus protocol, verified in the Rocq proof assistant. 
+    Pirlea and Sergey present a blockchain-based distributed consensus protocol, verified in the Rocq proof assistant. 
     This is an example of a modern application of a formally verified distributed protocol,
     in which correctness is absolutely critical for user trust in the system.
 
+    AWS \cite{brookerSystemsCorrectnessPractices2025}
+    Mongo \cite{schultzFormalVerificationDistributed2022}
+
+
   \subsection{ Byzantine Fault Tolerance}
-    Another fundamental problem in distributed computing is Byzantine Fault Tolerance. 
-    This problem was also introduced by Lamport et. al \cite{lamportByzantineGeneralsProblem2019}, and addresses partial malfunction in a distributed system.
-    The problem 
+    Byzantine fault tolerance (BFT) protocols aim to achieve consensus in a group of nodes containing potentially malicious members.
+    Consensus protocols, such as Paxos and Raft, assume a crash resistant model, but cannot handle arbitrairy node behaviour.
+    BFT protocols aim to protect against this.
+    This problem was also introduced by Lamport et al. \cite{lamportByzantineGeneralsProblem2019}.
 
     BFT \cite{zhaoCompositionalVerificationComposite2024}
 
@@ -225,31 +236,24 @@
 
 
 
-\subsection{Verified software}
-
-  AWS \cite{brookerSystemsCorrectnessPractices2025}
-  Mongo \cite{schultzFormalVerificationDistributed2022}
-
-
-
 \section{Comparison of Verification Strategies }
 
   There are three major verification paradigms that are often used for distributed algorithm verification.
-  The other two predominant methods of formally verifying distributed systems are using model checking and manual proofs.
+  The other two predominant methods of formally verifying distributed systems are model checking and manual proofs.
   Each of these other verification approaches has its own advantages and disadvantages in relation to theorem proving.
 
   Many solutions to the previously mentioned problems are based on manual proofs.
-  For example, De Prisco et al. \cite{depriscoRevisitingPaxosAlgorithm1997} developed a I/O automaton model and verify the PAXOS algorithm.
-  The paper contains a manual correctness proof, with the correctness of each component proved with invariants.
+  For example, De Prisco et al. \cite{depriscoRevisitingPaxosAlgorithm1997} developed an I/O automaton model and verified the Paxos algorithm.
+  The paper contains a manual correctness proof, in which the validity of each component proved with invariants.
   Manual proofs are more expressive than mechanized proofs,
-  but have a weaker correctness guarantee because depend on mathematical arguments formulated by humans.
-  This means they are more prone to errors in their development or implementation, and are more difficult maintain when scaling.
+  but have a weaker correctness guarantee because they depend on mathematical arguments formulated by humans.
+  This means they are more prone to errors in their development or implementation, and are more difficult to maintain when scaling.
 
   Model checking is another approach for verifying the correctness of a distributed system.
   Model checking expands the state space, exhaustively exploring every possible state and ensuring that the correctness properties hold in each one.
   This was exemplified by Tsuchiya and Springer \cite{tsuchiyaUsingBoundedModel2008},
   who used bounded model checking to verify two consensus algorithms, including Hybrid-1, an improved version of the Fast Paxos algorithm.
-  They were able to mechanically verify agreement up to 8 proccesses and termination up to 11 processes. 
+  They were able to mechanically verify agreement up to 8 processes and termination up to 11 processes. 
   A major limitation of model checking is the state space explosion problem, which restricts it to bounded or specifically abstracted models. 
   This often reduces the maximum number of processes in a verified protocol. 
 
@@ -271,12 +275,12 @@
 
 \section{Conclusion}
 
-  This paper aims to provide an overview of different techniques and problems in the formal verfication of distributed systems using theorem proving.
+  This paper aims to provide an overview of different techniques and problems in the formal verification of distributed systems using theorem proving.
 
 
   % Synthesis
   % Patterns
-  % Trade offs
+  % Trade-offs
 
 
   Interactive theorem provers provide the strongest guarantee of correctness, but are still expensive when compared to other methods.
