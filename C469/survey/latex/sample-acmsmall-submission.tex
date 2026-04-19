@@ -179,19 +179,22 @@
     The most commonly used tool in the literature is Rocq, formerly Coq.
     There are multiple frameworks implemented for Rocq that specifically focus on distributed systems, 
     such as Verdi \cite{wilcoxVerdiFrameworkImplementing2015}, and Diesel \cite{sergeyProgrammingProvingDistributed2017}.
-    These ...
+    These frameworks differ in 
 
-    Another regularly used theorem prover is TLAPS \cite{cousineau2012tla}
     
-    Iron Fleet \cite{hawblitzelIronFleetProvingPractical2015}
+    Dafny is another verification-aware programming language that allows for the verification of distributed algorithms .
+    Iron Fleet \cite{hawblitzelIronFleetProvingPractical2015}, is a framework built on Dafny that is designed for this specific purpose.
+    
+    Another regularly used theorem prover is the TLA+ Proof System, or TLAPS \cite{cousineau2012tla}. 
+    This was created by lamport in 
 
     A more contemporary tool is Lean4.
-    There is less research in verification with Lean4, as it is a younger tool.
+    There is little mention of Lean4 in the literature, because it is a relatively new tool.
+    It was 
     In 2025, the Veil \cite{pirleaVeilFrameworkAutomated2025a} framework was introduced as a basis to verify distributed protocols specifically.
+    Veil was implemented using Lean metaproggraming, which is an attractive feature for
 
     These languages and frameworks all have advantages and disadvantages.
-    
-
 
 \section{Case Studies}
   \subsection{ Consensus Algorithms}
@@ -273,11 +276,6 @@
   In a 2023 paper \cite{liuLearningContractInvariants2023},
   Liu et al. propose a technique, based on reinforcement learning for predicting contract invariants that are useful for proving arithmetic safety.
   Although this paper doesn't focus on a distributed protocol, it highlights the potential that ML may hold in reducing the verification time of complex systems.
-  
-
-  
-
-
 
 \section{Conclusion}
 
