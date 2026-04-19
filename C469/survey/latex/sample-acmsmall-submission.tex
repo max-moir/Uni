@@ -81,8 +81,8 @@
   Additionally, errors can propagate throughout a system, and partial failures can lead to unexpected negative outcomes.
   For this reason, it is often unrealistic to achieve total coverage with traditional testing.
   Formal verification can provide a strong guarantee of correctness in these situations.
-  Interactive theorem proving as a verification method is specifically strong for distributed systems, as it can verify correctness in all states without iteratively exploring them.
-  Theorem proving also allows for flexibility in the paramaterization of systems, such as verifying an algorithm for any number of nodes, N.
+  Interactive theorem-proving as a verification method is specifically strong for distributed systems, as it can verify correctness in all states without iteratively exploring them.
+  theorem-proving also allows for flexibility in the parameterisation of systems, such as verifying an algorithm for any number of nodes, N.
 
 \subsection{Contributions}
   % What this survey contributes:
@@ -120,13 +120,13 @@
 \subsection{Inclusion and Exclusion Criteria}
 
   These results were then screened by title and abstract with standard inclusion and exclusion requirements.
-  Included papers focused on verification of distributed algorithms using theorem proving.
+  Included papers focused on the verification of distributed algorithms using theorem-proving.
   Duplicate papers within and between databases were removed. 
   Additionally, papers were excluded if model checking or manual proof were the primary verification technique.
   This reduced the number of results to 37 for ACM and 15 for IEEE Xplore. 
 
 \subsection{Citation Chaining}
-  Finally, the reference lists of the selected papers were scanned,and fundamental or commonly referenced papers were added.
+  Finally, the reference lists of the selected papers were scanned,and fundamental or commonly cited papers were added.
   Google Scholar was used as a supplementary tool for citation chaining.
   Any additional papers identified this way were included only if they met the above criteria or were primarily concerned with a related topic to be explained.
 
@@ -134,7 +134,7 @@
 
 \subsection{Distributed Algorithms}
   Distributed computing is a fundamental field in Computer Science.
-  It concerns the intercommunication between distinct autonomous components in a system.
+  It concerns intercommunication among distinct autonomous components in a system.
   These patterns often arise, usually when there is a network of multiple devices.
 
   There are several common challenges in distributed computing that are often the targets of formal verification.
@@ -166,7 +166,7 @@
 
   \subsection{Proof techniques}
 
-    The primary proof technique used in the mechanized theorem proving approach for formal verification is inductive invariants.
+    The primary proof technique used in the mechanized theorem-proving approach for formal verification is inductive invariants.
     When using this approach 
 
     Inductive invariants
@@ -219,7 +219,7 @@
 
   \subsection{ Byzantine Fault Tolerance}
     Byzantine fault tolerance (BFT) protocols aim to achieve consensus in a group of nodes containing potentially malicious members.
-    Consensus protocols, such as Paxos and Raft, assume a crash resistant model, but cannot handle arbitrairy node behaviour.
+    Consensus protocols, such as Paxos and Raft, assume a crash-resistant model, but cannot handle unspecified node behaviour.
     BFT protocols aim to protect against this.
     This problem was also introduced by Lamport et al. \cite{lamportByzantineGeneralsProblem2019}.
 
@@ -240,11 +240,11 @@
 
   There are three major verification paradigms that are often used for distributed algorithm verification.
   The other two predominant methods of formally verifying distributed systems are model checking and manual proofs.
-  Each of these other verification approaches has its own advantages and disadvantages in relation to theorem proving.
+  Each of these other verification approaches has its own advantages and disadvantages in relation to theorem-proving.
 
   Many solutions to the previously mentioned problems are based on manual proofs.
   For example, De Prisco et al. \cite{depriscoRevisitingPaxosAlgorithm1997} developed an I/O automaton model and verified the Paxos algorithm.
-  The paper contains a manual correctness proof, in which the validity of each component proved with invariants.
+  The paper contains a manual correctness proof, in which the validity of each component is proved with invariants.
   Manual proofs are more expressive than mechanized proofs,
   but have a weaker correctness guarantee because they depend on mathematical arguments formulated by humans.
   This means they are more prone to errors in their development or implementation, and are more difficult to maintain when scaling.
@@ -257,11 +257,11 @@
   A major limitation of model checking is the state space explosion problem, which restricts it to bounded or specifically abstracted models. 
   This often reduces the maximum number of processes in a verified protocol. 
 
-  A theorem proving approach does not have this issue, as it can ensure that correctness conditions hold for any finite number of processes.
+  A theorem-proving approach does not have this issue, as it can ensure that correctness conditions hold for any finite number of processes.
 
 
 \section{Challenges and Future Directions}
-  One of the common criticisims of theorem based formal verification is that it is too time consuming to apply practically.
+  One of the common criticisms of theorem-based formal verification is that it is too time-consuming to apply practically.
 
   \cite{liuLearningContractInvariants2023}
   Proof effort
@@ -275,7 +275,7 @@
 
 \section{Conclusion}
 
-  This paper aims to provide an overview of different techniques and problems in the formal verification of distributed systems using theorem proving.
+  This paper aims to provide an overview of different techniques and problems in the formal verification of distributed systems using theorem-proving.
 
 
   % Synthesis
