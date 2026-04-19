@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.13)  20 APR 2026 11:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.13)  20 APR 2026 11:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -847,18 +847,19 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 LaTeX Info: Redefining \tempurl on input line 60.
 LaTeX Info: Redefining \tempurl on input line 80.
 LaTeX Info: Redefining \tempurl on input line 92.
-LaTeX Info: Redefining \tempurl on input line 104.
  [5.5]
+LaTeX Info: Redefining \tempurl on input line 104.
 LaTeX Info: Redefining \tempurl on input line 115.
-LaTeX Info: Redefining \tempurl on input line 135.
-LaTeX Info: Redefining \tempurl on input line 146.
-LaTeX Info: Redefining \tempurl on input line 157.
-LaTeX Info: Redefining \tempurl on input line 168.
-LaTeX Info: Redefining \tempurl on input line 179.
+LaTeX Info: Redefining \tempurl on input line 127.
+LaTeX Info: Redefining \tempurl on input line 147.
+LaTeX Info: Redefining \tempurl on input line 158.
+LaTeX Info: Redefining \tempurl on input line 169.
+LaTeX Info: Redefining \tempurl on input line 180.
 LaTeX Info: Redefining \tempurl on input line 191.
-LaTeX Info: Redefining \tempurl on input line 202.
-LaTeX Info: Redefining \tempurl on input line 213.
-LaTeX Info: Redefining \tempurl on input line 224.
+LaTeX Info: Redefining \tempurl on input line 203.
+LaTeX Info: Redefining \tempurl on input line 214.
+LaTeX Info: Redefining \tempurl on input line 225.
+LaTeX Info: Redefining \tempurl on input line 236.
 ) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 ) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def
@@ -872,18 +873,18 @@ Package rerunfilecheck Info: File `sample-acmsmall-submission.out' has not chang
 (rerunfilecheck)             Checksum: F0016C83074F44DACBB9EA07DBB77652;3966.
  ) 
 Here is how much of TeX's memory you used:
- 21004 strings out of 475069
- 338989 string characters out of 5774627
+ 21011 strings out of 475069
+ 339219 string characters out of 5774627
  1946975 words of memory out of 5000000
- 42261 multiletter control sequences out of 15000+600000
- 701954 words of font info for 322 fonts, out of 8000000 for 9000
+ 42264 multiletter control sequences out of 15000+600000
+ 702325 words of font info for 324 fonts, out of 8000000 for 9000
  886 hyphenation exceptions out of 8191
- 90i,16n,131p,1064b,703s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,16n,131p,1064b,701s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on sample-acmsmall-submission.pdf (6 pages, 408221 bytes).
+Output written on sample-acmsmall-submission.pdf (6 pages, 409158 bytes).
 PDF statistics:
- 239 PDF objects out of 1000 (max. 8388607)
- 211 compressed objects within 3 object streams
- 48 named destinations out of 1000 (max. 500000)
+ 244 PDF objects out of 1000 (max. 8388607)
+ 216 compressed objects within 3 object streams
+ 49 named destinations out of 1000 (max. 500000)
  78025 words of extra memory for PDF output out of 89155 (max. 10000000)
 

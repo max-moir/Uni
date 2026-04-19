@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{17}
+\begin{thebibliography}{18}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -113,6 +113,18 @@
 \showISBNx{978-1-4503-3834-9}
 \urldef\tempurl%
 \url{https://doi.org/10.1145/2815400.2815428}
+\showDOI{\tempurl}
+
+
+\bibitem[Lamport(1998)]%
+        {lamportCompositionWayMake1998b}
+\bibfield{author}{\bibinfo{person}{Leslie Lamport}.} \bibinfo{year}{1998}\natexlab{}.
+\newblock \showarticletitle{Composition: {{A Way}} to {{Make Proofs Harder}}}.
+\newblock In \bibinfo{booktitle}{\emph{Compositionality: {{The Significant Difference}}}}, \bibfield{editor}{\bibinfo{person}{Gerhard Goos}, \bibinfo{person}{Juris Hartmanis}, \bibinfo{person}{Jan Van~Leeuwen}, \bibinfo{person}{Willem-Paul De~Roever}, \bibinfo{person}{Hans Langmaack}, {and} \bibinfo{person}{Amir Pnueli}} (Eds.). Vol.~\bibinfo{volume}{1536}. \bibinfo{publisher}{Springer Berlin Heidelberg}, \bibinfo{address}{Berlin, Heidelberg}, \bibinfo{pages}{402--423}.
+\newblock
+\showISBNx{978-3-540-65493-3 978-3-540-49213-9}
+\urldef\tempurl%
+\url{https://doi.org/10.1007/3-540-49213-5_15}
 \showDOI{\tempurl}
 
 
