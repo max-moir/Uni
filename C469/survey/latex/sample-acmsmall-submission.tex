@@ -136,12 +136,10 @@
 \subsection{Distributed Algorithms}
   Distributed computing is a fundamental field in Computer Science.
   It concerns intercommunication among distinct autonomous components in a system.
-  These patterns often arise, usually when there is a network of multiple devices.
+  These patterns often arise when there is a network of multiple devices, and .
 
-  There are several common challenges in distributed computing that are often the targets of formal verification.
-  For example, consensus protocols such as Paxos 
-  Another example is Byzantine Fault Tolerance.
-
+  There are many challenges in distributed computing that can be the targets of formal verification.
+  Several of these problems with be elaborated upon below, such as consensus, fault tolerance and mutual exclusion protocols.
 
 \subsection{Interactive Theorem Provers}
   Interactive Theorem Provers, or proof assistants, have seen a recent surge in popularity among computer scientists and mathematicians alike.
@@ -149,19 +147,14 @@
   These formal proofs can then be automatically checked by the machine, ensuring correctness at each stage of the process. 
   Theorem provers are extremely useful in the formal verification of protocols, where they can be used to ensure specific properties of a system hold.
   For this reason, proof assistants such as Coq, Lean, Isabelle, and Dafny have become popular for verifying distributed algorithms.
-  % Common languages:
-  % Coq
-  % Lean
-  % Isabelle
-  % Dafny
+
 \subsection{Verification}
-  Verifying the correctness of a program requires that specific conditions about a system can be shown to hold in certain states.
-  These conditions can be arbitrarily chosen, but usually represent ...
+  Verifying the correctness of a program requires proving that specific conditions about a system can be shown to hold in certain states.
   The two most notable property categories of a system are ``Safety'' and ``Liveness''.
   A safety property ensures protection against unfavourable events, whereas liveness properties make sure that the program functions as intended.
 
   Fault tolerance is another notable aspect of ensuring a program works as intended.
-  Byzantine fault tolerance, specifically, is a common problem in
+  Byzantine fault tolerance, specifically, is a common problem in distributed computing.
 
 \section{Approaches to Verifying Distributed Algorithms}
   \subsection{Tools and Common frameworks}
@@ -171,23 +164,20 @@
     such as Verdi \cite{wilcoxVerdiFrameworkImplementing2015}, and Diesel \cite{sergeyProgrammingProvingDistributed2017}.
     These frameworks differ in 
 
-    
     Dafny is another verification-aware programming language that allows for the verification of distributed algorithms .
     Iron Fleet \cite{hawblitzelIronFleetProvingPractical2015}, is a framework built on Dafny that is designed for this specific purpose.
     
     Another regularly used theorem prover is the TLA+ Proof System, or TLAPS \cite{cousineau2012tla}. 
-    This was created by lamport in 
+    This was created by Lamport as a supplementary tool to his TLA+ formal specification language.
+    TLAPS can be used to prove correctness conditions about systems that have been formalised in TLA+.
 
     A more contemporary tool is Lean4.
     There is little mention of Lean4 in the literature, because it is a relatively new tool.
-    It was 
     In 2025, the Veil \cite{pirleaVeilFrameworkAutomated2025a} framework was introduced as a basis to verify distributed protocols specifically.
-    Veil was implemented using Lean metaproggraming, which is an attractive feature for
 
     These languages and frameworks all have advantages and disadvantages.
 
   \subsection{Proof techniques}
-
     There are a range of proof techniques used to verify distributed algorithms.
     Although these approaches often overlap in practice, they .
 
@@ -199,11 +189,10 @@
 
     \emph{Temporal logic-based}
 
-    \emph{Refinement based}
+    \emph{Refinement based} proof approaches ..
 
     Compositional verification reasons about different components of a system independentaly.
     \cite{zhaoCompositionalVerificationComposite2024}
-
 
     Although interactive theorem proving is manual, many systems implement \emph{automated theorem proving}.
 
