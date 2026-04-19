@@ -40,7 +40,7 @@
   
   Formal verification is a topical field in modern Computer Science. 
   Proving the correctness of programs is not only elegant in a theoretical sense, but is often necessary in mission-critical applications.
-  Due to the difficulty in formalizing programs, reliability in industry is often left to automated testing. 
+  Due to the difficulty in formalising programs, reliability in industry is often left to automated testing. 
   However, in specific circumstances where correctness must be ensured, formal proofs may be required. 
 
 \end{abstract}
@@ -166,7 +166,7 @@
 
   \subsection{Proof techniques}
 
-    The primary proof technique used in the mechanized theorem-proving approach for formal verification is inductive invariants.
+    The primary proof technique used in the mechanised theorem-proving approach for formal verification is inductive invariants.
     When using this approach 
 
     Inductive invariants
@@ -245,7 +245,7 @@
   Many solutions to the previously mentioned problems are based on manual proofs.
   For example, De Prisco et al. \cite{depriscoRevisitingPaxosAlgorithm1997} developed an I/O automaton model and verified the Paxos algorithm.
   The paper contains a manual correctness proof, in which the validity of each component is proved with invariants.
-  Manual proofs are more expressive than mechanized proofs,
+  Manual proofs are more expressive than mechanised proofs,
   but have a weaker correctness guarantee because they depend on mathematical arguments formulated by humans.
   This means they are more prone to errors in their development or implementation, and are more difficult to maintain when scaling.
 
@@ -262,28 +262,40 @@
 
 \section{Challenges and Future Directions}
   One of the common criticisms of theorem-based formal verification is that it is too time-consuming to apply practically.
+  In addition to this, verification requires specialised engineers, often with a mathematical background.
 
-  \cite{liuLearningContractInvariants2023}
-  Proof effort
-  Scalability
+  Another common challenge is scalability.
+  After a system has been formally verified, ongoing maintainance is required to reverify it each time it changes.
+
   There are differing perspectives on this .
 
   Increased automation
-  Machine learning
+
+  One potentially direction of future research is the application of machine learning to assist with formalisation.
+  In a 2023 paper \cite{liuLearningContractInvariants2023},
+  Liu et al. propose a technique, based on reinforcement learning for predicting contract invariants that are useful for proving arithmetic safety.
+  Although this paper doesn't focus on a distributed protocol, it highlights the potential that ML may hold in reducing the verification time of complex systems.
+  
+
+  
 
 
 
 \section{Conclusion}
 
-  This paper aims to provide an overview of different techniques and problems in the formal verification of distributed systems using theorem-proving.
 
+  This survey has provided an overview of the use of interactive theorem provers for the formal verification of distributed systems.
+  It has covered common languages, frameworks, proof techniques and algorithms in the area and discusses their relative advantages and disadvantages.
+  Throughout the paper, several patterns have repeatedly manifested.
+  For example, the trade-offs between development time and degree of correctness guaranteed.
+  Case studies in consensus agreement and Byzantine fault tolerance have demonstrated the feasibility and importance of protocol verification.
+
+  Due to common intercacies in distributed algorithms, correctness guarantees can be especially valuable.
+  In relation to manual proofs and model checking, interactive theorem provers act as a powerful tool in reasoning about the correctness of these systems.
 
   % Synthesis
   % Patterns
   % Trade-offs
-
-
-  Interactive theorem provers provide the strongest guarantee of correctness, but are still expensive when compared to other methods.
 
 
 %% The next two lines define the bibliography style to be used, and

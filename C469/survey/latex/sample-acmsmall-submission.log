@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.13)  20 APR 2026 00:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.13)  20 APR 2026 00:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -835,13 +835,12 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
  [2.2]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3.3] (./sample-acmsmall-submission.bbl
+ [3.3]
+Underfull \vbox (badness 2698) has occurred while \output is active []
+
+ [4.4] (./sample-acmsmall-submission.bbl
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 8.0pt on input line 44.
-
-Underfull \vbox (badness 1270) has occurred while \output is active []
-
- [4.4]
 LaTeX Info: Redefining \tempurl on input line 68.
 LaTeX Info: Redefining \tempurl on input line 80.
 LaTeX Info: Redefining \tempurl on input line 91.
@@ -853,12 +852,13 @@ LaTeX Info: Redefining \tempurl on input line 155.
 LaTeX Info: Redefining \tempurl on input line 167.
 LaTeX Info: Redefining \tempurl on input line 178.
 LaTeX Info: Redefining \tempurl on input line 189.
+ [5.5]
 LaTeX Info: Redefining \tempurl on input line 200.
 ) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 ) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [5.5] (./sample-acmsmall-submission.aux)
+) [6.6] (./sample-acmsmall-submission.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -867,18 +867,18 @@ Package rerunfilecheck Info: File `sample-acmsmall-submission.out' has not chang
 (rerunfilecheck)             Checksum: 432BD2B8367C3EF172F245569CE7D460;3966.
  ) 
 Here is how much of TeX's memory you used:
- 20935 strings out of 475069
- 337167 string characters out of 5774627
- 1947975 words of memory out of 5000000
+ 20954 strings out of 475069
+ 337614 string characters out of 5774627
+ 1948975 words of memory out of 5000000
  42253 multiletter control sequences out of 15000+600000
- 691185 words of font info for 284 fonts, out of 8000000 for 9000
+ 692823 words of font info for 296 fonts, out of 8000000 for 9000
  886 hyphenation exceptions out of 8191
- 90i,17n,131p,1064b,690s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,17n,131p,1064b,719s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on sample-acmsmall-submission.pdf (5 pages, 403042 bytes).
+Output written on sample-acmsmall-submission.pdf (6 pages, 404993 bytes).
 PDF statistics:
- 228 PDF objects out of 1000 (max. 8388607)
- 201 compressed objects within 3 object streams
- 45 named destinations out of 1000 (max. 500000)
+ 232 PDF objects out of 1000 (max. 8388607)
+ 204 compressed objects within 3 object streams
+ 46 named destinations out of 1000 (max. 500000)
  73929 words of extra memory for PDF output out of 74296 (max. 10000000)
 
