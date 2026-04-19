@@ -581,3 +581,20 @@
   abstract = {This paper presents an approach to automatic verification of asynchronous round-based consensus algorithms. We use model checking, a widely practiced verification method; but its application to asynchronous distributed algorithms is difficult because the state space of these algorithms is often infinite. The proposed approach addresses this difficulty by reducing the verification problem to small model checking problems that involve only single phases of algorithm execution. Because a phase consists of a finite number of rounds, bounded model checking, a technique using satisfiability solving, can be effectively used to solve these problems. The proposed approach allows us to model check some consensus algorithms up to around 10 processes.},
   isbn = {978-3-540-87778-3}
 }
+
+@inproceedings{liuLearningContractInvariants2023,
+  title = {Learning {{Contract Invariants Using Reinforcement Learning}}},
+  booktitle = {Proceedings of the 37th {{IEEE}}/{{ACM International Conference}} on {{Automated Software Engineering}}},
+  author = {Liu, Junrui and Chen, Yanju and Tan, Bryan and Dillig, Isil and Feng, Yu},
+  year = 2023,
+  month = jan,
+  series = {{{ASE}} '22},
+  pages = {1--11},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  doi = {10.1145/3551349.3556962},
+  urldate = {2026-04-19},
+  abstract = {Due to the popularity of smart contracts in the modern financial ecosystem, there has been growing interest in formally verifying their correctness and security properties. Most existing techniques in this space focus on common vulnerabilities like arithmetic overflows and perform verification by leveraging contract invariants (i.e., logical formulas hold at transaction boundaries). In this paper, we propose a new technique, based on deep reinforcement learning, for automatically learning contract invariants that are useful for proving arithmetic safety. Our method incorporates an off-line training phase in which the verifier uses its own verification attempts to learn a policy for contract invariant generation. This learned (neural) policy is then used at verification time to predict likely invariants that are also useful for proving arithmetic safety. We implemented this idea in a tool called Cider and incorporated it into an existing verifier (based on refinement type checking) for proving arithmetic safety. Our evaluation shows that Cider improves both the quality of the inferred invariants as well as inference time, leading to faster verification and hardened contracts with fewer run-time assertions.},
+  isbn = {978-1-4503-9475-8},
+  file = {/csse/users/mmo199/Zotero/storage/SDRLTUKI/Liu et al. - 2023 - Learning Contract Invariants Using Reinforcement Learning.pdf}
+}

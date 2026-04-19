@@ -91,7 +91,6 @@
   %   challenges and open problems
   For this reason, this survey will explore the verification of distributed algorithms with interactive theorem provers.
   It provides a taxonomy of different theorem-based verfication approaches and frameworks, reviews several common tools, and contrasts with other verification approaches.
-
   In addition, this survey will compare the theorem proving verification approach against other common methods, such as manual proofs and model checking.
 \section{Methodology}
 
@@ -196,21 +195,31 @@
 
 \section{Case Studies}
   \subsection{ Consensus Algorithms}
-    Consensus algorithm are  
-    \cite{digitalequipmentcorporationParttimeParliament2019}, 
+    Consensus algorithms are used to agree on one result in a group of multiple, possibly unreliable, participants. 
+    Two well known solutions to the consensus problem are the Paxos and Raft protocols.
+    The Paxos protocol, originally specified by Lamport \cite{digitalequipmentcorporationParttimeParliament2019}, is one method to facillitate consensus.
 
-    Blockchain consensus \cite{pirleaMechanisingBlockchainConsensus2018}
+    Consensus is an important problem in application too. 
+    For example, in blockchain systems consensus is required between distributed, and potentially malicious, 
+    machines to ensure users can agree on the state of the system.
+    In their 2018 paper \cite{pirleaMechanisingBlockchainConsensus2018},
+    Pirlea and Sergey present blockchain-based distributed consensus protocol, verified in the Rocq proof assistant. 
+    This is an example of a modern application of a formally verified distributed protocol,
+    in which correctness is absolutely critical for user trust in the system.
 
   \subsection{ Byzantine Fault Tolerance}
     Another fundamental problem in distributed computing is Byzantine Fault Tolerance. 
-    This problem was originally introduced by Lamport et. al \cite{lamportByzantineGeneralsProblem2019}, and addresses partial malfunction in a distributed system.
+    This problem was also introduced by Lamport et. al \cite{lamportByzantineGeneralsProblem2019}, and addresses partial malfunction in a distributed system.
     The problem 
 
     BFT \cite{zhaoCompositionalVerificationComposite2024}
+
+    Once again, this problem arises in blockchain systems.
     Blockchain Byzantine \cite{tholoniatFormalVerificationBlockchain2022}
 
   \subsection{Mutual Exclusion }
-    asdf
+    Mutual exclusion is another classic distributed computing problem.
+    It was 
 
     \cite{wilcoxVerdiFrameworkImplementing2015}
 
@@ -249,13 +258,21 @@
 
 \section{Challenges and Future Directions}
   One of the common criticisims of theorem based formal verification is that it is too time consuming to apply practically.
+
+  \cite{liuLearningContractInvariants2023}
+  Proof effort
+  Scalability
   There are differing perspectives on this .
+
+  Increased automation
+  Machine learning
 
 
 
 \section{Conclusion}
 
   This paper aims to provide an overview of different techniques and problems in the formal verfication of distributed systems using theorem proving.
+
 
   % Synthesis
   % Patterns

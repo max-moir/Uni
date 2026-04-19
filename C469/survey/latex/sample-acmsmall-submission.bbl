@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{14}
+\begin{thebibliography}{15}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -99,6 +99,17 @@
 \newblock In \bibinfo{booktitle}{\emph{Concurrency: The {{Works}} of {{Leslie Lamport}}}}. \bibinfo{publisher}{Association for Computing Machinery}, \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{203--226}.
 \newblock
 \showISBNx{978-1-4503-7270-1}
+
+
+\bibitem[Liu et~al\mbox{.}(2023)]%
+        {liuLearningContractInvariants2023}
+\bibfield{author}{\bibinfo{person}{Junrui Liu}, \bibinfo{person}{Yanju Chen}, \bibinfo{person}{Bryan Tan}, \bibinfo{person}{Isil Dillig}, {and} \bibinfo{person}{Yu Feng}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Learning {{Contract Invariants Using Reinforcement Learning}}}. In \bibinfo{booktitle}{\emph{Proceedings of the 37th {{IEEE}}/{{ACM International Conference}} on {{Automated Software Engineering}}}} \emph{(\bibinfo{series}{{{ASE}} '22})}. \bibinfo{publisher}{Association for Computing Machinery}, \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{1--11}.
+\newblock
+\showISBNx{978-1-4503-9475-8}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3551349.3556962}
+\showDOI{\tempurl}
 
 
 \bibitem[P{\^i}rlea et~al\mbox{.}(2025)]%
