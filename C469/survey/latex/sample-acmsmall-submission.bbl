@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{12}
+\begin{thebibliography}{14}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -55,6 +55,18 @@
 \newblock \showarticletitle{{{TLA}}+ Proofs}.
 \newblock \bibinfo{journal}{\emph{Proceedings of the 18th International Symposium on Formal Methods (FM 2012), Dimitra Giannakopoulou and Dominique Mery, editors. Springer-Verlag Lecture Notes in Computer Science}}  \bibinfo{volume}{7436} (\bibinfo{date}{Jan.} \bibinfo{year}{2012}), \bibinfo{pages}{147--154}.
 \newblock
+
+
+\bibitem[De~Prisco et~al\mbox{.}(1997)]%
+        {depriscoRevisitingPaxosAlgorithm1997}
+\bibfield{author}{\bibinfo{person}{Roberto De~Prisco}, \bibinfo{person}{Butler Lampson}, {and} \bibinfo{person}{Nancy Lynch}.} \bibinfo{year}{1997}\natexlab{}.
+\newblock \showarticletitle{Revisiting the {{Paxos}} Algorithm}.
+\newblock In \bibinfo{booktitle}{\emph{Distributed {{Algorithms}}}}, \bibfield{editor}{\bibinfo{person}{Gerhard Goos}, \bibinfo{person}{Juris Hartmanis}, \bibinfo{person}{Jan Van~Leeuwen}, \bibinfo{person}{Marios Mavronicolas}, {and} \bibinfo{person}{Philippas Tsigas}} (Eds.). Vol.~\bibinfo{volume}{1320}. \bibinfo{publisher}{Springer Berlin Heidelberg}, \bibinfo{address}{Berlin, Heidelberg}, \bibinfo{pages}{111--125}.
+\newblock
+\showISBNx{978-3-540-63575-8 978-3-540-69600-1}
+\urldef\tempurl%
+\url{https://doi.org/10.1007/BFb0030679}
+\showDOI{\tempurl}
 
 
 \bibitem[{Digital Equipment Corporation} and Lamport(2019)]%
@@ -142,6 +154,17 @@
 \showISBNx{978-3-031-07534-6 978-3-031-07535-3}
 \urldef\tempurl%
 \url{https://doi.org/10.1007/978-3-031-07535-3_12}
+\showDOI{\tempurl}
+
+
+\bibitem[Tsuchiya and Schiper(2008)]%
+        {tsuchiyaUsingBoundedModel2008}
+\bibfield{author}{\bibinfo{person}{Tatsuhiro Tsuchiya} {and} \bibinfo{person}{Andr{\'e} Schiper}.} \bibinfo{year}{2008}\natexlab{}.
+\newblock \showarticletitle{Using {{Bounded Model Checking}} to {{Verify Consensus Algorithms}}}. In \bibinfo{booktitle}{\emph{Proceedings of the 22nd International Symposium on {{Distributed Computing}}}} \emph{(\bibinfo{series}{{{DISC}} '08})}. \bibinfo{publisher}{Springer-Verlag}, \bibinfo{address}{Berlin, Heidelberg}, \bibinfo{pages}{466--480}.
+\newblock
+\showISBNx{978-3-540-87778-3}
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-540-87779-0_32}
 \showDOI{\tempurl}
 
 

@@ -102,9 +102,9 @@
   These databases were chosen due to their broad coverage of research in fomral verification and distributed systems, and were accessed on April 17 2026.
 
   To ensure the quality of the review, the PRISMA framework was used to inform the search strategy.
-  The strategy can be summarized into two steps.
-  First, we curated relevant keywords and constructed seach queries to compile relevant papers based on the guiding questions of the survey.
-  This led to the following seach query:
+  The strategy consisted of constructing a query followed by database searching and screening.
+  First, relevant keywords were curated based on the topic of this survey and a seach query was constructed.
+  The query used is as follows.
 
   \begin{quote}
     ("proof assistant" OR "theorem prover" OR "mechanized verification" OR "formal verification")
@@ -122,10 +122,11 @@
   These results were then screened by title and abstract with standard inclusion and exclusion requirements.
   Included papers focused on verfication of distributed algorithms using theorem proving.
   Duplicate papers within and between databases were removed. 
-  Additionally, any papers focused on model checking or manual proofs were removed.
+  Additionally, papers were excluded if model checking or manual proof were the primary verification technique.
   This reduced the number of results to 37 for ACM and 15 for IEEE Xplore. 
 
-  After this, the reference lists of the selected papers were scanned and fundamental or commonly referenced papers were added.
+\subsection{Citation Chaining}
+  Finally, the reference lists of the selected papers were scanned and fundamental or commonly referenced papers were added.
   Google scholar was used as a supplementary tool for citation chaining.
   Any additional papers identified this way were included only if they met the above criteria, or primarily concerned a related topic to be explained.
 
@@ -193,11 +194,12 @@
     In 2025, the Veil \cite{pirleaVeilFrameworkAutomated2025a} framework was introduced as a basis to verify distributed protocols specifically.
 
 
-
-
 \section{Case Studies}
-  \subsection{ Consensus }
+  \subsection{ Consensus Algorithms}
+    Consensus algorithm are  
     \cite{digitalequipmentcorporationParttimeParliament2019}, 
+
+    Blockchain consensus \cite{pirleaMechanisingBlockchainConsensus2018}
 
   \subsection{ Byzantine Fault Tolerance}
     Another fundamental problem in distributed computing is Byzantine Fault Tolerance. 
@@ -205,11 +207,13 @@
     The problem 
 
     BFT \cite{zhaoCompositionalVerificationComposite2024}
-
-  \subsection{ Blockchain variants}
-
-    Blockchain consensus \cite{pirleaMechanisingBlockchainConsensus2018}
     Blockchain Byzantine \cite{tholoniatFormalVerificationBlockchain2022}
+
+  \subsection{Mutual Exclusion }
+    asdf
+
+    \cite{wilcoxVerdiFrameworkImplementing2015}
+
 
 
 \subsection{Verified software}
@@ -217,39 +221,35 @@
   AWS \cite{brookerSystemsCorrectnessPractices2025}
   Mongo \cite{schultzFormalVerificationDistributed2022}
 
-  Nam id fermentum dui. Suspendisse sagittis tortor a nulla , in
-  pulvinar ex pretium. Sed interdum orci quis metus euismod, et sagittis
-  enim maximus. Vestibulum gravida massa ut  suscipit
 
 
-\section{Other Verification Strategy}
+\section{Comparison of Verification Strategies }
 
-    In contrast to using an interactive theorem prover, there are several other methods one might use to formally verify a distributed system.
-    Each of these other verification approaches has its own advantages and disadvantages in relation to theorem proving.
-    The two other predominant methods of formally verifying distributed systems are using model checking and manual proofs.
+  There are three major verification paradigms that are often used for distributed algorithm verification.
+  The other two predominant methods of formally verifying distributed systems are using model checking and manual proofs.
+  Each of these other verification approaches has its own advantages and disadvantages in relation to theorem proving.
 
-    Many solutions to the previously mentioned problems are based on manual proofs.
-    This makes sense, as manual proofs are much more flexibile than the other two methods.
+  Many solutions to the previously mentioned problems are based on manual proofs.
+  For example, De Prisco et al. \cite{depriscoRevisitingPaxosAlgorithm1997} developed a I/O automaton model and verify the PAXOS algorithm.
+  The paper contains a manual correctness proof, with the correctness of each component proved with invariants.
+  Manual proofs are more expressive than mechanized proofs,
+  but have a weaker correctness guarantee because depend on mathematical arguments formulated by humans.
+  This means they are more prone to errors in their development or implementation, and are more difficult maintain when scaling.
 
-    Model checking is another approach for verifying the correctness of a distributed system.
-    Model checking expands the state space, exhaustively exploring every possible state and ensuring that the correctness properties hold in each one.
-    Examples of 
+  Model checking is another approach for verifying the correctness of a distributed system.
+  Model checking expands the state space, exhaustively exploring every possible state and ensuring that the correctness properties hold in each one.
+  This was exemplified by Tsuchiya and Springer \cite{tsuchiyaUsingBoundedModel2008},
+  who used bounded model checking to verify two consensus algorithms, including Hybrid-1, an improved version of the Fast Paxos algorithm.
+  They were able to mechanically verify agreement up to 8 proccesses and termination up to 11 processes. 
+  A major limitation of model checking is the state space explosion problem, which restricts it to bounded or specifically abstracted models. 
+  This often reduces the maximum number of processes in a verified protocol. 
 
-    Theorem proving also has its relative merits. 
-    One of the strengths of using an interactive theorem prover is that the state space expansion problem is not an issue.
-    Invariant based theorems will necessarily hold for any transition between states, so there is no need to check them if a system has been verified in this way.
-
-  
+  A theorem proving approach does not have this issue, as it can ensure that correctness conditions hold for any finite number of processes.
 
 
 \section{Challenges and Future Directions}
-  One of the common criticisims of theorem based formal verification is that it is too difficult to apply practically.
+  One of the common criticisims of theorem based formal verification is that it is too time consuming to apply practically.
   There are differing perspectives on this .
-
-
-
-  AI 
-
 
 
 
