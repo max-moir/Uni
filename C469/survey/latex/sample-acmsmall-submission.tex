@@ -109,15 +109,11 @@
 
   Distributed systems are famously difficult to implement correctly. 
   Their divided and concurrent nature can often lead to subtle bugs that are difficult to reproduce.
-  Additionally, errors can propogate throughout a system, and partial failures can create unexpected state spaces.
+  Additionally, errors can propogate throughout a system, and partial failures can lead to unexpected negative outcomes.
   For this reason, it is often unrealistic to acheive total coverage with traditional testing.
   Formal verfication can provide a strong guarantee of correctness in these situations.
   Interactive theorem proving as a verification method is specificly strong for distributed systems, as it can verify correctness in all states without iteratively exploring them.
-  Theorem proving also allows for flexibility such as the paramaterization of systems, such as verifying an algorithm for any N nodes.
-
-\subsection{Scope of Survey}
-
-  Other approaches to the verification of distributed algorithms are outside the scope of this survey, except when used as comparison. 
+  Theorem proving also allows for flexibility in the paramaterization of systems, such as verifying an algorithm for any N nodes.
 
 \subsection{Contributions}
   % What this survey contributes:
@@ -126,6 +122,8 @@
   %   challenges and open problems
   For this reason, this survey will explore the verification of distributed algorithms with interactive theorem provers.
   It provides a taxonomy of different theorem-based verfication approaches and frameworks, reviews several common tools, and contrasts with other verification approaches.
+
+  In addition, this survey will compare the theorem proving verification approach against other common methods, such as manual proofs and model checking.
 
 \section{Preliminary}
 
@@ -192,7 +190,8 @@
 
   \subsection{Tools and Common frameworks}
     There are many languages and frameworks used for the verification of distributed systems.
-    The most commonly used tool in the literature is Rocq 
+    The most commonly used tool in the literature is Rocq, formerly Coq.
+
 
   %   % Common Frameworks:
     Verdi \cite{wilcoxVerdiFrameworkImplementing2015}
@@ -261,17 +260,27 @@
 
 
 \section{Challenges and Future Directions}
-  One of the common criticisims of formal verification is that it is too difficult to apply practically.
+  One of the common criticisims of theorem based formal verification is that it is too difficult to apply practically.
 
 
-  ...
+
   AI 
+
 
 
 
 \section{Conclusion}
 
-  This paper aims to provide a broad
+  This paper aims to provide an overview of different techniques and problems in the formal verfication of distributed systems using theorem proving.
+
+
+  % Synthesis
+  % Patterns
+  % Trade offs
+
+
+  Interactive theorem provers provide the strongest guarantee of correctness, but are still expensive when compared to other methods.
+
 
 %% The next two lines define the bibliography style to be used, and
 %% the bibliography file.
