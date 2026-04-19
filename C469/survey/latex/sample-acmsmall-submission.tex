@@ -85,10 +85,6 @@
   theorem-proving also allows for flexibility in the parameterisation of systems, such as verifying an algorithm for any number of nodes, N.
 
 \subsection{Contributions}
-  % What this survey contributes:
-  %   Overview of verification approaches
-  %   comparison 
-  %   challenges and open problems
   For this reason, this survey will explore the verification of distributed algorithms with interactive theorem provers.
   It provides a taxonomy of different theorem-based verification approaches and frameworks, reviews several common tools, and contrasts with other verification approaches.
   In addition, this survey will contrast the theorem-proving verification approach against other common methods, such as manual proofs and model checking.
@@ -200,7 +196,6 @@
 \section{Case Studies}
   \subsection{ Consensus Algorithms}
     Consensus algorithms are used to agree on one result in a group of multiple participants.
-    
     They typically assume that participants can crash, but will not act maliciously.
     Two well-known solutions to the consensus problem are the Paxos and Raft protocols.
     The Paxos protocol, originally specified by Lamport \cite{digitalequipmentcorporationParttimeParliament2019}, is one method to facilitate consensus.
@@ -229,10 +224,13 @@
     Blockchain Byzantine \cite{tholoniatFormalVerificationBlockchain2022}
 
   \subsection{Mutual Exclusion }
-    Mutual exclusion is another classic distributed computing problem.
-    It was 
+    The mutual exclusion problem is another classic challenge in distributed computing.
+    It was originally posed by Dijkstra in a 1965 article \cite{dijkstraSolutionProblem1965}
+    For a protocol to satisfy mutual exclusion, no two independent processes may be executing their so called ``critical portion'' at the same time.
 
-    \cite{wilcoxVerdiFrameworkImplementing2015}
+    An example of the mutual exclusion property formally verified can be found in the Verdi specification \cite{wilcoxVerdiFrameworkImplementing2015}.
+    Here, a toy lock service application is implemented in Verdi, with mutual exclusion verified as one of the correctness properties.
+    The mutual exclusion property is expressed as a predicate and is shown to hold under all traces produced under a given semantics.
 
 
 

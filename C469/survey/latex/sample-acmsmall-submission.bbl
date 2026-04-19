@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{15}
+\begin{thebibliography}{16}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -78,6 +78,18 @@
 \showISBNx{978-1-4503-7270-1}
 \urldef\tempurl%
 \url{https://doi.org/10.1145/3335772.3335939}
+\showDOI{\tempurl}
+
+
+\bibitem[Dijkstra(1965)]%
+        {dijkstraSolutionProblem1965}
+\bibfield{author}{\bibinfo{person}{E.~W. Dijkstra}.} \bibinfo{year}{1965}\natexlab{}.
+\newblock \showarticletitle{Solution of a Problem in Concurrent Programming Control}.
+\newblock \bibinfo{journal}{\emph{Commun. ACM}} \bibinfo{volume}{8}, \bibinfo{number}{9} (\bibinfo{date}{Sept.} \bibinfo{year}{1965}), \bibinfo{pages}{569}.
+\newblock
+\showISSN{0001-0782, 1557-7317}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/365559.365617}
 \showDOI{\tempurl}
 
 
