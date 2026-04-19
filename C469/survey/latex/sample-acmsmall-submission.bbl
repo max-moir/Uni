@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{8}
+\begin{thebibliography}{12}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -57,6 +57,18 @@
 \newblock
 
 
+\bibitem[{Digital Equipment Corporation} and Lamport(2019)]%
+        {digitalequipmentcorporationParttimeParliament2019}
+\bibfield{author}{\bibinfo{person}{{Digital Equipment Corporation}} {and} \bibinfo{person}{Leslie Lamport}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{The Part-Time Parliament}}.
+\newblock \bibinfo{publisher}{Association for Computing Machinery}.
+\newblock
+\showISBNx{978-1-4503-7270-1}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3335772.3335939}
+\showDOI{\tempurl}
+
+
 \bibitem[Hawblitzel et~al\mbox{.}(2015)]%
         {hawblitzelIronFleetProvingPractical2015}
 \bibfield{author}{\bibinfo{person}{Chris Hawblitzel}, \bibinfo{person}{Jon Howell}, \bibinfo{person}{Manos Kapritsos}, \bibinfo{person}{Jacob~R. Lorch}, \bibinfo{person}{Bryan Parno}, \bibinfo{person}{Michael~L. Roberts}, \bibinfo{person}{Srinath Setty}, {and} \bibinfo{person}{Brian Zill}.} \bibinfo{year}{2015}\natexlab{}.
@@ -68,6 +80,15 @@
 \showDOI{\tempurl}
 
 
+\bibitem[Lamport et~al\mbox{.}(2019)]%
+        {lamportByzantineGeneralsProblem2019}
+\bibfield{author}{\bibinfo{person}{Leslie Lamport}, \bibinfo{person}{Robert Shostak}, {and} \bibinfo{person}{Marshall Pease}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{The {{Byzantine}} Generals Problem}.
+\newblock In \bibinfo{booktitle}{\emph{Concurrency: The {{Works}} of {{Leslie Lamport}}}}. \bibinfo{publisher}{Association for Computing Machinery}, \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{203--226}.
+\newblock
+\showISBNx{978-1-4503-7270-1}
+
+
 \bibitem[P{\^i}rlea et~al\mbox{.}(2025)]%
         {pirleaVeilFrameworkAutomated2025a}
 \bibfield{author}{\bibinfo{person}{George P{\^i}rlea}, \bibinfo{person}{Vladimir Gladshtein}, \bibinfo{person}{Elad Kinsbruner}, \bibinfo{person}{Qiyuan Zhao}, {and} \bibinfo{person}{Ilya Sergey}.} \bibinfo{year}{2025}\natexlab{}.
@@ -76,6 +97,17 @@
 \showISBNx{978-3-031-98681-9}
 \urldef\tempurl%
 \url{https://doi.org/10.1007/978-3-031-98682-6_2}
+\showDOI{\tempurl}
+
+
+\bibitem[P{\^i}rlea and Sergey(2018)]%
+        {pirleaMechanisingBlockchainConsensus2018}
+\bibfield{author}{\bibinfo{person}{George P{\^i}rlea} {and} \bibinfo{person}{Ilya Sergey}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Mechanising Blockchain Consensus}. In \bibinfo{booktitle}{\emph{Proceedings of the 7th {{ACM SIGPLAN International Conference}} on {{Certified Programs}} and {{Proofs}}}}. \bibinfo{publisher}{ACM}, \bibinfo{address}{Los Angeles CA USA}, \bibinfo{pages}{78--90}.
+\newblock
+\showISBNx{978-1-4503-5586-5}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3167086}
 \showDOI{\tempurl}
 
 
@@ -98,6 +130,18 @@
 \newblock
 \urldef\tempurl%
 \url{https://doi.org/10.1145/3158116}
+\showDOI{\tempurl}
+
+
+\bibitem[Tholoniat and Gramoli(2022)]%
+        {tholoniatFormalVerificationBlockchain2022}
+\bibfield{author}{\bibinfo{person}{Pierre Tholoniat} {and} \bibinfo{person}{Vincent Gramoli}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Formal {{Verification}} of {{Blockchain Byzantine Fault Tolerance}}}.
+\newblock In \bibinfo{booktitle}{\emph{Handbook on {{Blockchain}}}}, \bibfield{editor}{\bibinfo{person}{Duc~A. Tran}, \bibinfo{person}{My~T. Thai}, {and} \bibinfo{person}{Bhaskar Krishnamachari}} (Eds.). Vol.~\bibinfo{volume}{194}. \bibinfo{publisher}{Springer International Publishing}, \bibinfo{address}{Cham}, \bibinfo{pages}{389--412}.
+\newblock
+\showISBNx{978-3-031-07534-6 978-3-031-07535-3}
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-031-07535-3_12}
 \showDOI{\tempurl}
 
 

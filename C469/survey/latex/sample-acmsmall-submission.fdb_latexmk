@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex sample-acmsmall-submission"] 1776481797.45206 "sample-acmsmall-submission.aux" "sample-acmsmall-submission.bbl" "sample-acmsmall-submission" 1776481799.20055 0
-  "./sample-base.bib" 1776466338.50334 46372 7c359b07ef8da7b6d86b1280276a5e84 ""
+["bibtex sample-acmsmall-submission"] 1776583038.79856 "sample-acmsmall-submission.aux" "sample-acmsmall-submission.bbl" "sample-acmsmall-submission" 1776583103.47281 0
+  "./sample-base.bib" 1776580668.74164 49211 ae08d418d8acefb6187e01a3b7b35ead ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/acmart/ACM-Reference-Format.bst" 1680299675 90332 18dc4e5c9b5c2ddd337e9f97727d04f1 ""
-  "sample-acmsmall-submission.aux" 1776481798.95372 3947 9cba974dfcff0b68513e329f2b38a67e "pdflatex"
+  "sample-acmsmall-submission.aux" 1776583103.18038 5163 6d7108501ccd33dc9a5e4ecaa22c1557 "pdflatex"
   (generated)
   "sample-acmsmall-submission.bbl"
   "sample-acmsmall-submission.blg"
   (rewritten before read)
-["pdflatex"] 1776481797.52552 "/csse/users/mmo199/uni/C469/survey/latex/sample-acmsmall-submission.tex" "sample-acmsmall-submission.pdf" "sample-acmsmall-submission" 1776481799.20268 0
-  "/csse/users/mmo199/uni/C469/survey/latex/sample-acmsmall-submission.tex" 1776481795.61851 10186 c953763e774beb480a486fea8ff8277a ""
-  "/etc/texmf/web2c/texmf.cnf" 1739403162.24709 475 c0e671620eb5563b2130f56340a5fde8 ""
+["pdflatex"] 1776583101.83107 "/csse/users/mmo199/uni/C469/survey/latex/sample-acmsmall-submission.tex" "sample-acmsmall-submission.pdf" "sample-acmsmall-submission" 1776583103.47508 0
+  "/csse/users/mmo199/uni/C469/survey/latex/sample-acmsmall-submission.tex" 1776583101.62564 11680 53978d27626344341b45f94d468156d2 ""
+  "/etc/texmf/web2c/texmf.cnf" 1739399380.05966 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc" 1490131464 2921 8ca0eb0831f9bc5da080d3697cfe67bf ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc" 1490131464 2933 9ad527ce78d7c5fa0a642dead095f172 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc" 1490131464 2934 a4a9158faed2e9e89c771b4e3b7fc12f ""
@@ -36,6 +36,8 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/libertine/LinLibertineTB-tlf-t1.tfm" 1490131464 19488 f569478ca339d9b5ad93b46bf7a470e2 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/libertine/LinLibertineTI-tlf-t1--base.tfm" 1490131464 1932 54655639067fe21ae3b23b77173351a5 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/libertine/LinLibertineTI-tlf-t1.tfm" 1490131464 19920 63bb3db95807ffe45b0900d104896325 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/LibertineMathMI.tfm" 1569879884 1552 f91250a4f6e3f34d48dfc8f34aabc764 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/NewTXMI.tfm" 1572128992 1408 ef71a9098da4d5a1a85b5920860b6731 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm" 1589834365 760 e8ec875a87aa119f1af7ea4be48da9e8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxexx.tfm" 1699567298 1788 252bc928adbd02cba8c68f0fccd62f6c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxsy.tfm" 1699567298 2028 52e8459eebf22a562b33a44afb65f348 ""
@@ -47,6 +49,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/nxlmi5.tfm" 1569879884 3308 547f06fb56819535c1e0ce385c4f647b ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/nxlmi7.tfm" 1575323900 3320 6cf9c990505795806c1f3ac537f356c3 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/nxlmia.tfm" 1617586172 2616 0bf54bdee01e38e3ed8342d25e5584f6 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm" 1569879884 1836 3af1bb0996e7f6070b70151de6395c2c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/txex-bar.tfm" 1699567298 900 fc8190d6de1e520c751c99f1e4e5fe0a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/txsys.tfm" 1699567298 1660 d580b6f461bbd2ab53b1fd3851108c0e ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb" 1354061736 548786 1e51d517556d29f2841d57da58668a69 ""
@@ -54,6 +57,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb" 1354061736 614791 ea39341e4db76f25cb20c361802d3cd5 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb" 1354061736 538965 19c5c8b7f952ac97afb8565e9c21a82d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb" 1354061736 490980 e27f1e217a0902faea22205f197918d4 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/LibertineMathMI.pfb" 1569879884 35829 268d1d114c9114e541f92817aec4230d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb" 1699567298 45943 7899c7ea4fdd83f3625178689816dcee ""
   "/usr/share/texlive/texmf-dist/fonts/vf/public/libertine/LinBiolinumT-tlf-t1.vf" 1490131464 1728 e76e04a950024a95b620698b679c9810 ""
   "/usr/share/texlive/texmf-dist/fonts/vf/public/libertine/LinBiolinumTB-tlf-t1.vf" 1354061736 1728 4ae633ddccb76ba8d0a0906a5e2e8fdf ""
@@ -62,6 +66,7 @@
   "/usr/share/texlive/texmf-dist/fonts/vf/public/libertine/LinLibertineTB-tlf-t1.vf" 1490131464 1768 5d66dfd9709f1f38b8fb3cb38db46402 ""
   "/usr/share/texlive/texmf-dist/fonts/vf/public/libertine/LinLibertineTI-tlf-t1.vf" 1490131464 1768 b3bfd8ed1fe2dce5fd19610abe4c3dbe ""
   "/usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxsy.vf" 1699567298 1804 0d5405efa3655e9ce85ebf4efa9b7f0b ""
+  "/usr/share/texlive/texmf-dist/fonts/vf/public/newtx/nxlmi.vf" 1569879884 2744 3e5ba39e1559219ae379b7645e2f9524 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty" 1576625341 40635 c40361e206be584d448876bba8a64a3b ""
@@ -180,12 +185,12 @@
   "/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1655411236 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1739403343.4099 5454181 dd79697d40acb2e99f1a53aa0722816b ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1739403397 7005130 df3c822fe75866dd920fb37c8d88683f ""
-  "sample-acmsmall-submission.aux" 1776481798.95372 3947 9cba974dfcff0b68513e329f2b38a67e "pdflatex"
-  "sample-acmsmall-submission.bbl" 1776481797.51787 7928 747d9b659502e4b5f87e70cbae47c793 "bibtex sample-acmsmall-submission"
-  "sample-acmsmall-submission.out" 1776481798.95784 3191 b51a7e6344b673d73408dcf921601c4f "pdflatex"
-  "sample-acmsmall-submission.tex" 1776481795.61851 10186 c953763e774beb480a486fea8ff8277a ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1739399548.83911 5454181 dd79697d40acb2e99f1a53aa0722816b ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1739399574 7003663 e3b12b52393c9fcdb2d6c141b79cd7c2 ""
+  "sample-acmsmall-submission.aux" 1776583103.18038 5163 6d7108501ccd33dc9a5e4ecaa22c1557 "pdflatex"
+  "sample-acmsmall-submission.bbl" 1776583038.87258 10439 0df12af62bae5216211b697e6cda3aba "bibtex sample-acmsmall-submission"
+  "sample-acmsmall-submission.out" 1776583103.18463 4191 76d2d998afd1cb0c7a016d2bd03a21c9 "pdflatex"
+  "sample-acmsmall-submission.tex" 1776583101.62564 11680 53978d27626344341b45f94d468156d2 ""
   (generated)
   "sample-acmsmall-submission.aux"
   "sample-acmsmall-submission.log"

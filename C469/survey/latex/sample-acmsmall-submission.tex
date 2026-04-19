@@ -45,7 +45,7 @@
 %% "authornote" and "authornotemark" commands
 %% used to denote shared contribution to the research.
 \author{Maxwell Moir}
-\affiliation{%
+\affiliation{
   \institution{University of Canterbury}
   \city{Christchurch}
   \country{New Zealand}}
@@ -54,7 +54,7 @@
 
 %%
 %% By default, the full list of authors will be used in the page
-%% headers. Often, this list is too long, and will overlap
+%% headers. Often, this list is too long, Verifying the correctness of a program requires that specific conditions about a system can beand will overlap
 %% other information printed in the page headers. This command allows
 %% the author to define a more concise list
 %% of authors' names for this purpose.
@@ -64,9 +64,11 @@
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
+  
+  Formal verification is a topical field in modern Computer Science. 
   Proving the correctness of programs is not only elegant in a theoretical sense, but is often necessary in mission-critical applications.
+  Due to the difficulty in formalizing programs, reliability in industry is often left to automated testing. 
   However, in specific circumstances where correctness must be ensured, formal proofs may be required. 
-  This survey reviews the different approaches to verifying the correctness of distributed algorithms.
 
 \end{abstract}
 
@@ -100,39 +102,40 @@
 
 \section{Introduction}
 
-  With an increasing societal dependance on software, ensuring the effective operation of the tools we use has become more important.
-  % Motivations
-  %   Why its hard, why it matters, real world uses
-  %   Difficulties - Distributed systems are notorious for being difficult to verify. 
-  %   There are many edge cases and etc... that make these systems
-  One method for reasoning about the correctness of programs is formal verification.
-  Distributed systems underpin many of the applications that we use every day.
-  Distributed systems are notoriously difficult to verify due to ...
+  In an increasingly interconnected world, distributed algorithms play an integral part in much of the software we use on a daily basis.
+  Ensuring these algorithms function as intended protects against failures that may be technically, economically, or even medically, critical.
+  
+\subsection{Motivation}
 
-  % Rise of proof assistant verification
-  % Recently, there has been a rise in verification with Interactive Theorem Provers.
+  Distributed systems are famously difficult to implement correctly. 
+  Their divided and concurrent nature can often lead to subtle bugs that are difficult to reproduce.
+  Additionally, errors can propogate throughout a system, and partial failures can create unexpected state spaces.
+  For this reason, it is often unrealistic to acheive total coverage with traditional testing.
+  Formal verfication can provide a strong guarantee of correctness in these situations.
+  Interactive theorem proving as a verification method is specificly strong for distributed systems, as it can verify correctness in all states without iteratively exploring them.
+  Theorem proving also allows for flexibility such as the paramaterization of systems, such as verifying an algorithm for any N nodes.
 
+\subsection{Scope of Survey}
+
+  Other approaches to the verification of distributed algorithms are outside the scope of this survey, except when used as comparison. 
+
+\subsection{Contributions}
   % What this survey contributes:
   %   Overview of verification approaches
   %   comparison 
   %   challenges and open problems
-  This survey aims to explore attempts to formally verify distributed algorithms, both theoretically and in practice.
+  For this reason, this survey will explore the verification of distributed algorithms with interactive theorem provers.
   It provides a taxonomy of different theorem-based verfication approaches and frameworks, reviews several common tools, and contrasts with other verification approaches.
-
-  % Scope
-  Other approaches to the verification of distributed algorithms are outside the scope of this survey, except when used as comparison. 
-
 
 \section{Preliminary}
 
-\subsection{Distributed Protocols}
+\subsection{Distributed Algorithms}
   Distributed computing is a fundemental field in Computer Science.
   It concerns the inter-communication between distinct autonomous components in a system.
   This patterns shows up often, usually when there is a network of multiple devices.
 
-  A common challenge in distributed computing is fault tolerance. 
-  This underpins some of the problems that are often the targets of formal verification.
-  For example, consensus protocols such as Paxos and Raft.
+  There are several common challenges in distributed computing that are often the targets of formal verification.
+  For example, consensus protocols such as Paxos 
   Another example is Byzantine Fault Tolerance.
 
 
@@ -156,85 +159,6 @@
 
   Fault tolerance is another notable aspect of ensuring a program works as intended.
   Byzantine fault tolerance, specifically, is a common problem in
-
-
-\section{Approaches}
-
-  Byzantine fault tolerance
-
-  Compositional and modular verification
-
-  Proof techniques:
-  Invariant
-  refinement
-
-  \subsection{Tools}
-  \subsection{Common Frameworks}
-    There are several common frameworks used in the verification of distributed protocols. 
-    Each of which has its own benefits and detractions.
-
-    % Common Frameworks:
-    Verdi \cite{wilcoxVerdiFrameworkImplementing2015}
-    Iron Fleet \cite{hawblitzelIronFleetProvingPractical2015}
-    Diesel \cite{sergeyProgrammingProvingDistributed2017}
-    Veil \cite{pirleaVeilFrameworkAutomated2025a}
-    TLAPS \cite{cousineau2012tla}
-
-  \subsection{Proof techniques}
-  \subsection{Proof techniques}
-
-
-
-
-
-
-
-\section{Applications}
-  Nam id fermentum dui. Suspendisse sagittis tortor a nulla , in
-  pulvinar ex pretium. Sed interdum orci quis metus euismod, et sagittis
-
-\subsection{Verified protocols}
-
-  Nam id fermentum dui. Suspendisse sagittis tortor a nulla , in
-  pulvinar ex pretium. Sed interdum orci quis metus euismod, et sagittis
-  enim maximus. Vestibulum gravida massa ut felis suscipit
-  congue. Quisque mattis elit a risus ultrices commodo venenatis eget
-  dui. Etiam sagittis eleifend elementum.
-
-  BFT \cite{zhaoCompositionalVerificationComposite2024}
-
-
-\subsection{Verified software}
-
-  AWS \cite{brookerSystemsCorrectnessPractices2025}
-  Mongo \cite{schultzFormalVerificationDistributed2022}
-
-  Nam id fermentum dui. Suspendisse sagittis tortor a nulla , in
-  pulvinar ex pretium. Sed interdum orci quis metus euismod, et sagittis
-  enim maximus. Vestibulum gravida massa ut  suscipit
-
-\section{Alternative Verification Approaches}
-
-  Model checking, 
-  congue. Quisque mattis elit a risus  commodo venenatis eget
-  dui. Etiam sagittis eleifend elementum.
-
-\section{Future Directions}
-
-
-  One of the common criticisims of formal verification is that the effort of verifying a system is unpractical and unnecessary.
-  ...
-  AI 
-
-
-
-\section{Conclusion}
-
-  Nam id fermentum dui.  sagittis tortor a nulla mollis, in
-  pulvinar ex pretium. Sed interdum orci quis metus euismod, et sagittis
-  enim maximus. Vestibulum gravida massa ut felis suscipit
-  congue. Quisque mattis elit a risus ultrices commodo venenatis eget
-  dui. Etiam sagittis eleifend elementum. Test 01
 
 \section{Methodology}
 
@@ -263,6 +187,91 @@
   From these, the most relevant papers were selected from the remainders.
 
 
+
+\section{Approaches to Verifying Distributed Algorithms}
+
+  \subsection{Tools and Common frameworks}
+    There are many languages and frameworks used for the verification of distributed systems.
+    The most commonly used tool in the literature is Rocq 
+
+  %   % Common Frameworks:
+    Verdi \cite{wilcoxVerdiFrameworkImplementing2015}
+    Diesel \cite{sergeyProgrammingProvingDistributed2017}
+
+    Iron Fleet \cite{hawblitzelIronFleetProvingPractical2015}
+    Veil \cite{pirleaVeilFrameworkAutomated2025a}
+    TLAPS \cite{cousineau2012tla}
+
+  \subsection{Proof techniques}
+    Inductive invariants
+    Temporal logic based
+    Refinement based
+    Compositional
+    \cite{zhaoCompositionalVerificationComposite2024}
+    Automation
+
+
+
+\section{Case Studies}
+  \subsection{ Consensus }
+    \cite{digitalequipmentcorporationParttimeParliament2019}, 
+
+  \subsection{ Byzantine Fault Tolerance}
+    Another fundamental problem in distributed computing is Byzantine Fault Tolerance. 
+    This problem was originally introduced by Lamport et. al \cite{lamportByzantineGeneralsProblem2019}, and addresses partial malfunction in a distributed system.
+    The problem 
+
+    BFT \cite{zhaoCompositionalVerificationComposite2024}
+
+  \subsection{ Blockchain variants}
+
+    Blockchain consensus \cite{pirleaMechanisingBlockchainConsensus2018}
+    Blockchain Byzantine \cite{tholoniatFormalVerificationBlockchain2022}
+
+
+\subsection{Verified software}
+
+  AWS \cite{brookerSystemsCorrectnessPractices2025}
+  Mongo \cite{schultzFormalVerificationDistributed2022}
+
+  Nam id fermentum dui. Suspendisse sagittis tortor a nulla , in
+  pulvinar ex pretium. Sed interdum orci quis metus euismod, et sagittis
+  enim maximus. Vestibulum gravida massa ut  suscipit
+
+\section{ Comparative Analysis}
+
+  \subsection{Verification Strategy}
+
+    In contrast to using an interactive theorem prover, there are several other methods one might use to formally verify a distributed system.
+    Each of these other verification approaches has its own advantages and disadvantages in relation to theorem proving.
+    The two other predominant methods of formally verifying distributed systems are using model checking and manual proofs.
+
+    Many solutions to the previously mentioned problems are based on manual proofs.
+    This makes sense, as manual proofs are much more flexibile than the other two methods.
+
+    Model checking is another approach for verifying the correctness of a distributed system.
+    Model checking expands the state space, exhaustively exploring every possible state and ensuring that the correctness properties hold in each one.
+    Examples of 
+
+    Theorem proving also has its relative merits. 
+    One of the strengths of using an interactive theorem prover is that the state space expansion problem is not an issue.
+    Invariant based theorems will necessarily hold for any transition between states, so there is no need to check them if a system has been verified in this way.
+
+  
+
+
+\section{Challenges and Future Directions}
+  One of the common criticisims of formal verification is that it is too difficult to apply practically.
+
+
+  ...
+  AI 
+
+
+
+\section{Conclusion}
+
+  This paper aims to provide a broad
 
 %% The next two lines define the bibliography style to be used, and
 %% the bibliography file.
