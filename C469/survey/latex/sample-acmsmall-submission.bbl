@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{16}
+\begin{thebibliography}{17}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -46,6 +46,18 @@
 \showISSN{0001-0782}
 \urldef\tempurl%
 \url{https://doi.org/10.1145/3729175}
+\showDOI{\tempurl}
+
+
+\bibitem[Chand et~al\mbox{.}(2016)]%
+        {chandFormalVerificationMultiPaxos2016}
+\bibfield{author}{\bibinfo{person}{Saksham Chand}, \bibinfo{person}{Yanhong~A. Liu}, {and} \bibinfo{person}{Scott~D. Stoller}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Formal {{Verification}} of {{Multi-Paxos}} for {{Distributed Consensus}}}.
+\newblock In \bibinfo{booktitle}{\emph{{{FM}} 2016: {{Formal Methods}}}}, \bibfield{editor}{\bibinfo{person}{John Fitzgerald}, \bibinfo{person}{Constance Heitmeyer}, \bibinfo{person}{Stefania Gnesi}, {and} \bibinfo{person}{Anna Philippou}} (Eds.). Vol.~\bibinfo{volume}{9995}. \bibinfo{publisher}{Springer International Publishing}, \bibinfo{address}{Cham}, \bibinfo{pages}{119--136}.
+\newblock
+\showISBNx{978-3-319-48988-9 978-3-319-48989-6}
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-319-48989-6_8}
 \showDOI{\tempurl}
 
 

@@ -159,21 +159,6 @@
   Byzantine fault tolerance, specifically, is a common problem in
 
 \section{Approaches to Verifying Distributed Algorithms}
-
-  \subsection{Proof techniques}
-
-    The primary proof technique used in the mechanised theorem-proving approach for formal verification is inductive invariants.
-    When using this approach 
-
-    Inductive invariants
-
-    Temporal logic-based
-
-    Refinement based
-    Compositional
-    \cite{zhaoCompositionalVerificationComposite2024}
-    Automation
-
   \subsection{Tools and Common frameworks}
     There are many languages and frameworks used to verify distributed systems.
     The most commonly used tool in the literature is Rocq, formerly Coq.
@@ -196,12 +181,37 @@
 
     These languages and frameworks all have advantages and disadvantages.
 
+  \subsection{Proof techniques}
+
+    There are a range of proof techniques used to verify distributed algorithms.
+    Although these approaches often overlap in practice, they .
+
+    The most common proof technique used with interactive theorem provers is \emph{inductive invariants}.
+    When using this approach, the verifier proves that property holds in the initial state and that it is presevered by every transition.
+    Inductive invariants can be seen used in a verification of a consensus protocol by Chand et al. \cite{chandFormalVerificationMultiPaxos2016}, 
+    in which Type, Acceptor and Message invariants are shown to hold inductively under all transitions.
+    These invariants are then shown to prove safety, as defined in the paper.
+
+    \emph{Temporal logic-based}
+
+    \emph{Refinement based}
+
+    Compositional verification reasons about different components of a system independentaly.
+    \cite{zhaoCompositionalVerificationComposite2024}
+
+
+    Although interactive theorem proving is manual, many systems implement \emph{automated theorem proving}.
+
 \section{Case Studies}
   \subsection{ Consensus Algorithms}
     Consensus algorithms are used to agree on one result in a group of multiple participants.
     They typically assume that participants can crash, but will not act maliciously.
     Two well-known solutions to the consensus problem are the Paxos and Raft protocols.
     The Paxos protocol, originally specified by Lamport \cite{digitalequipmentcorporationParttimeParliament2019}, is one method to facilitate consensus.
+
+    Multi-Paxos, a version of the Paxos algorithm in which distributed processes agree on a sequence of values,
+    was specified and verified in a 2019 paper by Chand et al. \cite{chandFormalVerificationMultiPaxos2016}.
+    This paper formally specified the algorithm in TLA+, and provided a proof for it written in TLAPS.
 
     Consensus is also an important problem in application. 
     For example, in blockchain systems, consensus is required between distributed, and potentially faulty, 
