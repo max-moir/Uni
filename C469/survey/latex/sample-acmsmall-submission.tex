@@ -161,21 +161,28 @@
     There are many languages and frameworks used to verify distributed systems.
     The most commonly used tool in the literature is Rocq, formerly Coq.
     There are multiple frameworks implemented for Rocq that specifically focus on distributed systems, 
-    such as Verdi \cite{wilcoxVerdiFrameworkImplementing2015}, and Diesel \cite{sergeyProgrammingProvingDistributed2017}.
-    These frameworks differ in 
+    such as Verdi \cite{wilcoxVerdiFrameworkImplementing2015}, and Disel \cite{sergeyProgrammingProvingDistributed2017}.
+    These frameworks both use Rocq, but have different focuses. 
+    As described in the Disel specification, Verdi focuses on vertical composition, meaning it aims to prove correctness across various fault models.
+    Disel, on the other hand, is primarily used to establish safety invariants between separate interacting protocols.
 
     Dafny is another verification-aware programming language that allows for the verification of distributed algorithms .
     Iron Fleet \cite{hawblitzelIronFleetProvingPractical2015}, is a framework built on Dafny that is designed for this specific purpose.
-    
     Another regularly used theorem prover is the TLA+ Proof System, or TLAPS \cite{cousineau2012tla}. 
     This was created by Lamport as a supplementary tool to his TLA+ formal specification language.
     TLAPS can be used to prove correctness conditions about systems that have been formalised in TLA+.
-
     A more contemporary tool is Lean4.
-    There is little mention of Lean4 in the literature, because it is a relatively new tool.
     In 2025, the Veil \cite{pirleaVeilFrameworkAutomated2025a} framework was introduced as a basis to verify distributed protocols specifically.
+    Due to this novelty, there have been very few published attempts to verify algorithms with Lean4.
+    Veil has both automated and interactive theorem proving capabilities built in. 
+    This means a user can interactively prove prove properties using native lean tactics, or use Veil's built in SMT solvers.
 
     These languages and frameworks all have advantages and disadvantages.
+    Ironfleet produces executable C\# code, and has a stronger focus on verifying liveness than the other frameworks.
+    Lean4 with Veil is lightweight and expressive, but Veil still a research prototype, unlike, for example, Dafny and Rocq, which have been tried and tested in industry.
+    Another aspect where these tools differ is their level of automation.
+    Ironfleet, TLAPS and Veil all have SMT solver support, meaning they can use tools such as Z3.
+    The Rocq based tools do not have these same capabilities.
 
   \subsection{Proof techniques}
     There are a range of proof techniques used to verify distributed algorithms.
