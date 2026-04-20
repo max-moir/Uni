@@ -8,20 +8,21 @@
 %%% NOTE TO THE USER: you can override these defaults by providing
 %%% customized versions of any of these macros before the \bibliography
 %%% command.  Each of them MUST provide its own final punctuation,
-%%% except for \shownote{} and \showURL{}.  The latter two
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
 %%% do not use final punctuation, in order to avoid confusing it with
 %%% the Web address.
 %%%
 %%% To suppress output of a particular field, define its macro to expand
 %%% to an empty string, or better, \unskip, like this:
 %%%
-%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
 %%%
-%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
 %%%
 %%% ====================================================================
 
 \ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
 \ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
 \ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
 \ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
@@ -36,6 +37,18 @@
 \providecommand\natexlab[1]{#1}
 \providecommand\showeprint[2][]{arXiv:#2}
 
+\bibitem[Abadi and Lamport(1991)]%
+        {abadiExistenceRefinementMappings1991}
+\bibfield{author}{\bibinfo{person}{Mart{\'i}n Abadi} {and} \bibinfo{person}{Leslie Lamport}.} \bibinfo{year}{1991}\natexlab{}.
+\newblock \showarticletitle{The Existence of Refinement Mappings}.
+\newblock \bibinfo{journal}{\emph{Theor. Comput. Sci.}} \bibinfo{volume}{82}, \bibinfo{number}{2} (\bibinfo{date}{May} \bibinfo{year}{1991}), \bibinfo{pages}{253--284}.
+\newblock
+\showISSN{0304-3975}
+\urldef\tempurl%
+\url{https://doi.org/10.1016/0304-3975(91)90224-P}
+\showDOI{\tempurl}
+
+
 \bibitem[Brooker and Desai(2025)]%
         {brookerSystemsCorrectnessPractices2025}
 \bibfield{author}{\bibinfo{person}{Marc Brooker} {and} \bibinfo{person}{Ankush Desai}.} \bibinfo{year}{2025}\natexlab{}.
@@ -43,7 +56,9 @@
 \newblock \bibinfo{journal}{\emph{Commun. ACM}} \bibinfo{volume}{68}, \bibinfo{number}{6} (\bibinfo{date}{June} \bibinfo{year}{2025}), \bibinfo{pages}{38--42}.
 \newblock
 \showISSN{0001-0782}
-\href{https://doi.org/10.1145/3729175}{doi:\nolinkurl{10.1145/3729175}}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3729175}
+\showDOI{\tempurl}
 
 
 \bibitem[Chand et~al\mbox{.}(2016)]%
@@ -53,7 +68,9 @@
 \newblock In \bibinfo{booktitle}{\emph{{{FM}} 2016: {{Formal Methods}}}}, \bibfield{editor}{\bibinfo{person}{John Fitzgerald}, \bibinfo{person}{Constance Heitmeyer}, \bibinfo{person}{Stefania Gnesi}, {and} \bibinfo{person}{Anna Philippou}} (Eds.). Vol.~\bibinfo{volume}{9995}. \bibinfo{publisher}{Springer International Publishing}, \bibinfo{address}{Cham}, \bibinfo{pages}{119--136}.
 \newblock
 \showISBNx{978-3-319-48988-9 978-3-319-48989-6}
-\href{https://doi.org/10.1007/978-3-319-48989-6_8}{doi:\nolinkurl{10.1007/978-3-319-48989-6_8}}
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-319-48989-6_8}
+\showDOI{\tempurl}
 
 
 \bibitem[Cousineau et~al\mbox{.}(2012)]%
@@ -71,7 +88,9 @@
 \newblock In \bibinfo{booktitle}{\emph{Distributed {{Algorithms}}}}, \bibfield{editor}{\bibinfo{person}{Gerhard Goos}, \bibinfo{person}{Juris Hartmanis}, \bibinfo{person}{Jan Van~Leeuwen}, \bibinfo{person}{Marios Mavronicolas}, {and} \bibinfo{person}{Philippas Tsigas}} (Eds.). Vol.~\bibinfo{volume}{1320}. \bibinfo{publisher}{Springer Berlin Heidelberg}, \bibinfo{address}{Berlin, Heidelberg}, \bibinfo{pages}{111--125}.
 \newblock
 \showISBNx{978-3-540-63575-8 978-3-540-69600-1}
-\href{https://doi.org/10.1007/BFb0030679}{doi:\nolinkurl{10.1007/BFb0030679}}
+\urldef\tempurl%
+\url{https://doi.org/10.1007/BFb0030679}
+\showDOI{\tempurl}
 
 
 \bibitem[{Digital Equipment Corporation} and Lamport(2019)]%
@@ -81,7 +100,9 @@
 \newblock \bibinfo{publisher}{Association for Computing Machinery}.
 \newblock
 \showISBNx{978-1-4503-7270-1}
-\href{https://doi.org/10.1145/3335772.3335939}{doi:\nolinkurl{10.1145/3335772.3335939}}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3335772.3335939}
+\showDOI{\tempurl}
 
 
 \bibitem[Dijkstra(1965)]%
@@ -91,7 +112,9 @@
 \newblock \bibinfo{journal}{\emph{Commun. ACM}} \bibinfo{volume}{8}, \bibinfo{number}{9} (\bibinfo{date}{Sept.} \bibinfo{year}{1965}), \bibinfo{pages}{569}.
 \newblock
 \showISSN{0001-0782, 1557-7317}
-\href{https://doi.org/10.1145/365559.365617}{doi:\nolinkurl{10.1145/365559.365617}}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/365559.365617}
+\showDOI{\tempurl}
 
 
 \bibitem[Hawblitzel et~al\mbox{.}(2015)]%
@@ -100,7 +123,9 @@
 \newblock \showarticletitle{{{IronFleet}}: Proving Practical Distributed Systems Correct}. In \bibinfo{booktitle}{\emph{Proceedings of the 25th {{Symposium}} on {{Operating Systems Principles}}}} \emph{(\bibinfo{series}{{{SOSP}} '15})}. \bibinfo{publisher}{Association for Computing Machinery}, \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{1--17}.
 \newblock
 \showISBNx{978-1-4503-3834-9}
-\href{https://doi.org/10.1145/2815400.2815428}{doi:\nolinkurl{10.1145/2815400.2815428}}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/2815400.2815428}
+\showDOI{\tempurl}
 
 
 \bibitem[Lamport(1998)]%
@@ -110,7 +135,9 @@
 \newblock In \bibinfo{booktitle}{\emph{Compositionality: {{The Significant Difference}}}}, \bibfield{editor}{\bibinfo{person}{Gerhard Goos}, \bibinfo{person}{Juris Hartmanis}, \bibinfo{person}{Jan Van~Leeuwen}, \bibinfo{person}{Willem-Paul De~Roever}, \bibinfo{person}{Hans Langmaack}, {and} \bibinfo{person}{Amir Pnueli}} (Eds.). Vol.~\bibinfo{volume}{1536}. \bibinfo{publisher}{Springer Berlin Heidelberg}, \bibinfo{address}{Berlin, Heidelberg}, \bibinfo{pages}{402--423}.
 \newblock
 \showISBNx{978-3-540-65493-3 978-3-540-49213-9}
-\href{https://doi.org/10.1007/3-540-49213-5_15}{doi:\nolinkurl{10.1007/3-540-49213-5_15}}
+\urldef\tempurl%
+\url{https://doi.org/10.1007/3-540-49213-5_15}
+\showDOI{\tempurl}
 
 
 \bibitem[Lamport et~al\mbox{.}(2019)]%
@@ -128,7 +155,9 @@
 \newblock \showarticletitle{Learning {{Contract Invariants Using Reinforcement Learning}}}. In \bibinfo{booktitle}{\emph{Proceedings of the 37th {{IEEE}}/{{ACM International Conference}} on {{Automated Software Engineering}}}} \emph{(\bibinfo{series}{{{ASE}} '22})}. \bibinfo{publisher}{Association for Computing Machinery}, \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{1--11}.
 \newblock
 \showISBNx{978-1-4503-9475-8}
-\href{https://doi.org/10.1145/3551349.3556962}{doi:\nolinkurl{10.1145/3551349.3556962}}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3551349.3556962}
+\showDOI{\tempurl}
 
 
 \bibitem[P{\^i}rlea et~al\mbox{.}(2025)]%
@@ -137,7 +166,9 @@
 \newblock \showarticletitle{Veil: {{A Framework}} for~{{Automated}} and~{{Interactive Verification}} of~{{Transition Systems}}}. In \bibinfo{booktitle}{\emph{Computer {{Aided Verification}}: 37th {{International Conference}}, {{CAV}} 2025, {{Zagreb}}, {{Croatia}}, {{July}} 23-25, 2025, {{Proceedings}}, {{Part III}}}}. \bibinfo{publisher}{Springer-Verlag}, \bibinfo{address}{Berlin, Heidelberg}, \bibinfo{pages}{26--41}.
 \newblock
 \showISBNx{978-3-031-98681-9}
-\href{https://doi.org/10.1007/978-3-031-98682-6_2}{doi:\nolinkurl{10.1007/978-3-031-98682-6_2}}
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-031-98682-6_2}
+\showDOI{\tempurl}
 
 
 \bibitem[P{\^i}rlea and Sergey(2018)]%
@@ -146,7 +177,9 @@
 \newblock \showarticletitle{Mechanising Blockchain Consensus}. In \bibinfo{booktitle}{\emph{Proceedings of the 7th {{ACM SIGPLAN International Conference}} on {{Certified Programs}} and {{Proofs}}}}. \bibinfo{publisher}{ACM}, \bibinfo{address}{Los Angeles CA USA}, \bibinfo{pages}{78--90}.
 \newblock
 \showISBNx{978-1-4503-5586-5}
-\href{https://doi.org/10.1145/3167086}{doi:\nolinkurl{10.1145/3167086}}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3167086}
+\showDOI{\tempurl}
 
 
 \bibitem[Schultz et~al\mbox{.}(2022)]%
@@ -155,7 +188,9 @@
 \newblock \showarticletitle{Formal Verification of a Distributed Dynamic Reconfiguration Protocol}. In \bibinfo{booktitle}{\emph{Proceedings of the 11th {{ACM SIGPLAN International Conference}} on {{Certified Programs}} and {{Proofs}}}} \emph{(\bibinfo{series}{{{CPP}} 2022})}. \bibinfo{publisher}{Association for Computing Machinery}, \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{143--152}.
 \newblock
 \showISBNx{978-1-4503-9182-5}
-\href{https://doi.org/10.1145/3497775.3503688}{doi:\nolinkurl{10.1145/3497775.3503688}}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3497775.3503688}
+\showDOI{\tempurl}
 
 
 \bibitem[Sergey et~al\mbox{.}(2017)]%
@@ -164,17 +199,9 @@
 \newblock \showarticletitle{Programming and Proving with Distributed Protocols}.
 \newblock \bibinfo{journal}{\emph{Proc. ACM Program. Lang.}} \bibinfo{volume}{2}, \bibinfo{number}{POPL} (\bibinfo{date}{Dec.} \bibinfo{year}{2017}), \bibinfo{pages}{28:1--28:30}.
 \newblock
-\href{https://doi.org/10.1145/3158116}{doi:\nolinkurl{10.1145/3158116}}
-
-
-\bibitem[Tholoniat and Gramoli(2022)]%
-        {tholoniatFormalVerificationBlockchain2022}
-\bibfield{author}{\bibinfo{person}{Pierre Tholoniat} {and} \bibinfo{person}{Vincent Gramoli}.} \bibinfo{year}{2022}\natexlab{}.
-\newblock \showarticletitle{Formal {{Verification}} of {{Blockchain Byzantine Fault Tolerance}}}.
-\newblock In \bibinfo{booktitle}{\emph{Handbook on {{Blockchain}}}}, \bibfield{editor}{\bibinfo{person}{Duc~A. Tran}, \bibinfo{person}{My~T. Thai}, {and} \bibinfo{person}{Bhaskar Krishnamachari}} (Eds.). Vol.~\bibinfo{volume}{194}. \bibinfo{publisher}{Springer International Publishing}, \bibinfo{address}{Cham}, \bibinfo{pages}{389--412}.
-\newblock
-\showISBNx{978-3-031-07534-6 978-3-031-07535-3}
-\href{https://doi.org/10.1007/978-3-031-07535-3_12}{doi:\nolinkurl{10.1007/978-3-031-07535-3_12}}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3158116}
+\showDOI{\tempurl}
 
 
 \bibitem[Tsuchiya and Schiper(2008)]%
@@ -183,7 +210,9 @@
 \newblock \showarticletitle{Using {{Bounded Model Checking}} to {{Verify Consensus Algorithms}}}. In \bibinfo{booktitle}{\emph{Proceedings of the 22nd International Symposium on {{Distributed Computing}}}} \emph{(\bibinfo{series}{{{DISC}} '08})}. \bibinfo{publisher}{Springer-Verlag}, \bibinfo{address}{Berlin, Heidelberg}, \bibinfo{pages}{466--480}.
 \newblock
 \showISBNx{978-3-540-87778-3}
-\href{https://doi.org/10.1007/978-3-540-87779-0_32}{doi:\nolinkurl{10.1007/978-3-540-87779-0_32}}
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-540-87779-0_32}
+\showDOI{\tempurl}
 
 
 \bibitem[Wilcox et~al\mbox{.}(2015)]%
@@ -192,7 +221,9 @@
 \newblock \showarticletitle{Verdi: A Framework for Implementing and Formally Verifying Distributed Systems}. In \bibinfo{booktitle}{\emph{Proceedings of the 36th {{ACM SIGPLAN Conference}} on {{Programming Language Design}} and {{Implementation}}}} \emph{(\bibinfo{series}{{{PLDI}} '15})}. \bibinfo{publisher}{Association for Computing Machinery}, \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{357--368}.
 \newblock
 \showISBNx{978-1-4503-3468-6}
-\href{https://doi.org/10.1145/2737924.2737958}{doi:\nolinkurl{10.1145/2737924.2737958}}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/2737924.2737958}
+\showDOI{\tempurl}
 
 
 \bibitem[Zhao et~al\mbox{.}(2024)]%
@@ -201,7 +232,9 @@
 \newblock \showarticletitle{Compositional {{Verification}} of {{Composite Byzantine Protocols}}}. In \bibinfo{booktitle}{\emph{Proceedings of the 2024 on {{ACM SIGSAC Conference}} on {{Computer}} and {{Communications Security}}}} \emph{(\bibinfo{series}{{{CCS}} '24})}. \bibinfo{publisher}{Association for Computing Machinery}, \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{34--48}.
 \newblock
 \showISBNx{979-8-4007-0636-3}
-\href{https://doi.org/10.1145/3658644.3690355}{doi:\nolinkurl{10.1145/3658644.3690355}}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3658644.3690355}
+\showDOI{\tempurl}
 
 
 \end{thebibliography}
