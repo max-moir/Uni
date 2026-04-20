@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.13)  20 APR 2026 22:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.13)  20 APR 2026 22:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -831,14 +831,14 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 7.0pt on input line 96.
  [1.1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}]
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 150.
+(Font)              scaled to size 8.0pt on input line 151.
  [2.2]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 189.
- [3.3] [4.4]
-Underfull \vbox (badness 4024) has occurred while \output is active []
+(Font)              scaled to size 10.0pt on input line 192.
+ [3.3]
+Underfull \vbox (badness 7397) has occurred while \output is active []
 
- [5.5] (./sample-acmsmall-submission.bbl
+ [4.4] [5.5] (./sample-acmsmall-submission.bbl
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 8.0pt on input line 44.
 LaTeX Info: Redefining \tempurl on input line 60.
@@ -852,13 +852,14 @@ LaTeX Info: Redefining \tempurl on input line 159.
 LaTeX Info: Redefining \tempurl on input line 170.
 LaTeX Info: Redefining \tempurl on input line 181.
 LaTeX Info: Redefining \tempurl on input line 192.
+
+Underfull \vbox (badness 1377) has occurred while \output is active []
+
+ [6.6]
 LaTeX Info: Redefining \tempurl on input line 203.
 LaTeX Info: Redefining \tempurl on input line 214.
 LaTeX Info: Redefining \tempurl on input line 225.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6.6]) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
+) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 ) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
@@ -871,15 +872,15 @@ Package rerunfilecheck Info: File `sample-acmsmall-submission.out' has not chang
 (rerunfilecheck)             Checksum: F0016C83074F44DACBB9EA07DBB77652;3966.
  ) 
 Here is how much of TeX's memory you used:
- 21026 strings out of 475069
- 339466 string characters out of 5774627
- 1950975 words of memory out of 5000000
+ 21010 strings out of 475069
+ 339075 string characters out of 5774627
+ 1948975 words of memory out of 5000000
  42261 multiletter control sequences out of 15000+600000
- 704061 words of font info for 336 fonts, out of 8000000 for 9000
+ 702603 words of font info for 326 fonts, out of 8000000 for 9000
  886 hyphenation exceptions out of 8191
- 90i,17n,131p,1064b,725s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,17n,131p,1064b,719s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on sample-acmsmall-submission.pdf (7 pages, 411722 bytes).
+Output written on sample-acmsmall-submission.pdf (7 pages, 412428 bytes).
 PDF statistics:
  247 PDF objects out of 1000 (max. 8388607)
  218 compressed objects within 3 object streams
