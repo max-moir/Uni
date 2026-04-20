@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{18}
+\begin{thebibliography}{17}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -179,17 +179,6 @@
 \showISBNx{978-1-4503-5586-5}
 \urldef\tempurl%
 \url{https://doi.org/10.1145/3167086}
-\showDOI{\tempurl}
-
-
-\bibitem[Schultz et~al\mbox{.}(2022)]%
-        {schultzFormalVerificationDistributed2022}
-\bibfield{author}{\bibinfo{person}{William Schultz}, \bibinfo{person}{Ian Dardik}, {and} \bibinfo{person}{Stavros Tripakis}.} \bibinfo{year}{2022}\natexlab{}.
-\newblock \showarticletitle{Formal Verification of a Distributed Dynamic Reconfiguration Protocol}. In \bibinfo{booktitle}{\emph{Proceedings of the 11th {{ACM SIGPLAN International Conference}} on {{Certified Programs}} and {{Proofs}}}} \emph{(\bibinfo{series}{{{CPP}} 2022})}. \bibinfo{publisher}{Association for Computing Machinery}, \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{143--152}.
-\newblock
-\showISBNx{978-1-4503-9182-5}
-\urldef\tempurl%
-\url{https://doi.org/10.1145/3497775.3503688}
 \showDOI{\tempurl}
 
 

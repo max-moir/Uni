@@ -13,45 +13,45 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--empty address in digitalequipmentcorporationParttimeParliament2019
 Warning--empty chapter and pages in digitalequipmentcorporationParttimeParliament2019
-You've used 18 entries,
+You've used 17 entries,
             5981 wiz_defined-function locations,
-            1646 strings with 23882 characters,
-and the built_in function-call counts, 22199 in all, are:
-= -- 2744
-> -- 725
+            1636 strings with 23510 characters,
+and the built_in function-call counts, 20958 in all, are:
+= -- 2602
+> -- 694
 < -- 0
-+ -- 248
-- -- 252
-* -- 1706
-:= -- 2168
-add.period$ -- 97
-call.type$ -- 18
-change.case$ -- 135
-chr.to.int$ -- 18
-cite$ -- 20
-duplicate$ -- 1963
-empty$ -- 1364
-format.name$ -- 316
-if$ -- 5242
++ -- 238
+- -- 243
+* -- 1615
+:= -- 2058
+add.period$ -- 92
+call.type$ -- 17
+change.case$ -- 128
+chr.to.int$ -- 17
+cite$ -- 19
+duplicate$ -- 1839
+empty$ -- 1278
+format.name$ -- 303
+if$ -- 4945
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 66
-newline$ -- 240
-num.names$ -- 132
-pop$ -- 660
+missing$ -- 61
+newline$ -- 229
+num.names$ -- 125
+pop$ -- 617
 preamble$ -- 1
-purify$ -- 279
+purify$ -- 264
 quote$ -- 0
-skip$ -- 738
+skip$ -- 690
 stack$ -- 0
-substring$ -- 1774
-swap$ -- 230
+substring$ -- 1666
+swap$ -- 215
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 455
+type$ -- 425
 warning$ -- 2
-while$ -- 134
+while$ -- 128
 width$ -- 0
-write$ -- 469
+write$ -- 444
 (There were 2 warnings)
