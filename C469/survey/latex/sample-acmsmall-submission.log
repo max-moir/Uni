@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.13)  20 APR 2026 22:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.13)  20 APR 2026 22:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -852,11 +852,8 @@ LaTeX Info: Redefining \tempurl on input line 159.
 LaTeX Info: Redefining \tempurl on input line 170.
 LaTeX Info: Redefining \tempurl on input line 181.
 LaTeX Info: Redefining \tempurl on input line 192.
-
-Underfull \vbox (badness 1377) has occurred while \output is active []
-
- [6.6]
 LaTeX Info: Redefining \tempurl on input line 203.
+ [6.6]
 LaTeX Info: Redefining \tempurl on input line 214.
 LaTeX Info: Redefining \tempurl on input line 225.
 ) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
@@ -872,15 +869,15 @@ Package rerunfilecheck Info: File `sample-acmsmall-submission.out' has not chang
 (rerunfilecheck)             Checksum: F0016C83074F44DACBB9EA07DBB77652;3966.
  ) 
 Here is how much of TeX's memory you used:
- 21010 strings out of 475069
- 339075 string characters out of 5774627
- 1948975 words of memory out of 5000000
+ 21016 strings out of 475069
+ 339222 string characters out of 5774627
+ 1949975 words of memory out of 5000000
  42261 multiletter control sequences out of 15000+600000
- 702603 words of font info for 326 fonts, out of 8000000 for 9000
+ 703149 words of font info for 330 fonts, out of 8000000 for 9000
  886 hyphenation exceptions out of 8191
- 90i,17n,131p,1064b,719s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,17n,131p,1064b,721s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on sample-acmsmall-submission.pdf (7 pages, 412428 bytes).
+Output written on sample-acmsmall-submission.pdf (7 pages, 412258 bytes).
 PDF statistics:
  247 PDF objects out of 1000 (max. 8388607)
  218 compressed objects within 3 object streams

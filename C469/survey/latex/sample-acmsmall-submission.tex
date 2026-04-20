@@ -274,19 +274,17 @@
 
   A theorem-proving approach does not have this issue, as it can ensure that correctness conditions hold for any finite number of processes.
 
-
 \section{Challenges and Future Directions}
-  A common criticism of theorem-based formal verification is that it is too time-consuming to apply practically.
-  In addition to this, verification requires specialised engineers, often with a mathematical  It also addresses another common challenge in formal verification, scalability.
-  After a system has been formally verified, ongoing maintenance is required to reverify it each time it changes. background.
+  One of the common criticisms of theorem-based formal verification is that it is too time-consuming to apply practically.
+  In addition to this, verification requires specialised engineers, often with a mathematical background.
   Despite this difficulty, there has been industrial adoption of formal verification of distributed systems.
-  For example, Brooker and Desai \cite{brookerSystemsCorrectnessPractices2025} outlined how Amazon Web Services uses formal
+  For example, Brooker and Desai \cite{brookerSystemsCorrectnessPractices2025} outlined how Amazon Web Services use formal
   and semi-formal methods to maintain availability and security.
-  In this article, they detail the use of formal mathematical tools such as Dafny to prove security properties in their access control language Cedar.
-  Despite the successes at Amazon, the authors reiterate the challenges with the steep learning curve of verification. 
+  In this article, they detail the use of formal mathematical tools such as Dafny to prove secuirty properties in their access control language Cedar.
+  Despite the successes at Amazon, the authors re-iterate the challenges with the steep learning curve of verification. 
   The specialisation required for engineers maintaining formally verified systems is an ongoing challenge.
 
-  One potential direction of future research is the application of machine learning to assist with formalisation.
+  One potentially direction of future research is the application of machine learning to assist with formalisation.
   In a 2023 paper \cite{liuLearningContractInvariants2023},
   Liu et al. propose a technique based on reinforcement learning for predicting contract invariants that are useful for proving arithmetic safety.
   Although this paper doesn't focus on a distributed protocol, it highlights the potential that ML may hold in reducing the verification time of complex systems.
