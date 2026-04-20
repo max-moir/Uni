@@ -194,16 +194,22 @@
     in which Type, Acceptor and Message invariants are shown to hold inductively under all transitions.
     These invariants are then shown to prove safety, as defined in the paper.
 
-    % \emph{Temporal logic-based}
+    \emph{Refinement based} proof approaches aim to bridge the gap between abstract models and executable code.
+    Refinement mappings are used to create a relationship between states in a low-level system and a high-level specification, 
+    and a verifier can prove that there are corresponding transitions in each model.
+    Correctness properties can be proven to hold in the higher level system, ensuring that the protocol works as intended.
+    In the later analysis of fault tolerance protocols, an example of a refinement proof will be provided.
 
-    \emph{Refinement based} proof approaches ..
-
-    Compositional verification reasons about different components of a system independentaly.
-    \cite{zhaoCompositionalVerificationComposite2024}
-    Composition \cite{sergeyProgrammingProvingDistributed2017} \cite{lamportCompositionWayMake1998b}.
-
-    Although interactive theorem proving is manual, many systems implement \emph{automated theorem proving}.
-
+    Compositional verification reasons about a system by decomposing it into independentally verifiable parts.
+    As mentioned previously, this technique is used by both Verdi and Disel, but in different ways.
+    In a 2024 paper, Zhao et al. \cite{zhaoCompositionalVerificationComposite2024} introducted BYTHOS, a Rocq framework for compositional verification.
+    They use BYTHOS to verify safety and liveness properties of three Byzantine fault tolerance protocol: reliable broadcast, provable broadcast and accountable byzantine confirmer.
+    There have been mixed opinions about the efficacy of composition as a proof technique.
+    In his paper ``Composition: A Way To Make Proofs Harder'' \cite{lamportCompositionWayMake1998b}, 
+    Lamport argues that mathematical decomposition is a more powerful approach than forming a specification as the parallel composition of separate components.
+    The Disel specification \cite{sergeyProgrammingProvingDistributed2017} addresses this viewpoint,
+    arguing that the strengths of mathematical models and program logics can be utilised together.
+     
 \section{Case Studies}
   \subsection{ Consensus Algorithms}
     Consensus algorithms are used to agree on one result in a group of multiple participants.
