@@ -29,7 +29,6 @@ after_init {
   critical N := False;
   choosing N := False;
   number N := False;
-  ticket N := 0;
   serving N := 0;
   cs N := idle;
   t N := 0;
