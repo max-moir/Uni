@@ -1,6 +1,7 @@
 import Veil
 
 set_option linter.dupNamespace false
+set_option veil.printCounterexamples true
 
 veil module MyMutex
 
@@ -9,12 +10,13 @@ type ticket
 
 instantiate tot : TotalOrder node
 
-enum state = {idle, waiting, critical}
+open TotalOrder
+
 -- Nodes
 relation critical : node → Prop
 function choosing : node → Prop
 function number   : node → ℕ
-function cs : node → state
+function trying : node → Prop
 
 #gen_state
 
@@ -24,7 +26,6 @@ after_init {
   critical N := False;
   choosing N := False;
   number N := 0;
-  cs N  := idle;
 }
 
 #print initialState?
@@ -40,26 +41,44 @@ action choose (n : node)  = {
   number n := t_max;
 
   choosing n := False;
+  trying n := True;
 }
 
-action enter (n : node) = {
-  require number n != 0;
 
-  require ∀ j, j ≠ n →
-    (¬ choosing j) ∧ ((number j = 0) ∨ (number n < number j) ∨ (number n = number j ∧ tot.le n j));
 
-  critical n := True;
+action enter (i : node) = {
+  require trying i;
+  require number i != 0;
+  require critical i = False;
+
+  require ∀ j, j ≠ i →
+    (choosing j = False) ∧
+    ((number j = 0) ∨
+     (number i < number j) ∨
+     (number i = number j ∧ le i j ∧ ¬ le j i)
+     );
+
+  critical i := True;
+  trying i := False;
 }
 
 action exit (n : node) = {
   require critical n
-  number n := 0
   critical n := False
+  number n := 0
 }
 
 
-safety [mutex] critical I ∧ critical J → I = J
+safety [mutex] (critical I ∧ critical J) → I = J
+invariant [different_vals]
+  number I ≠ 0 →
+    number I = number J →
+      I = J
 
+-- invariant [critical_lowest]
+--   critical I →
+--     ∀ J, J ≠ I →
+--       number I < number J
 
 #gen_spec
 #check_invariants
