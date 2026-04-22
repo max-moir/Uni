@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex sample-acmsmall-submission"] 1776684091.38474 "sample-acmsmall-submission.aux" "sample-acmsmall-submission.bbl" "sample-acmsmall-submission" 1776684092.23671 0
+["bibtex sample-acmsmall-submission"] 1776684091.38474 "sample-acmsmall-submission.aux" "sample-acmsmall-submission.bbl" "sample-acmsmall-submission" 1776684490.59907 0
   "./sample-base.bib" 1776683784.91548 55393 a5d63cd9028ba071ddf1afa9f6bc3911 ""
   "/usr/share/texmf-dist/bibtex/bst/acmart/ACM-Reference-Format.bst" 1772820570 93560 12e0ced1522ea2bfa9b2fb12855c7e9e ""
-  "sample-acmsmall-submission.aux" 1776684092.06799 5721 82e840ce643c8004f65a66979efe2434 "pdflatex"
+  "sample-acmsmall-submission.aux" 1776684490.42424 5721 82e840ce643c8004f65a66979efe2434 "pdflatex"
   (generated)
   "sample-acmsmall-submission.bbl"
   "sample-acmsmall-submission.blg"
   (rewritten before read)
-["pdflatex"] 1776684091.43384 "/home/moir/uni/C469/survey/latex/sample-acmsmall-submission.tex" "sample-acmsmall-submission.pdf" "sample-acmsmall-submission" 1776684092.23687 0
-  "/home/moir/uni/C469/survey/latex/sample-acmsmall-submission.tex" 1776684090.43894 21170 436dc2a7fd8ff991cc7039c1863a4680 ""
+["pdflatex"] 1776684489.78506 "/home/moir/uni/C469/survey/latex/sample-acmsmall-submission.tex" "sample-acmsmall-submission.pdf" "sample-acmsmall-submission" 1776684490.59924 0
+  "/home/moir/uni/C469/survey/latex/sample-acmsmall-submission.tex" 1776684489.61662 21164 44b47e5052ada05fb662cd087d0ff3c6 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc" 1772820570 2921 8ca0eb0831f9bc5da080d3697cfe67bf ""
   "/usr/share/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc" 1772820570 2933 9ad527ce78d7c5fa0a642dead095f172 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc" 1772820570 2934 a4a9158faed2e9e89c771b4e3b7fc12f ""
@@ -175,10 +175,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1772820570 43569 fd570f2fa160877d211e859f687312ba ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1773361542 5385779 47c0c393a77fd4a098bacfd57d66b88a ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1773361483 2328189 372db6e85f14133eba512a837b988849 ""
-  "sample-acmsmall-submission.aux" 1776684092.06799 5721 82e840ce643c8004f65a66979efe2434 "pdflatex"
+  "sample-acmsmall-submission.aux" 1776684490.42424 5721 82e840ce643c8004f65a66979efe2434 "pdflatex"
   "sample-acmsmall-submission.bbl" 1776684091.43007 14034 ecbdd88df8ea8873cbb0d3933803641c "bibtex sample-acmsmall-submission"
-  "sample-acmsmall-submission.out" 1776684092.06899 3966 f0016c83074f44dacbb9ea07dbb77652 "pdflatex"
-  "sample-acmsmall-submission.tex" 1776684090.43894 21170 436dc2a7fd8ff991cc7039c1863a4680 ""
+  "sample-acmsmall-submission.out" 1776684490.42524 3966 f0016c83074f44dacbb9ea07dbb77652 "pdflatex"
+  "sample-acmsmall-submission.tex" 1776684489.61662 21164 44b47e5052ada05fb662cd087d0ff3c6 ""
   (generated)
   "sample-acmsmall-submission.aux"
   "sample-acmsmall-submission.log"
