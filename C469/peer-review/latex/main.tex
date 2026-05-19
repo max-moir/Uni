@@ -38,7 +38,9 @@
 %     Conclude with the reviewer’s overall opinion of what the manuscript does and does not do well.
 
 
-This paper outlines a proposal for the development of a general purpose robot to assist in the caretaking of elderly and disabled people.
+This paper states a proposal for the development of a general purpose robot for assisting in the caretaking of elderly and disabled people.
+The goal of the paper is to develop a robot that can be adapted to tasks such as 
+
 
 The paper then provides preliminary examples related to the area.
 It outlines the technical approach that may be taken to build an example robot to meet its criteria.
@@ -51,10 +53,12 @@ It cites two papers that detail applications similar to the intended goal.
 
 
 \section{Decision}
-The final decision of this review is to reject this paper proposal due to the concerns stated below.
-The paper requires major revision before it will be in a publishable state.
-It requires significant grammatical improvement, and requires conducting new experiments.
-Despite the execution falling short in multiple regards, the topic is well motivated.
+The final decision of the review is to reject this proposal.
+The paper requires major revision before it will be in a publishable state, 
+due to the concerns outlined in the following sections.
+It requires significant grammatical improvement, and conducting new experiments.
+Despite the execution falling short in multiple regards,
+the topic is well motivated and could make for an interesting paper if done correctly.
 
 \section{Major Concerns}
 
@@ -62,16 +66,34 @@ Despite the execution falling short in multiple regards, the topic is well motiv
 % Speculative 
 
 A first major concern with this paper is that it is speculative rather than experimental.
-No clear research contributions.
-
+This is not consistent with the goal of the paper to build a useable outcome, 
+and it is unclear what the research contributions of this paper are.
 % Lack of clear experimental or computational data
-It follows naturally from this that the paper has a distinct lack of experimental data.
-
-In addition to this, the paper is speculative rather than experimental.
-It is clearly stated that the goal of the paper is ``to demonstrate the capabilities of a mobile personal assistance robot using `simple’ image processing.'' 
-Despite this, no outcome seems to have been achived in the paper, with the evaluation section being seemingly purely speculative .
+It follows naturally from this that the evaluation has a lack of experimental or computational data.
+The entire evaluation and testing section is purely hypothetical, and resemble a brainstorm more than serious scientific discussion.
+and presents no contributions, let alone novel ones.
+In order to resolve this concern, the author would need to undergo extensive further work,
+including developing the proposed robot and conducting new experiments. 
+This is a major factor in the decision to reject this paper.
 
 % Lack of technical depth
+Additionally, the design plan detailed in the paper has a lack technical depth.
+Even if the outcome were created according to the specification,
+it would likely be inadequate in terms of novelty.
+It lists a rough list of potential hardware that might be used to create the robot,
+but does not go into detail about the system design decisions made for the project.
+To resolve this concern, the approach section would need significant additions.
+
+% Lack of previous work
+Another concern is the minimal citation of previous work.
+Although there are a number of referenced papers in the bibliography,
+the author only addresses a couple of these.
+The references that are addressed are not evaluated in significant depth,
+
+% Underdeveloped saftey / ethical
+Finally, the paper has an underdeveloped ethical implications section. 
+It fails to address potential safety concerns and brushes off ethical issues as ``beyond the scope of this paper''.
+It mentions potential privacy concerns, but does not detail how these will be addressed.
 
 
 
@@ -79,63 +101,86 @@ Despite this, no outcome seems to have been achived in the paper, with the evalu
 
 % Intro
 In addition to the major concerns about this paper stated above, there are several minor concerns that require revisions.
-The paper has many syntactic and grammatical mistakes.
-
-% Poorly worded 
-
-"This paper"
+First of all, the paper has many spelling and grammatical mistakes.
+For this paper to reach a publishable state, these mistakes,
+as well as any others within the text, must be resolved.
+A non-comprehensive list of grammatical inaccuracies is as follows:
 
 % Grammar
+\begin{enumerate}
+% Spelling mistakes:
+    %     Furthermore, logistic needs such as medicine retrieval can be performed without personnel
+  \item Spelling Mistakes
+  \begin{itemize}
+    \item \emph{``(partivuarly repetitive and simple ones)''}  $\to$ particularly
+    \item \emph{hospital personell} $\to$ personnel
+  \end{itemize}
 
-Missing words
+  \item Missing words and articles
+  \begin{itemize}
+    \item \emph{``Arduino mega 2560 is used for the large number of digital pins''} 
+    \item \emph{items an elderly has}
+  \end{itemize}
 
-    " This a broad topic with many different applications in both health care and non-commercial. "
-    items an elderly has
 
-Spelling mistakes:
-    (partivuarly repetitive and simple ones)
-    Furthermore, logistic needs such as medicine retrieval can be performed without personnel
-    hospital personell
+% incorrect plurals
+%     follow a similar criteria
+  \item Incorrect plurals
+  \begin{itemize}
+    \item \emph{``items an elderly has''}
+  \end{itemize}
 
-incorrect plurals
-    follow a similar criteria
+% missing punctuation
+  \item Missing punctuation
+  \begin{itemize}
+    \item \emph{``No obstacle detection is performed, hence the robot will bump into any objects The robot will stop if it cannot find the marker.''}
+  \end{itemize}
 
-missing articles
-    Arduino mega 2560 is used for the large number of digital pins
 
-redundancy:
-    The robot must be seamless and operate effectively within it’s environment even to the extent of
+% corrupted 
+  \item Corrupted text
+  \begin{itemize}
+    \item 
+    \emph{ ``used. \newline
+    –¿ arco principes of opereation''
+    }
+  \end{itemize}
+
+
+\end{enumerate}
+
+% Poorly worded 
+In addition to the grammatical errors, the paper is generally poorly worded.
+It contains many rambling or incomplete sentances and awkward phrasings.
+For example, \emph{``Due to the nature of robots, however, repetitive tasks without the need for complex
+decision making are desirable as opposed to ones that require a significant level of decision
+making (medical diagnosis for instance).''}
+The author also uses redundant definitions such as: \emph{``The robot must be seamless and operate effectively within it’s environment even to the extent of
     operating effectively within an unfamiliar environment that it was not designed for in a way
-    that does not compromise human safety
+    that does not compromise human safety''}.
+This sentance could be significantly shorted.
+Thourough proofreading would resolve this concern.
 
-This paper presents a mobile robot for elderly and disabled assistance
-
-missing punctuation
- No obstacle detection is performed, hence the robot will bump into any objects The robot will stop if it cannot find the marker.
-
-
-corrupted 
-    used.
-    –¿ arco principes of opereation
-
-% Figure 1: Follower robot not present
-
-% Subsections formatted strangely e.g. Approach
-% Paragraph length
-
+The paper also has multiple inconsistencies in relation to formatting.
+The paragraph length and spacing between paragraphs is in many points inconsistent. 
+The Subsections are formatted strangely, for example, 
+the Approach section starts with a hardware list before entering a very short Overall System subsection.
+The organization of sections is also 
+Figure 1 is missing entirely despite its present label.
+Additionally,
 
 % Text on pdf
 
 
-
+The reference usage throughout the paper is also incorrect and inconsistent.
 % Incorrect refence usage:
-    oming 5 years.[2] 
-    Reference not used [1]
-    compromise the user’s safety. []
-    [] illustrates a robot 
-    With the rise in technology1 the
-    However, [2] raises some interesting ethical issues regarding robots in daily lives and health care.
-I assume bad citations
+%     oming 5 years.[2] 
+%     Reference not used [1]
+%     compromise the user’s safety. []
+%     [] illustrates a robot 
+%     With the rise in technology1 the
+%     However, [2] raises some interesting ethical issues regarding robots in daily lives and health care.
+% I assume bad citations
 
 
 
