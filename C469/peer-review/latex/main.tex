@@ -37,17 +37,26 @@ navigation, object recognition and avoidance, pose recognition and communication
 It is stated that the main focus of the project is the transport of hospital related items.
 
 The paper then provides background and preliminary examples related to the area, 
-citing two projects similar to the one proposed. 
+citing two projects similar to the one proposed.
+It gives descriptions of these projects, and discusses their solutions of related problems.
 
-It outlines the technical approach that may be taken to build an example robot to meet its criteria.
-The proposed implementation suggests using Microsoft 360 Connect camera to detect and follow ArUco markers.
-It also implies it will use both a Raspberry Pi3 and an Arduino Mega 2560 Microcontroller.
+The author then outlines the intended technical approach for building the proposed robot to meet its criteria.
+The suggested implementation uses a Microsoft 360 Connect camera to detect and follow ArUco markers.
+It also opts for both a Raspberry Pi3 and an Arduino Mega 2560 Microcontroller.
+For locomotion, the author decides to use four 4 defgrees of freedom legs, with wheels attached to the ends of each.
+The author states that this will reduce power consumption, while maintaining the ability for the robot to climb stairs.
 
 It then states how said robot may be evaluated and tested.
+It summarises potential test situations under which to evaluate the robot.
+These include pose recognition, motion detection and outdoor navigation scenarios.
+It does not provide any experimental results or discussion of a completed outcome.
 
-The author also attempts to address ethical concerns and potential future research direction.
+The author also attempts to address ethical concerns and potential future research directions.
+The ethical concerns are minimally touched on, and in depth analysis are ``beyond the scope of'' the paper.
+Future work contains some overlap with what is claimed to be already implemented,
+but generally details possible extensions for the robots functionality including point cloud maps,
+measuring the health of a user, and playing fetch.
 
-It cites two papers that detail applications similar to the intended goal.
 While the chosen application area is well motivated, 
 the paper does not have sufficient technical depth, experimental results or testing validation.
 
