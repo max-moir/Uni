@@ -33,97 +33,95 @@
 
 This paper states a proposal for the development of a general purpose robot for assisting in the caretaking of elderly and disabled people.
 The goal of the paper is to develop a robot that can be adapted to tasks such as 
-navigation, object recognition and avoidance, pose recognition and communication.
-It is stated that the main focus of the project is the transport of hospital related items.
-
+navigation, object recognition and avoidance, pose recognition, transport of hospital-related items, and communication. 
 The paper then provides background and preliminary examples related to the area, 
-citing two projects similar to the one proposed.
-It gives descriptions of these projects, and discusses their solutions of related problems.
+citing two projects similar to the outcome proposed.
+It gives descriptions of these projects and discusses their solutions to related problems.
 
-The author then outlines the intended technical approach for building the proposed robot to meet its criteria.
+The paper then proposes the intended technical approach for building the robot to meet its criteria.
 The suggested implementation uses a Microsoft 360 Connect camera to detect and follow ArUco markers.
-It also opts for both a Raspberry Pi3 and an Arduino Mega 2560 Microcontroller.
-For locomotion, the author decides to use four 4 defgrees of freedom legs, with wheels attached to the ends of each.
-The author states that this will reduce power consumption, while maintaining the ability for the robot to climb stairs.
-
-It then states how said robot may be evaluated and tested.
+It also opts for both a Raspberry Pi 3 and an Arduino Mega 2560 Microcontroller.
+For locomotion, the author decides to use four 4 degrees of freedom legs, with wheels attached to the ends of each of them.
+The author states that this will reduce power consumption while maintaining the ability for the robot to climb stairs.
+It then suggests how the robot may be evaluated and tested.
 It summarises potential test situations under which to evaluate the robot.
-These include pose recognition, motion detection and outdoor navigation scenarios.
+These include pose recognition, motion detection, and outdoor navigation scenarios.
 It does not provide any experimental results or discussion of a completed outcome.
 
 The author also attempts to address ethical concerns and potential future research directions.
-The ethical concerns are minimally touched on, and in depth analysis are ``beyond the scope of'' the paper.
-Future work contains some overlap with what is claimed to be already implemented,
-but generally details possible extensions for the robots functionality including point cloud maps,
+Ethical concerns are minimally touched on, with in-depth analysis stated to be ``beyond the scope of'' the paper.
+Some of the functionality discussed in the future work section overlaps with capabilities that are previously ambiguously described as already implemented.
+The section also generally details possible extensions for the robot's functionality, including point cloud maps,
 measuring the health of a user, and playing fetch.
-
 While the chosen application area is well motivated, 
-the paper does not have sufficient technical depth, experimental results or testing validation.
+the paper does not have sufficient technical depth, experimental results, or testing validation.
 
 
 
 \section{Decision}
 The final decision of the review is to reject this proposal.
-The paper requires major revision before it will be in a publishable state, 
+The paper requires major revisions to form it into a publishable state, 
 due to the concerns outlined in the following sections.
 The paper has unclear contributions, insufficient novelty, and a lack of any completed experiments.
-Therefore it does not meet the standards for publication of a computer vision research paper.
-Despite the execution falling short in multiple regards,
-the topic is well motivated and could make for an interesting paper if done correctly.
+Therefore, it does not meet the standards for publication of a computer vision research paper.
+Despite shortcomings in execution,
+the topic is well motivated and has the potential to form the basis of a compelling paper if developed further.
 
 \section{Major Concerns}
 
 
 % Speculative 
-
-A first major concern with this paper is that it has unclear contributions.
+A first major concern with this paper is the lack of clear contributions.
 It frequently mixes implemented functionality with speculative goals,
 making it difficult to understand what has been achieved.
-For exampl
-This is not consistent with the goal of the paper to build a useable outcome, 
-and it is unclear what the research contributions of this paper are.
+For example, capabilities such as outdoor navigation, pose detection, and object recognition
+are discussed despite not being experimentally demonstrated.
+This conflicts with the stated goal of developing a practical assistive robotic system,
+and it is unclear what the concrete research contributions of this paper are.
 % Lack of clear experimental or computational data
-It follows naturally from this that the evaluation has a lack of experimental or computational data.
-The entire evaluation and testing section is purely hypothetical, and resemble a brainstorm more than serious scientific discussion.
-and presents no contributions, let alone novel ones.
+Related to this concern, the evaluation has a lack of experimental or computational data.
+The entire evaluation and testing section is purely hypothetical and resembles speculative planning more than rigorous scientific evaluation,
+while also failing to demonstrate a novel technical contribution.
 In order to resolve this concern, the author would need to undergo extensive further work,
 including developing the proposed robot and conducting new experiments. 
 This is a major factor in the decision to reject this paper.
-Further work should include quantitative evaluation of the developed outcome such as clearly defined success metrics,
-extensive testing and benchmarks (e.g. for navigational performance or tracking accuracy).
+Revisions should include quantitative evaluation of a developed outcome, such as clearly defined success metrics,
+extensive testing, and benchmarks (e.g., for navigational performance or tracking accuracy).
+
 
 % Lack of technical depth
-Additionally, the design plan detailed in the paper has a lack technical depth.
+Additionally, the design plan detailed in the paper lacks technical depth.
 Even if the outcome were created according to the specification,
 it would likely be inadequate in terms of novelty.
-It lists a rough list of potential hardware that might be used to create the robot,
+It provides only a rough list of potential hardware that might be used to create the robot,
 but does not go into detail about the system design decisions made for the project.
 To resolve this concern, the approach section would need significant additions.
 For example, it should include discussion of the computer vision pipeline,
-navigational methedology and 
+navigational methodology, and system integration decisions.
 
 % Lack of previous work
 Another concern is the minimal citation of previous work.
 Although there are a number of referenced papers in the bibliography,
 the author only addresses a couple of these.
-The references that are addressed are not evaluated in significant depth,
+The references that are addressed are not evaluated in significant depth, and their relationship to the proposed system is often unclear.
 
 % Underdeveloped saftey / ethical
-Finally, the paper has an underdeveloped ethical and safety implications section. 
-It fails to address potential safety concerns and brushes off ethical issues as ``beyond the scope of this paper''.
+Finally, the paper has an underdeveloped section on ethical and safety implications. 
+It fails to address safety concerns and brushes off ethical issues as ``beyond the scope of this paper''.
 It mentions potential privacy concerns, but does not detail how these will be addressed.
-Physical safety concerns have also not been addressed, such as collision detection or reliability of the system.
+The suggested features, such as watching users sleep, are especially invasive and should be addressed. 
+Physical safety concerns have also not been addressed, such as collision detection or the reliability of the system.
 This is especially important for technology in the healthcare sector, and should be discussed in a publishable paper.
-
 
 \section{Minor Concerns}
 
 % Intro
 In addition to the major concerns about this paper stated above, there are several minor concerns that require revisions.
 First of all, the paper has many spelling and grammatical mistakes.
-For this paper to reach a publishable state, these mistakes,
-as well as any others within the text, must be resolved.
-A non-comprehensive list of grammatical inaccuracies is as follows:
+For this paper to reach a publishable state, all these mistakes,
+as well as any others within the text, must be resolved. 
+There are too many grammatical inaccuracies to cover in this review, 
+so a non-comprehensive list of grammatical inaccuracies is given as follows:
 
 % Grammar
 \begin{enumerate}
@@ -137,26 +135,23 @@ A non-comprehensive list of grammatical inaccuracies is as follows:
 
   \item Missing words and articles
   \begin{itemize}
-    \item \emph{``Arduino mega 2560 is used for the large number of digital pins''} 
-    \item \emph{items an elderly has}
+    \item \emph{``Arduino mega 2560 is used for the large number of digital pins (12 alone are required for
+moving the legs).''} $\to$ An Arduino Mega 2560 ...
+    \item \emph{``Inconvenient tasks like picking up fallen objects or items an elderly has
+dropped to avoid bending down.''} $\to$ an elderly person
   \end{itemize}
 
 
-% incorrect plurals
-%     follow a similar criteria
   \item Incorrect plurals
   \begin{itemize}
-    \item \emph{``items an elderly has''}
+    \item \emph{``Disabled and elderly assistant devices follow a similar criteria.''} $\to$ a similar criterion.
   \end{itemize}
 
-% missing punctuation
   \item Missing punctuation
   \begin{itemize}
-    \item \emph{``No obstacle detection is performed, hence the robot will bump into any objects The robot will stop if it cannot find the marker.''}
+    \item \emph{``No obstacle detection is performed, hence the robot will bump into any objects The robot will stop if it cannot find the marker.''} $\to$ ... objects. The robot ...
   \end{itemize}
 
-
-% corrupted 
   \item Corrupted text
   \begin{itemize}
     \item 
@@ -171,43 +166,42 @@ A non-comprehensive list of grammatical inaccuracies is as follows:
 \noindent
 % Poorly worded 
 In addition to the grammatical errors, the paper is generally poorly worded.
-It contains many rambling or incomplete sentances and awkward phrasings.
+It contains many rambling or incomplete sentences and awkward phrasings.
 For example, \emph{``Due to the nature of robots, however, repetitive tasks without the need for complex
 decision making are desirable as opposed to ones that require a significant level of decision
-making (medical diagnosis for instance).''}
+making (medical diagnosis for instance).''} 
+This sentence is unnecessarily complicated and could be easily rephrased to be more concise.
 The author also uses redundant definitions such as: \emph{``The robot must be seamless and operate effectively within it’s environment even to the extent of
     operating effectively within an unfamiliar environment that it was not designed for in a way
     that does not compromise human safety''}.
-This sentance could be significantly shorted.
-Thourough proofreading would resolve this concern.
-
-
-% Text on pdf
-
-
+This sentence could be significantly shortened, without the repetition or tautilogical reference to an unfamiliar environment.
+Thorough proofreading would resolve this concern.
 The reference usage throughout the paper is also often incorrect or inconsistent.
 Some examples of this include:
 % Incorrect refence usage:
-%     However, [2] raises some interesting ethical issues regarding robots in daily lives and health care.
 % I assume bad citations
 \begin{itemize}
-    \item Empty citation placeholder: \emph{``[] illustrates a robot capable...''}
-    \item Incorrect citation spacing: \emph{``coming 5 years.[2]''}
-    \item Footnote formatting issue: \emph{``With the rise in technology $^1$''}
+    \item Empty citation placeholders: \emph{``[] illustrates a robot capable...''}
+    \item Incorrect citation positioning: \emph{``12.5\% of the population in the US is elderly and is expected to increase by
+twice within the coming 5 years.[2]''}
+    \item Inconsistent citation formatting: \emph{``With the rise in technology $^1$''}
+    \item Addressing citations directly: \emph{``However, [2] raises some interesting ethical issues regarding robots in daily lives and health care.''}
     \item Unreferenced claims regarding healthcare staffing and demographics
 \end{itemize}
 
+\noindent
 The paper also has multiple inconsistencies in relation to formatting.
-The paragraph length and spacing between paragraphs is in many points inconsistent. 
-The Subsections are formatted strangely, for example, 
+The paragraph length and spacing are inconsistent throughout the paper. 
+The subsections are formatted strangely; for example, 
 the Approach section starts with a hardware list before entering a very short Overall System subsection.
-The organization of sections is also 
-Figure 1 is missing entirely despite its present label.
-Overall significant proofreading and restructuring of the paper would be necessary for it to meet a publishable standard.
+In addition to this, Figure 1 is missing entirely despite the presence of its label.
+These listed inconsistencies are relatively minor concerns
+and could be fixed easily by the author.
 
-\section{Conclusion}
-
-
-
+Overall, while the paper addresses a socially relevant problem area, 
+as it currently stands, it lacks technical rigor, experimental validation, 
+or the clarity of discussion expected of a computer vision research paper.
+Tightening the scope of the project and defining and executing quantitative experiments
+would substantially improve the quality of the work.
 
 \end{document}
