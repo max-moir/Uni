@@ -1,0 +1,49 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+
+
+
+\title{Assignment 2: PeerBoard}
+\author{
+    Max Moir \\
+    \textit{University of Canterbury} \\ 
+    \text{Christchurch, New Zealand} \\ 
+    \texttt{maxwmoir@gmail.com}
+}
+
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+For this project 
+
+\section{Design Decision}
+
+
+If I were to do the project again, one design decision I would've made early on would be unifying the message datatype.
+In my implementation, there is not one single source of truth for what a message should contain, with different datatypes for the database, swarm, frontend and bridge api.
+In addition to this, I decided to first interface between the frontend and the server, then between the server and the swarm_runner.
+This is honestly a pointless distiction, and made my life much harder while developing this, because I had to redefine commands in 3+ places.
+
+
+
+
+\section{One Suprise}
+
+\section{Grade Estimation}
+For this Assignment, I estimate that I will get a grade in the high B+ / low A- range.
+
+
+
+\end{document}

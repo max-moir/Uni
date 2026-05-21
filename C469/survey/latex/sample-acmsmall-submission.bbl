@@ -1,0 +1,198 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{17}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Abadi and Lamport(1991)]%
+        {abadiExistenceRefinementMappings1991}
+\bibfield{author}{\bibinfo{person}{Mart{\'i}n Abadi} {and} \bibinfo{person}{Leslie Lamport}.} \bibinfo{year}{1991}\natexlab{}.
+\newblock \showarticletitle{The Existence of Refinement Mappings}.
+\newblock \bibinfo{journal}{\emph{Theor. Comput. Sci.}} \bibinfo{volume}{82}, \bibinfo{number}{2} (\bibinfo{date}{May} \bibinfo{year}{1991}), \bibinfo{pages}{253--284}.
+\newblock
+\showISSN{0304-3975}
+\href{https://doi.org/10.1016/0304-3975(91)90224-P}{doi:\nolinkurl{10.1016/0304-3975(91)90224-P}}
+
+
+\bibitem[Brooker and Desai(2025)]%
+        {brookerSystemsCorrectnessPractices2025}
+\bibfield{author}{\bibinfo{person}{Marc Brooker} {and} \bibinfo{person}{Ankush Desai}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Systems {{Correctness Practices}} at {{Amazon Web Services}}}.
+\newblock \bibinfo{journal}{\emph{Commun. ACM}} \bibinfo{volume}{68}, \bibinfo{number}{6} (\bibinfo{date}{June} \bibinfo{year}{2025}), \bibinfo{pages}{38--42}.
+\newblock
+\showISSN{0001-0782}
+\href{https://doi.org/10.1145/3729175}{doi:\nolinkurl{10.1145/3729175}}
+
+
+\bibitem[Chand et~al\mbox{.}(2016)]%
+        {chandFormalVerificationMultiPaxos2016}
+\bibfield{author}{\bibinfo{person}{Saksham Chand}, \bibinfo{person}{Yanhong~A. Liu}, {and} \bibinfo{person}{Scott~D. Stoller}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Formal {{Verification}} of {{Multi-Paxos}} for {{Distributed Consensus}}}.
+\newblock In \bibinfo{booktitle}{\emph{{{FM}} 2016: {{Formal Methods}}}}, \bibfield{editor}{\bibinfo{person}{John Fitzgerald}, \bibinfo{person}{Constance Heitmeyer}, \bibinfo{person}{Stefania Gnesi}, {and} \bibinfo{person}{Anna Philippou}} (Eds.). Vol.~\bibinfo{volume}{9995}. \bibinfo{publisher}{Springer International Publishing}, \bibinfo{address}{Cham}, \bibinfo{pages}{119--136}.
+\newblock
+\showISBNx{978-3-319-48988-9 978-3-319-48989-6}
+\href{https://doi.org/10.1007/978-3-319-48989-6_8}{doi:\nolinkurl{10.1007/978-3-319-48989-6_8}}
+
+
+\bibitem[Cousineau et~al\mbox{.}(2012)]%
+        {cousineau2012tla}
+\bibfield{author}{\bibinfo{person}{Denis Cousineau}, \bibinfo{person}{Damien Doligez}, \bibinfo{person}{Leslie Lamport}, \bibinfo{person}{Stephan Merz}, \bibinfo{person}{Daniel Ricketts}, {and} \bibinfo{person}{Hernan Vanzetto}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{{{TLA}}+ Proofs}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the 18th International Symposium on Formal Methods (FM 2012), Dimitra Giannakopoulou and Dominique Mery, editors. Springer-Verlag Lecture Notes in Computer Science}}  \bibinfo{volume}{7436} (\bibinfo{date}{Jan.} \bibinfo{year}{2012}), \bibinfo{pages}{147--154}.
+\newblock
+
+
+\bibitem[De~Prisco et~al\mbox{.}(1997)]%
+        {depriscoRevisitingPaxosAlgorithm1997}
+\bibfield{author}{\bibinfo{person}{Roberto De~Prisco}, \bibinfo{person}{Butler Lampson}, {and} \bibinfo{person}{Nancy Lynch}.} \bibinfo{year}{1997}\natexlab{}.
+\newblock \showarticletitle{Revisiting the {{Paxos}} Algorithm}.
+\newblock In \bibinfo{booktitle}{\emph{Distributed {{Algorithms}}}}, \bibfield{editor}{\bibinfo{person}{Gerhard Goos}, \bibinfo{person}{Juris Hartmanis}, \bibinfo{person}{Jan Van~Leeuwen}, \bibinfo{person}{Marios Mavronicolas}, {and} \bibinfo{person}{Philippas Tsigas}} (Eds.). Vol.~\bibinfo{volume}{1320}. \bibinfo{publisher}{Springer Berlin Heidelberg}, \bibinfo{address}{Berlin, Heidelberg}, \bibinfo{pages}{111--125}.
+\newblock
+\showISBNx{978-3-540-63575-8 978-3-540-69600-1}
+\href{https://doi.org/10.1007/BFb0030679}{doi:\nolinkurl{10.1007/BFb0030679}}
+
+
+\bibitem[{Digital Equipment Corporation} and Lamport(2019)]%
+        {digitalequipmentcorporationParttimeParliament2019}
+\bibfield{author}{\bibinfo{person}{{Digital Equipment Corporation}} {and} \bibinfo{person}{Leslie Lamport}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{The Part-Time Parliament}}.
+\newblock \bibinfo{publisher}{Association for Computing Machinery}.
+\newblock
+\showISBNx{978-1-4503-7270-1}
+\href{https://doi.org/10.1145/3335772.3335939}{doi:\nolinkurl{10.1145/3335772.3335939}}
+
+
+\bibitem[Dijkstra(1965)]%
+        {dijkstraSolutionProblem1965}
+\bibfield{author}{\bibinfo{person}{E.~W. Dijkstra}.} \bibinfo{year}{1965}\natexlab{}.
+\newblock \showarticletitle{Solution of a Problem in Concurrent Programming Control}.
+\newblock \bibinfo{journal}{\emph{Commun. ACM}} \bibinfo{volume}{8}, \bibinfo{number}{9} (\bibinfo{date}{Sept.} \bibinfo{year}{1965}), \bibinfo{pages}{569}.
+\newblock
+\showISSN{0001-0782, 1557-7317}
+\href{https://doi.org/10.1145/365559.365617}{doi:\nolinkurl{10.1145/365559.365617}}
+
+
+\bibitem[Hawblitzel et~al\mbox{.}(2015)]%
+        {hawblitzelIronFleetProvingPractical2015}
+\bibfield{author}{\bibinfo{person}{Chris Hawblitzel}, \bibinfo{person}{Jon Howell}, \bibinfo{person}{Manos Kapritsos}, \bibinfo{person}{Jacob~R. Lorch}, \bibinfo{person}{Bryan Parno}, \bibinfo{person}{Michael~L. Roberts}, \bibinfo{person}{Srinath Setty}, {and} \bibinfo{person}{Brian Zill}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{{{IronFleet}}: Proving Practical Distributed Systems Correct}. In \bibinfo{booktitle}{\emph{Proceedings of the 25th {{Symposium}} on {{Operating Systems Principles}}}} \emph{(\bibinfo{series}{{{SOSP}} '15})}. \bibinfo{publisher}{Association for Computing Machinery}, \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{1--17}.
+\newblock
+\showISBNx{978-1-4503-3834-9}
+\href{https://doi.org/10.1145/2815400.2815428}{doi:\nolinkurl{10.1145/2815400.2815428}}
+
+
+\bibitem[Lamport(1998)]%
+        {lamportCompositionWayMake1998b}
+\bibfield{author}{\bibinfo{person}{Leslie Lamport}.} \bibinfo{year}{1998}\natexlab{}.
+\newblock \showarticletitle{Composition: {{A Way}} to {{Make Proofs Harder}}}.
+\newblock In \bibinfo{booktitle}{\emph{Compositionality: {{The Significant Difference}}}}, \bibfield{editor}{\bibinfo{person}{Gerhard Goos}, \bibinfo{person}{Juris Hartmanis}, \bibinfo{person}{Jan Van~Leeuwen}, \bibinfo{person}{Willem-Paul De~Roever}, \bibinfo{person}{Hans Langmaack}, {and} \bibinfo{person}{Amir Pnueli}} (Eds.). Vol.~\bibinfo{volume}{1536}. \bibinfo{publisher}{Springer Berlin Heidelberg}, \bibinfo{address}{Berlin, Heidelberg}, \bibinfo{pages}{402--423}.
+\newblock
+\showISBNx{978-3-540-65493-3 978-3-540-49213-9}
+\href{https://doi.org/10.1007/3-540-49213-5_15}{doi:\nolinkurl{10.1007/3-540-49213-5_15}}
+
+
+\bibitem[Lamport et~al\mbox{.}(2019)]%
+        {lamportByzantineGeneralsProblem2019}
+\bibfield{author}{\bibinfo{person}{Leslie Lamport}, \bibinfo{person}{Robert Shostak}, {and} \bibinfo{person}{Marshall Pease}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{The {{Byzantine}} Generals Problem}.
+\newblock In \bibinfo{booktitle}{\emph{Concurrency: The {{Works}} of {{Leslie Lamport}}}}. \bibinfo{publisher}{Association for Computing Machinery}, \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{203--226}.
+\newblock
+\showISBNx{978-1-4503-7270-1}
+
+
+\bibitem[Liu et~al\mbox{.}(2023)]%
+        {liuLearningContractInvariants2023}
+\bibfield{author}{\bibinfo{person}{Junrui Liu}, \bibinfo{person}{Yanju Chen}, \bibinfo{person}{Bryan Tan}, \bibinfo{person}{Isil Dillig}, {and} \bibinfo{person}{Yu Feng}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Learning {{Contract Invariants Using Reinforcement Learning}}}. In \bibinfo{booktitle}{\emph{Proceedings of the 37th {{IEEE}}/{{ACM International Conference}} on {{Automated Software Engineering}}}} \emph{(\bibinfo{series}{{{ASE}} '22})}. \bibinfo{publisher}{Association for Computing Machinery}, \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{1--11}.
+\newblock
+\showISBNx{978-1-4503-9475-8}
+\href{https://doi.org/10.1145/3551349.3556962}{doi:\nolinkurl{10.1145/3551349.3556962}}
+
+
+\bibitem[P{\^i}rlea et~al\mbox{.}(2025)]%
+        {pirleaVeilFrameworkAutomated2025a}
+\bibfield{author}{\bibinfo{person}{George P{\^i}rlea}, \bibinfo{person}{Vladimir Gladshtein}, \bibinfo{person}{Elad Kinsbruner}, \bibinfo{person}{Qiyuan Zhao}, {and} \bibinfo{person}{Ilya Sergey}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Veil: {{A Framework}} for~{{Automated}} and~{{Interactive Verification}} of~{{Transition Systems}}}. In \bibinfo{booktitle}{\emph{Computer {{Aided Verification}}: 37th {{International Conference}}, {{CAV}} 2025, {{Zagreb}}, {{Croatia}}, {{July}} 23-25, 2025, {{Proceedings}}, {{Part III}}}}. \bibinfo{publisher}{Springer-Verlag}, \bibinfo{address}{Berlin, Heidelberg}, \bibinfo{pages}{26--41}.
+\newblock
+\showISBNx{978-3-031-98681-9}
+\href{https://doi.org/10.1007/978-3-031-98682-6_2}{doi:\nolinkurl{10.1007/978-3-031-98682-6_2}}
+
+
+\bibitem[P{\^i}rlea and Sergey(2018)]%
+        {pirleaMechanisingBlockchainConsensus2018}
+\bibfield{author}{\bibinfo{person}{George P{\^i}rlea} {and} \bibinfo{person}{Ilya Sergey}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Mechanising Blockchain Consensus}. In \bibinfo{booktitle}{\emph{Proceedings of the 7th {{ACM SIGPLAN International Conference}} on {{Certified Programs}} and {{Proofs}}}}. \bibinfo{publisher}{ACM}, \bibinfo{address}{Los Angeles CA USA}, \bibinfo{pages}{78--90}.
+\newblock
+\showISBNx{978-1-4503-5586-5}
+\href{https://doi.org/10.1145/3167086}{doi:\nolinkurl{10.1145/3167086}}
+
+
+\bibitem[Sergey et~al\mbox{.}(2017)]%
+        {sergeyProgrammingProvingDistributed2017}
+\bibfield{author}{\bibinfo{person}{Ilya Sergey}, \bibinfo{person}{James~R. Wilcox}, {and} \bibinfo{person}{Zachary Tatlock}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Programming and Proving with Distributed Protocols}.
+\newblock \bibinfo{journal}{\emph{Proc. ACM Program. Lang.}} \bibinfo{volume}{2}, \bibinfo{number}{POPL} (\bibinfo{date}{Dec.} \bibinfo{year}{2017}), \bibinfo{pages}{28:1--28:30}.
+\newblock
+\href{https://doi.org/10.1145/3158116}{doi:\nolinkurl{10.1145/3158116}}
+
+
+\bibitem[Tsuchiya and Schiper(2008)]%
+        {tsuchiyaUsingBoundedModel2008}
+\bibfield{author}{\bibinfo{person}{Tatsuhiro Tsuchiya} {and} \bibinfo{person}{Andr{\'e} Schiper}.} \bibinfo{year}{2008}\natexlab{}.
+\newblock \showarticletitle{Using {{Bounded Model Checking}} to {{Verify Consensus Algorithms}}}. In \bibinfo{booktitle}{\emph{Proceedings of the 22nd International Symposium on {{Distributed Computing}}}} \emph{(\bibinfo{series}{{{DISC}} '08})}. \bibinfo{publisher}{Springer-Verlag}, \bibinfo{address}{Berlin, Heidelberg}, \bibinfo{pages}{466--480}.
+\newblock
+\showISBNx{978-3-540-87778-3}
+\href{https://doi.org/10.1007/978-3-540-87779-0_32}{doi:\nolinkurl{10.1007/978-3-540-87779-0_32}}
+
+
+\bibitem[Wilcox et~al\mbox{.}(2015)]%
+        {wilcoxVerdiFrameworkImplementing2015}
+\bibfield{author}{\bibinfo{person}{James~R. Wilcox}, \bibinfo{person}{Doug Woos}, \bibinfo{person}{Pavel Panchekha}, \bibinfo{person}{Zachary Tatlock}, \bibinfo{person}{Xi Wang}, \bibinfo{person}{Michael~D. Ernst}, {and} \bibinfo{person}{Thomas Anderson}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Verdi: A Framework for Implementing and Formally Verifying Distributed Systems}. In \bibinfo{booktitle}{\emph{Proceedings of the 36th {{ACM SIGPLAN Conference}} on {{Programming Language Design}} and {{Implementation}}}} \emph{(\bibinfo{series}{{{PLDI}} '15})}. \bibinfo{publisher}{Association for Computing Machinery}, \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{357--368}.
+\newblock
+\showISBNx{978-1-4503-3468-6}
+\href{https://doi.org/10.1145/2737924.2737958}{doi:\nolinkurl{10.1145/2737924.2737958}}
+
+
+\bibitem[Zhao et~al\mbox{.}(2024)]%
+        {zhaoCompositionalVerificationComposite2024}
+\bibfield{author}{\bibinfo{person}{Qiyuan Zhao}, \bibinfo{person}{George P{\^i}rlea}, \bibinfo{person}{Karolina Grzeszkiewicz}, \bibinfo{person}{Seth Gilbert}, {and} \bibinfo{person}{Ilya Sergey}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Compositional {{Verification}} of {{Composite Byzantine Protocols}}}. In \bibinfo{booktitle}{\emph{Proceedings of the 2024 on {{ACM SIGSAC Conference}} on {{Computer}} and {{Communications Security}}}} \emph{(\bibinfo{series}{{{CCS}} '24})}. \bibinfo{publisher}{Association for Computing Machinery}, \bibinfo{address}{New York, NY, USA}, \bibinfo{pages}{34--48}.
+\newblock
+\showISBNx{979-8-4007-0636-3}
+\href{https://doi.org/10.1145/3658644.3690355}{doi:\nolinkurl{10.1145/3658644.3690355}}
+
+
+\end{thebibliography}
