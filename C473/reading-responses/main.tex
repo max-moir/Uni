@@ -2,74 +2,212 @@
 
 \usepackage[english]{babel}
 
-\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage[
+    letterpaper,
+    top=2cm,
+    bottom=2cm,
+    left=3cm,
+    right=3cm,
+    marginparwidth=1.75cm
+]{geometry}
 
-% Useful packages
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{amsthm}
 \usepackage{csquotes}
 \usepackage{algorithm, algpseudocode, float}
-
+\usepackage{enumitem}
+\usepackage{setspace}
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
-
 
 \title{COSC 473 Reading Responses}
 \author{
     Max Moir \\
     \textit{University of Canterbury} \\ 
-    \text{Christchurch, New Zealand} \\ 
+    Christchurch, New Zealand \\ 
     \texttt{maxwmoir@gmail.com}
 }
 
-% The proposal (PDF with 1-3 pages excluding references; single-column text) should identify the problem you wish to address and the motivation for doing so.
-% It should also identify prior attempts to solve the problem (or a related problem) and analyse why these attempts were insufficient.
-% The proposal should also provide an outline of the intended method for resolving the problem.
-% Please also discuss risks that may affect your project (for example, alert-level changes or unavailability of data/tools your project depends on) and how you will mitigate the risks.
-
 \begin{document}
+
 \maketitle
 
 \section{Introduction}
 
-Reading response answers
+These are the reading responses I wasn't able to turn in due to my clash with the start of the COSC473 lectures.
+I believe this covers every week that I didn't submit a response in class.
 
 \subsection{Week 4}
-IPFS was designed to be a decentralized, content-addressed, peer-to-peer foundation for the future of the web.
 
+\textit{IPFS was designed to be a decentralized, content-addressed, peer-to-peer foundation for the future of the web.}
+\textit{Based on the readings, discuss the following:}
+\textit{To what extent does the current reality of IPFS live up to its original idea?}
+\textit{Consider one way IPFS fulfills its vision and one way it falls short.}
+\\
+\\
 \noindent
-Based on the readings discuss the following:
-
-\noindent
-\emph{To what extent does the current reality of IPFS live up to its original idea?}
-
-\noindent
-Consider one way IPFS fulfills its vision and one way it falls short.
+One way that IPFS fulfills its vision is by providing a practical distributed data storage 
+application.
+This is self evident, as the paper details widespread usage in terms of individual retrievals and 
+integration in third party services.
+The paper shows presence in 2715 Autonomous Systems and 152 countries, 
+which quantifies the fulfillment of this goal for adoption.
+Additionally, this ensures IPFS is resistant to single points of failure.
+On the other hand, IPFS struggles with a high churn rate, and lower performance when contrasted with 
+its centralised peers. The paper states that only 2.5\% of peers stay online for more than 24 hours. 
+Additionally, the top 10 ASes contain almost 65\% of all peers.
+These are likely symptoms of the lack of reliance on centralised servers, 
+but show that IPFS is more consolidated than it intended to be.
 
 \subsection{Week 5}
-In a centralised system, responsibility for knowing where data is concentrated, but Kademlia distributes it.
-Kademlia is designed so that no one can control it. When is that a strength, and when might it be a problem?
 
-Think about where else in life or society we rely on local knowledge and word-of-mouth to make things work without a central coordinator.
+\textit{In a centralised system, responsibility for knowing where data is concentrated, but Kademlia distributes it.}
+\textit{Kademlia is designed so that no one can control it. When is that a strength, and when might it be a problem?}
+\textit{Think about where else in life or society we rely on local knowledge and word-of-mouth to make things work without a central coordinator.}
+\\
+\\
+\noindent
+The decentralized nature of Kademlia is a strength because it doesn't require a central coordinator.
+This means that individual peers communicate with each other to find the location of data, 
+and this cannot be limited by a governing body.
+A lack of central control means that applications like Kademlia are invulnerable to censorship,
+and cannot be limited by a malicious authority.
+An example similar to this in real life may be distributing information in opposition to an oppressive government.
+Here word of mouth is better than a central coordinator, because a coordinator might become an easy target.
+Additionally, if the central coordinator were to be shut down, it would render the entire service useless. 
+On the other hand, this lack of authority leads to a trustless environment.
+This means moderation is difficult, if possible, and this may be taken advantage of by unsavoury parties.
 
-\subsection{Week 5}
+\subsection{Week 6}
 
-What kinds of trust are present in Bitcoin, and how do they compare to the forms of trust in earlier systems or traditional finanical institutions?
-How does Bitcoin establish agreement on a shared history of transactions and how does that compare to Lamport's way of reasoning about order in distributed systems?
+\textit{What kinds of trust are present in Bitcoin, and how do they compare to the forms of trust in earlier systems or traditional financial institutions?}
+\textit{How does Bitcoin establish agreement on a shared history of transactions, and how does that compare to Lamport's way of reasoning about order in distributed systems?}
+\\
+\\
+\noindent
+The trust required for earlier systems and financial institutions centred primarily around the central authority.
+For example, in order to interact with traditional financial institutions, a user would need to trust the central server of, for example, a bank.
+This differs in Bitcoin, where events are recorded by a collection of untrusted nodes.
+The trust in this decentralized example is moved to the cryptographic algorithms and distributed consensus.
+The user must be sure that there are more honest nodes overall in the system than coordinated attackers.
+Moreover, the underlying protocols must be trusted to be secure, otherwise the funds in the system would be vulnerable.
+There must also be the consensus that tokens are valuable, or else the system would not be worthwhile.
+This differs from Lamport's way of reasoning about distributed systems, because it doesn't rely on logical ordering through clocks.
+Bitcoin as a distributed system relies on consensus between nodes, with all transactions publicly available and their validity determined by probabilistic consensus.
 
+\subsection{Week 7}
 
-\subsection{Week 6 and 7}
-\subsection{Week 7 and 8}
+\textit{Smart contracts --- I didn't see the question in the lecture recording, so I've summarised the required reading below.}
+\\
+\\
+\noindent
+A smart contract is an automatically executing program, that is stored on a blockchain.
+Users interacting with a smart contract do not need to trust a third party, such as a bank,
+because functionality is directly enforced in the code.
+When a smart contract is deployed, it is typically immutable and deterministic which ensures an 
+authority cannot alter the service that users are running. 
+This makes it difficult for continuous development, and bugs can become persistent in a contract.
+The article also highlights several potential applications where smart contracts might be valuable, such as:
+
+\begin{itemize}
+    \item \textit{NFTs}
+    \item \textit{Games}
+    \item \textit{Marketplaces}
+    \item \textit{Custom digital currencies}
+\end{itemize}
+
+\subsection{Week 8}
+
+\textit{Where did you notice the authors assumed a human is still somewhere in the loop?}
+\textit{Consider a system where those roles are replaced by AI agents (as explored in ecosystems like NEAR Protocol).}
+\textit{Do you think this shift strengthens or weakens the original smart contract thesis? Consider autonomy, verifiability, and security.}
+\\
+\\
+\noindent
+In the applications section of the whitepaper,
+human interaction in the form of arbiters is assumed in several locations.
+For example, human decision about the trustworthiness of different parties is mentioned in multiple places.
+In one case, with humans evaluating the trustworthiness of organisations, and in another case determining the reputation of each other.
+Additionally, it is mentioned that humans could vote in DAOs to collectively decide how an organisation might allocate its funds.
+I think the shift from human input to an AI agent doesn't necessarily strengthen or weaken the original smart contract thesis
+but shifts the problem entirely.
+There are multiple applications in which an AI arbiter might be a stronger approach, particularly in terms of autonomy.
+For example, systems where there may need to be many low impact decisions made in quick succession, 
+which might be time consuming for a human but easy for an agent.
+Verifiability is another issue for agentic systems, because it is often difficult to determine the validity of the claims of an agent.
+This might arise as an issue if one of the parties is not satisfied with the decision of an AI arbiter.
+
 \subsection{Week 9}
-\subsection{Week 10}
-\subsection{Week 11}
 
+\textit{Think of tokens as programmable incentives inside a system.}
+\textit{Pick a simple dApp idea (e.g., peer tutoring marketplace, community library, campus carpooling app).}
+\\
+\\
+\noindent
+I'll choose the idea of a peer tutoring marketplace.
 
+\begin{itemize}
+    \item \textit{What is one specific user action you want to encourage?}
+            \\
+            \\
+            \noindent
+            One user action that one would want to encourage is showing up after booking a tutoring session.
+            If neither of the users is required to show up after organising a session, it would reduce the utility of the application.
 
+    \item \textit{How does a token cause or enforce that action?}
+            \\
+            \\
+            \noindent
+            Using a token in the system provides a monetary incentive for users to provide the
+            services that they've advertised. For example, if a tutor gets paid per successful 
+            tutoring session, an internal token would incentivise them to show up and tutor.
+            Additionally, the student would be incentivised to get the value from their payment
+            so they would be more likely to go to a session as well.
 
+    \item \textit{What can users do with the token inside your system (not just trade or sell it)?}
+            \\
+            \\
+            \noindent
+            In this system, a student would be able to use the token to purchase services from a tutor.
+            A user would be able to advertise a tutoring session in a specific topic at a certain rate.
+            This would lead to a marketplace in which tutors could compete to offer the best services in a specific area.
+            The competition in this model would hopefully lead to fairer compensation for higher performing teachers.
 
+    \item \textit{If you removed the token, what would break or become significantly worse?}
+            \\
+            \\
+            \noindent
+            This system would become significantly worse because it would not allow for the tutors to get paid for 
+            their work. This would make it difficult to attract talent, as all the tutors would need to be volunteers.
+            This would likely significantly reduce the userbase of the application, both on the student and tutor sides.
+            
+\end{itemize}
+\textit{Keep the answer to approximately one sentence per question.}
+
+\subsection{ Week 10 / Week 11}
+
+\textit{The paper identifies four risk categories:}
+\begin{itemize}
+    \item \textit{software security}
+    \item \textit{transaction costs}
+    \item \textit{governance}
+    \item \textit{systemic risk}
+\end{itemize}
+\textit{Which do you think poses the greatest barrier to mainstream DeFi adoption, and why?}
+\\
+\\
+\noindent
+This risk category that I believe poses the greatest barrier to mainstream DeFi
+adoption is software security.
+This is because in smart contracts, bugs are permanent and can often be exploited without defence.
+In an economically critical section such as finance, this could cause immeasurable damage.
+Governance and transaction cost concerns do raise questions about the relative efficiency of a decentralized approach,
+but the software security and continuous development issues are much more serious for potential investors.
+The attack surface covers both the exploitation of smart contracts and oracles,
+and potential attacks could have a detrimental impact on the entire sector.
+Therefore software security issues pose the greatest barrier to broad DeFi adoption.
 
 \end{document}

@@ -1,0 +1,149 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{amsthm}
+\usepackage{csquotes}
+\usepackage{algorithm, algpseudocode, float}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+
+\title{Formal Verification of Lamport's Mutex Algorithm for \emph{N} processes}
+\author{
+    Max Moir \\
+    \textit{University of Canterbury} \\ 
+    \text{Christchurch, New Zealand} \\ 
+    \texttt{maxwmoir@gmail.com}
+}
+
+% The proposal (PDF with 1-3 pages excluding references; single-column text) should identify the problem you wish to address and the motivation for doing so.
+% It should also identify prior attempts to solve the problem (or a related problem) and analyse why these attempts were insufficient.
+% The proposal should also provide an outline of the intended method for resolving the problem.
+% Please also discuss risks that may affect your project (for example, alert-level changes or unavailability of data/tools your project depends on) and how you will mitigate the risks.
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+The mutual exclusion (mutex) problem, as originally introduced and solved by Dijkstra in \cite{dijkstra_solution_1965}, is a fundamental result in concurrent computing.
+Lamport's Bakery Algorithm (LBA) is a solution to the mutex problem published in  \cite{lamport_new_1974}.
+Lamport elaborates on this in \cite{lamport_mutual_1986}, analysing several solution variants.
+
+For $N \leq 5$ processes, LBA can be verified using a model checker such as TLA+, but exhaustive state expansion is not tractable for higher \emph{N}. 
+The goal of this project is to develop a formal model of LBA generalised to any finite number of concurrent processes. 
+The model will be implemented in Lean4 to ensure that it maintains several required properties.
+
+
+\subsection{Problem Statement}
+
+The mutex problem is summarized by Dijkstra in \cite{dijkstra_solution_1965} as follows.
+
+\blockquote{
+To begin, consider \emph{N} computers, each engaged in a process which, for our aims, can be regarded as cyclic.
+In each of the cycles a so-called ``critical section'' occurs and the computers have to be programmed in such a way that at any moment only one of these \emph{N} cyclic processes is in its critical section.
+}
+
+\noindent 
+A more detailed formalization of the problem was introduced by Lamport in \cite{lamport_mutual_1986}, from which this proposal will take its terminology.
+Assuming that the \emph{i}th process oscillates between critical and non-critical sections, we can represent its sequence of elementary executions as:
+
+\[
+    NCS_{i}^{[1]} \rightarrow CS_{i}^{[1]} \rightarrow NCS_{i}^{[2]} \rightarrow CS_{i}^{[2]} \rightarrow \ldots
+\]
+
+\noindent
+As explained in \cite{lamport_mutual_1986}, there are multiple properties that must be shown to always hold to prove the correctness of the algorithm.
+This project will focus on the following two properties, in which $CS_i^{[k]}$ denotes the \emph{k}-th execution of process \emph{i}'s critical section.
+
+
+\begin{definition}[Mutual Exclusion Property]
+    For any pair of distinct processes i and j, no pair of operation executions $ CS_{i}^{[k]} $ and $ CS_{j}^{[k']} $ are concurrent.
+\end{definition}
+
+\begin{definition}[Deadlock Freedom Property]
+    If there exists a looping process, then there exist an infinite number of critical section operation executions.
+\end{definition}
+
+\noindent
+For a proof to be valid, these two properties must be shown to hold for every process in all state combinations. 
+There are several variants of LBA that satisfy stronger requirements, but these are outside the scope of this project.
+
+\subsection{Formal verification in Lean4}
+
+Lean4 is a functional programming language and theorem prover with extensive mathematical tooling.
+Recently, it has been used to formalize and prove many problems in mathematics, including, for example, some of the Erdős problems.
+Currently, there are efforts in the Lean4 community to verify further problems, such as Andrew Wiles' proof of Fermat's Last Theorem. 
+It can be used equally to ensure invariants within programs, and to prove mathematical theorems. 
+This project will use Lean4 to implement an invariance proof that LBA ensures mutual exclusion and deadlock freedom.
+
+\section{ Motivation }
+
+Formal verification is a topical field in modern Computer Science. 
+Proving the correctness of programs is not only elegant in a theoretical sense, but is often necessary in mission-critical applications.
+Due to the difficulty in formalizing programs, reliability in industry is often left to automated testing. 
+However, in specific circumstances where correctness must be ensured, formal proofs may be required. 
+
+This specific problem was chosen because it is a fundamental result in concurrent programming. Writing a formal proof for it acts as a benchmark that displays the capabilities of formal verification.
+Additionally, it is challenging to verify the correctness of LBA for \emph{N} processes without employing an inductive approach such as this one.  
+
+Lean4 was chosen for similar reasons.
+Recently, it has been receiving attention for the depth of its mathematical coverage.
+Its library mathlib provides mathematical foundations and data structures that will be useful in the proof of this algorithm.
+The decision to choose Lean4 was also motivated by its contemporary relevance.
+
+\section{Related Works}
+
+In addition to the problem statements by Lamport and Dijkstra mentioned previously, there are several other papers that will likely be included in the literature survey.
+For example, in \cite{nigroCorrectnessVerificationMutual2024}, Nigro proves mutual exclusion for $ N \le 5 $ processes using exhaustive model checking.
+This result is effective for limited processes but cannot show LBA holds for larger finite numbers of processes, due to the state space expansion problem.
+Earlier this year, Nigro and Cicirelli published another formalization (\cite{nigroStatisticalModelChecking2026}) of LBA, which uses a statistical model checking approach.
+This approach can scale for $ N > 5 $ processes, but is not as general as employing an inductive approach.
+
+Another paper, \cite{ogataFormalAnalysisBakery2008}, proves LBA satisfies the mutual exclusion protocol in CafeOBJ.
+\cite{ogataFormalAnalysisBakery2008} employs an approach similar to one used in this project, although its implementation is more limited. 
+It verifies that mutual exclusion holds, but does not verify other properties such as deadlock freedom, which this project aims to accomplish.
+The overall system may be modelled with a node for each process, as explained by Lamport in \cite{lamportDeconstructingBakeryBuild2022}.
+
+\section{Methodology}
+
+This project will use a distributed state machine with invariance proofs that ensure mutual exclusion and deadlock freedom.
+These properties can be maintained by creating an inductive invariant, which is proved in each state transition.
+The overall system may be modelled with a node for each process, as explained by Lamport in \cite{lamportDeconstructingBakeryBuild2022}.
+
+This project will implement the one-bit variant of LBA, as defined in section 3.2 of \cite{lamport_mutual_1986}. 
+It is also noted in \cite{wooNoteLamportsMutual1990} that the ticket numbers of waiting processes in LBA have the potential to grow indeterminately large.
+The paper poses a solution to this issue by moving ticket numbers around a ring of length \emph{2N}. This project will follow the same approach.
+
+The model will consist of methods used to transition processes between states, with a validity invariant ensured after each change. 
+It will show that for any finite \emph{N} independent processes, the mutual exclusion and deadlock freedom properties will always hold across the model's processes.
+
+
+\subsection{Risks}
+
+The primary risk of this project is a poorly estimated scope.
+To mitigate against this, the project has been chosen such that it is extensible. 
+If a model can be made that meets the previously defined requirements before the project conclusion,
+the scope can be adjusted to include another of the algorithms mentioned in section 3 of \cite{lamport_mutual_1986}.
+Alternatively, additional properties of the original algorithm may be formally verified.
+
+Moreover, scope creep could cause the project to change focus without meeting its initial requirements.
+To mitigate against this, the project will strictly adhere to the previously defined methodology. 
+Additional problems will not be included until the original requirements are met.
+
+Other risks, such as unavailability of resources or tools, are not relevant to this project.
+The only tool required for the project is Lean4, which is open source, so it is improbable that it will become unavailable.
+
+\bibliographystyle{abbrv}
+\bibliography{sample}
+
+\end{document}
