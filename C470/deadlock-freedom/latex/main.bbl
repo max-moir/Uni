@@ -1,38 +1,23 @@
 \begin{thebibliography}{1}
 
-\bibitem{dijkstra_solution_1965}
-E.~W. Dijkstra.
-\newblock Solution of a problem in concurrent programming control.
-\newblock {\em Communications of the ACM}, 8(9):569, Sept. 1965.
+\bibitem{hesselinkMechanicalVerificationLamports2013}
+W.~H. Hesselink.
+\newblock Mechanical verification of {{Lamport}}'s {{Bakery}} algorithm.
+\newblock {\em Science of Computer Programming}, 78(9):1622--1638, Sept. 2013.
 
-\bibitem{lamport_mutual_1986}
-L.~Lamport.
-\newblock The mutual exclusion problem: {partII}—statement and solutions.
-\newblock {\em Journal of the ACM}, 33(2):327--348, Apr. 1986.
+\bibitem{hesselinkCorrectnessConcurrentComplexity2016}
+W.~H. Hesselink.
+\newblock Correctness and concurrent complexity of the {{Black-White Bakery Algorithm}}.
+\newblock {\em Formal Aspects of Computing}, 28(2):325--341, Apr. 2016.
 
-\bibitem{lamportDeconstructingBakeryBuild2022}
-L.~Lamport.
-\newblock Deconstructing the bakery to build a distributed state machine.
-\newblock {\em Communications of the ACM}, 65(9):58--66, Sept. 2022.
+\bibitem{lamportHoareLogicCSP1984}
+L.~Lamport and F.~B. Schneider.
+\newblock The ``{{Hoare Logic}}'' of {{CSP}}, and {{All That}}.
+\newblock {\em ACM Transactions on Programming Languages and Systems}, 6(2):281--296, Apr. 1984.
 
-\bibitem{nigroCorrectnessVerificationMutual2024}
-L.~Nigro and F.~Cicirelli.
-\newblock Correctness {{Verification}} of {{Mutual Exclusion Algorithms}} by {{Model Checking}}.
-\newblock {\em Modelling}, 5(3):694--719, Sept. 2024.
-
-\bibitem{nigroStatisticalModelChecking2026}
-L.~Nigro and F.~Cicirelli.
-\newblock Statistical {{Model Checking}} of {{Lamport}}'s {{Bakery Mutual Exclusion Algorithm}}.
-\newblock In N.~Atulya~K., J.~Dharm~Singh, M.~Durgesh~Kumar, and A.~Joshi, editors, {\em Intelligent {{Sustainable Systems}}}, pages 142--152, Cham, 2026. Springer Nature Switzerland.
-
-\bibitem{ogataFormalAnalysisBakery2008}
-K.~Ogata and K.~Futatsugi.
-\newblock Formal {{Analysis}} of the {{Bakery Protocol}} with {{Consideration}} of {{Nonatomic Reads}} and {{Writes}}.
-\newblock In S.~Liu, T.~Maibaum, and K.~Araki, editors, {\em Formal {{Methods}} and {{Software Engineering}}}, pages 187--206, Berlin, Heidelberg, 2008. Springer.
-
-\bibitem{wooNoteLamportsMutual1990}
-T.-K. Woo.
-\newblock A note on {{Lamport}}'s mutual exclusion algorithm.
-\newblock {\em ACM SIGOPS Operating Systems Review}, 24(4):78--80, Sept. 1990.
+\bibitem{owickiProvingLivenessProperties1982}
+S.~Owicki and L.~Lamport.
+\newblock Proving {{Liveness Properties}} of {{Concurrent Programs}}.
+\newblock {\em ACM Transactions on Programming Languages and Systems}, 4(3):455--495, July 1982.
 
 \end{thebibliography}

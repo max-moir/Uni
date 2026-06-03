@@ -1,0 +1,82 @@
+\begin{thebibliography}{10}
+
+\bibitem{dijkstra_solution_1965}
+E.~W. Dijkstra.
+\newblock Solution of a problem in concurrent programming control.
+\newblock {\em Communications of the ACM}, 8(9):569, Sept. 1965.
+
+\bibitem{dijkstraSolutionProblem1965}
+E.~W. Dijkstra.
+\newblock Solution of a problem in concurrent programming control.
+\newblock {\em Communications of the ACM}, 8(9):569, Sept. 1965.
+
+\bibitem{hawblitzelIronFleetProvingPractical2015}
+C.~Hawblitzel, J.~Howell, M.~Kapritsos, J.~R. Lorch, B.~Parno, M.~L. Roberts, S.~Setty, and B.~Zill.
+\newblock {{IronFleet}}: Proving practical distributed systems correct.
+\newblock In {\em Proceedings of the 25th {{Symposium}} on {{Operating Systems Principles}}}, {{SOSP}} '15, pages 1--17, New York, NY, USA, Oct. 2015. Association for Computing Machinery.
+
+\bibitem{hesselinkMechanicalVerificationLamports2013}
+W.~H. Hesselink.
+\newblock Mechanical verification of {{Lamport}}'s {{Bakery}} algorithm.
+\newblock {\em Science of Computer Programming}, 78(9):1622--1638, Sept. 2013.
+
+\bibitem{hesselinkCorrectnessConcurrentComplexity2016}
+W.~H. Hesselink.
+\newblock Correctness and concurrent complexity of the {{Black-White Bakery Algorithm}}.
+\newblock {\em Formal Aspects of Computing}, 28(2):325--341, Apr. 2016.
+
+\bibitem{lamportSafetyLivenessFairness}
+L.~Lamport.
+\newblock Safety, {{Liveness}}, and {{Fairness}}.
+
+\bibitem{lamport_new_1974}
+L.~Lamport.
+\newblock A new solution of {Dijkstra}'s concurrent programming problem.
+\newblock {\em Commun. ACM}, 17(8):453--455, Aug. 1974.
+
+\bibitem{lamport_mutual_1986}
+L.~Lamport.
+\newblock The mutual exclusion problem: {partII}—statement and solutions.
+\newblock {\em Journal of the ACM}, 33(2):327--348, Apr. 1986.
+
+\bibitem{lamport2001paxos}
+L.~Lamport.
+\newblock Paxos made simple.
+\newblock {\em ACM SIGACT News}, 32(4):18--25, November 2001.
+
+\bibitem{lamportByzantineGeneralsProblem2019}
+L.~Lamport, R.~Shostak, and M.~Pease.
+\newblock The {{Byzantine}} generals problem.
+\newblock In {\em Concurrency: The {{Works}} of {{Leslie Lamport}}}, pages 203--226. Association for Computing Machinery, New York, NY, USA, Oct. 2019.
+
+\bibitem{owickiProvingLivenessProperties1982}
+S.~Owicki and L.~Lamport.
+\newblock Proving {{Liveness Properties}} of {{Concurrent Programs}}.
+\newblock {\em ACM Transactions on Programming Languages and Systems}, 4(3):455--495, July 1982.
+
+\bibitem{pirleaVeilFrameworkAutomated2025a}
+G.~P{\^i}rlea, V.~Gladshtein, E.~Kinsbruner, Q.~Zhao, and I.~Sergey.
+\newblock Veil: {{A Framework}} for~{{Automated}} and~{{Interactive Verification}} of~{{Transition Systems}}.
+\newblock In {\em Computer {{Aided Verification}}: 37th {{International Conference}}, {{CAV}} 2025, {{Zagreb}}, {{Croatia}}, {{July}} 23-25, 2025, {{Proceedings}}, {{Part III}}}, pages 26--41, Berlin, Heidelberg, July 2025. Springer-Verlag.
+
+\bibitem{sergeyProgrammingProvingDistributed2017}
+I.~Sergey, J.~R. Wilcox, and Z.~Tatlock.
+\newblock Programming and proving with distributed protocols.
+\newblock {\em Proc. ACM Program. Lang.}, 2(POPL):28:1--28:30, Dec. 2017.
+
+\bibitem{vinLeanLTLUnifyingFramework2025}
+E.~Vin, K.~A. Miller, and D.~J. Fremont.
+\newblock {{LeanLTL}}: {{A}} unifying framework for linear temporal logics in {{Lean}}.
+\newblock https://arxiv.org/abs/2507.01780v1, July 2025.
+
+\bibitem{wilcoxVerdiFrameworkImplementing2015}
+J.~R. Wilcox, D.~Woos, P.~Panchekha, Z.~Tatlock, X.~Wang, M.~D. Ernst, and T.~Anderson.
+\newblock Verdi: A framework for implementing and formally verifying distributed systems.
+\newblock In {\em Proceedings of the 36th {{ACM SIGPLAN Conference}} on {{Programming Language Design}} and {{Implementation}}}, {{PLDI}} '15, pages 357--368, New York, NY, USA, June 2015. Association for Computing Machinery.
+
+\bibitem{yuFormalVerificationMutex2012}
+X.-f. Yu and W.~Hui.
+\newblock Formal verification of mutex of concurrent system.
+\newblock In {\em International {{Conference}} on {{Automatic Control}} and {{Artificial Intelligence}} ({{ACAI}} 2012)}, pages 1077--1082, Mar. 2012.
+
+\end{thebibliography}

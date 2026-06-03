@@ -20,9 +20,6 @@
 \title{Deadlock Freedom}
 \author{
     Max Moir \\
-    \textit{University of Canterbury} \\ 
-    \text{Christchurch, New Zealand} \\ 
-    \texttt{maxwmoir@gmail.com}
 }
 
 % The proposal (PDF with 1-3 pages excluding references; single-column text) should identify the problem you wish to address and the motivation for doing so.
@@ -33,17 +30,43 @@
 \begin{document}
 \maketitle
 
-\section{Introduction}
+\section{Question}
 
-Hello Chenyi, I 
+Hello Chenyi, I wanted to address some confusion I have about the definition of deadlock freedom.
+It seems that in some papers deadlock freedom is expressed as a liveness property,
+expressing progress, whereas in others it is a safety property.
+You have suggested I should treat it as a liveness property,
+assuming fairness and reasoning about the execution path using temporal logic.
+In some of the papers I've seen, abscence of deadlock is treated as a safety property,
+where one must just prove that it impossible to reach a deadlocked state.
+For example, it is described this way in the following two papers.
 
-\section{Background}
+In \cite{lamportHoareLogicCSP1984}, Lamport writes:
+\emph{``Examples of safety properties are deadlock freedom, where Etern asserts that the program is not in a deadlock state, and mutual exclusion, where Etern asserts that two processes are not both in their critical sections.''}
+This definition of deadlock freedom describes it differently, in way such that it could 
+be represented simply as an invariant like mutex.
 
-\section{Literature review}
+Also, in \cite{owickiProvingLivenessProperties1982}:
+\emph{``Note that the absence of deadlock is a safety property, since it implies that a bad state (one in which both processes are waiting) cannot occur. Hence, it can be proved with the method described in Section 4.''}
+In this paper following definition is also given.
+\emph{``Absence of deadlock: the program never enters a state in which no further progress is possible.''}
+These definitions are more limited than the one we talked about, so I'm wondering whether proving deadlock 
+freedom in this way is sufficient.
 
-\section{Progress to date}
+\section{Example papers}
+Additionally, in these two papers by Hesselink, in which different variants of the 
+Bakery algorithm are formally verified, 
+he proves abscence of deadlock by showing deadlock states are not reachable.
+In the first \cite{hesselinkMechanicalVerificationLamports2013}, he states:
+\emph{``Absence of deadlock means that, when there is a competing process (a process not at 10), there is a competing process that can do a forward step. Of course, absence of deadlock is required only in reachable states. We may therefore use available invariants.''}
 
-\section{Future Work}
+Similarly, in another of his papers \cite{hesselinkCorrectnessConcurrentComplexity2016} he writes:
+\emph{``The transition system is said to be in deadlock iff there are competing threads and no (competing) thread can do a forward step. Absence of deadlock means that deadlock states are not reachable.''}
+Based on the proofs given in these papers (and some others I've seen), a invariant based approach also seems sufficient.
 
+
+
+\bibliographystyle{abbrv}
+\bibliography{sample}
 
 \end{document}
