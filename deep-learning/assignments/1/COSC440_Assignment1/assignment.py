@@ -40,8 +40,6 @@ class Model:
         """
         return inputs @ self.W.T + self.b
         
-
-
     def back_propagation(self, inputs, outputs, labels):
         """
         Returns the gradients for model's weights and biases
@@ -59,24 +57,32 @@ class Model:
         # TODO: calculate the gradients for the weights and the gradients for the bias with respect to average loss
         # HINT: np.argmax(outputs, axis=1) will give the index of the largest output
 
-        inputs = np.array(inputs)
-        y = labels - (outputs > 0)
+        # y = labels - (outputs > 0)
 
-        print(y.shape, inputs.shape)
+        # Each perceptron has its own y^c
+        # yc =	+1 if expected == c and argmax(f(x)) != c
+        #         -1 if expected != c and argmax(f(x)) == c
+        #         0 otherwise
 
+        classes = np.array([x for x in range(self.num_classes)])
+        bests = np.argmax(outputs, axis=1).reshape((self.batch_size, 1))
 
-        np.set_printoptions(precision=3, suppress=True)
-        print(y[0])
-        print(inputs[0])
+        conditions = [
+            (labels == classes) & (bests != classes),
+            (labels != classes) & (bests == classes),
+        ]
 
-        dw = y 
+        choices = [
+            1,
+            -1
+        ]
 
+        Y = np.select(conditions, choices, default=0)
 
-        exit()
-        return 
+        dW = (inputs.T @ Y) / self.batch_size
+        dB = np.mean(Y, axis=0)
 
-
-
+        return dW, dB
 
     def accuracy(self, outputs, labels):
         """
@@ -87,6 +93,9 @@ class Model:
         :return: Float (0,1) that contains batch accuracy
         """
         # TODO: calculate the batch accuracy
+        predictions = np.argmax(outputs, axis=1).reshape((outputs.shape[0], 1))
+        correct = predictions == labels
+        return np.mean(correct)
 
     def gradient_descent(self, gradW, gradB):
         """
@@ -97,6 +106,10 @@ class Model:
         :return: None
         """
         # TODO: change the weights and biases of the model to descent the gradient
+        self.W += gradW.T * self.learning_rate
+        self.b += gradB.T * self.learning_rate
+
+
 
 def train(model, train_inputs, train_labels):
     """
@@ -117,9 +130,6 @@ def train(model, train_inputs, train_labels):
         # TODO: For every batch, compute then descend the gradients for the model's weights
         probabilities = model.call(inputs)
         gradientsW, gradientsB = model.back_propagation(inputs, probabilities, labels)
-
-        
-        return
         model.gradient_descent(gradientsW, gradientsB)
 
 
@@ -134,7 +144,10 @@ def test(model, test_inputs, test_labels):
     """
 
     # TODO: Iterate over the testing inputs and labels
+    outputs = model.call(test_inputs)
+
     # TODO: Return accuracy across testing set
+    model.accuracy(outputs, test_labels)
 
 def visualize_results(image_inputs, probabilities, image_labels):
     """
@@ -171,7 +184,7 @@ def main(mnist_data_folder):
     """
 
     # TODO: load MNIST train and test examples into train_inputs, train_labels, test_inputs, test_labels
-    N = 300
+    N = 3000
     train_inputs_path = f"{mnist_data_folder}/{TRAIN_INPUTS_FILENAME}"
     train_labels_path = f"{mnist_data_folder}/{TRAIN_LABELS_FILENAME}"
     test_inputs_path = f"{mnist_data_folder}/{TEST_INPUTS_FILENAME}"
@@ -187,11 +200,14 @@ def main(mnist_data_folder):
     train(model, train_inputs, train_labels)
 
     # TODO: Test the accuracy by calling test() after running train()
+    accuracy = test(model, test_inputs, test_labels)
+    print(accuracy)
 
     # TODO: Visualize the data by using visualize_results()
+    num_results = 20
+    outputs = model.call(test_inputs[0:num_results])
+    visualize_results(test_inputs[0:num_results], outputs, test_labels[0:num_results])
 
-    visualize_results(train_inputs[0:10], train_inputs[0:10], train_labels[0:10])
-    visualize_results(test_inputs[0:10], test_labels[0:10], train_labels[0:10])
 
     print("end of assignment 1")
 

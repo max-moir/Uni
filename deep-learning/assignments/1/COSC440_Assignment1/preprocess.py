@@ -50,6 +50,6 @@ def get_data(inputs_file_path : str, labels_file_path: str, num_examples: int):
             A = np.frombuffer(buffer, np.uint8)
             labels.append(A)
 
-    return inputs, labels
+    return np.array(inputs), np.array(labels)
 
 
