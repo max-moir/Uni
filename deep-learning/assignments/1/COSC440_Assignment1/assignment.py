@@ -4,6 +4,9 @@ import numpy as np
 from preprocess import get_data
 import gzip, os
 
+TRAIN_EXAMPLES = 60_000
+TEST_EXAMPLES = 10_000
+
 TRAIN_INPUTS_FILENAME = "train-images-idx3-ubyte.gz"
 TRAIN_LABELS_FILENAME = "train-labels-idx1-ubyte.gz"
 TEST_INPUTS_FILENAME = "t10k-images-idx3-ubyte.gz"
@@ -21,13 +24,11 @@ class Model:
     """
 
     def __init__(self):
-        # TODO: Initialize all hyperparametrs
         self.input_size = 784 # Size of image vectors
         self.num_classes = 10 # Number of classes/possible labels
         self.batch_size = 100
         self.learning_rate = 0.5
 
-        # TODO: Initialize weights and biases
         self.W = np.full([self.num_classes, self.input_size], 0.0)
         self.b = np.full([self.num_classes], 0.0)
 
@@ -54,16 +55,6 @@ class Model:
         :param labels: true labels
         :return: gradient for weights, and gradient for biases
         """
-        # TODO: calculate the gradients for the weights and the gradients for the bias with respect to average loss
-        # HINT: np.argmax(outputs, axis=1) will give the index of the largest output
-
-        # y = labels - (outputs > 0)
-
-        # Each perceptron has its own y^c
-        # yc =	+1 if expected == c and argmax(f(x)) != c
-        #         -1 if expected != c and argmax(f(x)) == c
-        #         0 otherwise
-
         classes = np.array([x for x in range(self.num_classes)])
         bests = np.argmax(outputs, axis=1).reshape((self.batch_size, 1))
 
@@ -92,8 +83,9 @@ class Model:
         :param labels: test set labels
         :return: Float (0,1) that contains batch accuracy
         """
-        # TODO: calculate the batch accuracy
-        predictions = np.argmax(outputs, axis=1).reshape((outputs.shape[0], 1))
+
+        N = len(outputs)
+        predictions = np.argmax(outputs, axis=1).reshape((N, 1))
         correct = predictions == labels
         return np.mean(correct)
 
@@ -147,7 +139,7 @@ def test(model, test_inputs, test_labels):
     outputs = model.call(test_inputs)
 
     # TODO: Return accuracy across testing set
-    model.accuracy(outputs, test_labels)
+    return model.accuracy(outputs, test_labels)
 
 def visualize_results(image_inputs, probabilities, image_labels):
     """
@@ -183,35 +175,32 @@ def main(mnist_data_folder):
     :return: None
     """
 
-    # TODO: load MNIST train and test examples into train_inputs, train_labels, test_inputs, test_labels
-    N = 3000
+    # Load data
     train_inputs_path = f"{mnist_data_folder}/{TRAIN_INPUTS_FILENAME}"
     train_labels_path = f"{mnist_data_folder}/{TRAIN_LABELS_FILENAME}"
     test_inputs_path = f"{mnist_data_folder}/{TEST_INPUTS_FILENAME}"
     test_labels_path = f"{mnist_data_folder}/{TEST_LABELS_FILENAME}"
 
-    train_inputs, train_labels = get_data(train_inputs_path, train_labels_path, N)
-    test_inputs, test_labels = get_data(test_inputs_path, test_labels_path, N)
+    train_inputs, train_labels = get_data(train_inputs_path, train_labels_path, TRAIN_EXAMPLES)
+    test_inputs, test_labels = get_data(test_inputs_path, test_labels_path, TEST_EXAMPLES)
 
-    # TODO: Create Model
+    # Create Model
     model = Model()
 
-    # TODO: Train model by calling train() ONCE on all data
+    # Train model
     train(model, train_inputs, train_labels)
 
-    # TODO: Test the accuracy by calling test() after running train()
+    # Test the accuracy of the model
     accuracy = test(model, test_inputs, test_labels)
     print(accuracy)
 
-    # TODO: Visualize the data by using visualize_results()
+    # Visualize data 
     num_results = 20
     outputs = model.call(test_inputs[0:num_results])
     visualize_results(test_inputs[0:num_results], outputs, test_labels[0:num_results])
-
 
     print("end of assignment 1")
 
 
 if __name__ == '__main__':
-    #TODO: you might need to change this to something else if you run locally
     main("./MNIST_data")

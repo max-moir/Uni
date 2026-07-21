@@ -5,6 +5,7 @@ import numpy.typing as npt
 
 INPUT_HEADER_SIZE = 16
 LABEL_HEADER_SIZE = 8
+IMAGE_SIZE = 28 * 28
 
 def get_data(inputs_file_path : str, labels_file_path: str, num_examples: int):
     """
@@ -29,27 +30,20 @@ def get_data(inputs_file_path : str, labels_file_path: str, num_examples: int):
     :return: NumPy array of inputs as float32 and labels as int8
     """
 
-    # TODO: Load inputs and labels
-    inputs = [] 
-    labels = [] 
 
     with gzip.open(inputs_file_path, 'rb') as f:
         f.read(INPUT_HEADER_SIZE)
+        buffer = f.read(num_examples * IMAGE_SIZE)
 
-        for i in range(num_examples):
-            buffer = f.read(784)
-            A = np.frombuffer(buffer, np.uint8)
-            Normalized = (A.astype(np.uint32) / 255).astype(np.float32)
-            inputs.append(Normalized)
-        
+    inputs = np.frombuffer(buffer, np.uint8)
+    inputs = inputs.reshape((num_examples, IMAGE_SIZE)).astype(np.float32) / 255.0
+
     with gzip.open(labels_file_path, 'rb') as f:
         f.read(LABEL_HEADER_SIZE)
+        buffer = f.read(num_examples)
 
-        for _ in range(num_examples):
-            buffer = f.read(1)
-            A = np.frombuffer(buffer, np.uint8)
-            labels.append(A)
+    labels = np.frombuffer(buffer, np.uint8).reshape((num_examples, 1))
 
-    return np.array(inputs), np.array(labels)
+    return inputs, labels
 
 
