@@ -12,6 +12,11 @@ TRAIN_LABELS_FILENAME = "train-labels-idx1-ubyte.gz"
 TEST_INPUTS_FILENAME = "t10k-images-idx3-ubyte.gz"
 TEST_LABELS_FILENAME = "t10k-labels-idx1-ubyte.gz"
 
+INPUT_SIZE = 784
+NUM_CLASSES = 10
+BATCH_SIZE = 100
+LEARN_RATE = 0.5
+
 class Model:
     """
     This model class will contain the architecture for
@@ -24,10 +29,10 @@ class Model:
     """
 
     def __init__(self):
-        self.input_size = 784 # Size of image vectors
-        self.num_classes = 10 # Number of classes/possible labels
-        self.batch_size = 100
-        self.learning_rate = 0.5
+        self.input_size = INPUT_SIZE # Size of image vectors
+        self.num_classes = NUM_CLASSES # Number of classes/possible labels
+        self.batch_size = BATCH_SIZE
+        self.learning_rate = LEARN_RATE 
 
         self.W = np.zeros([self.num_classes, self.input_size])
         self.b = np.zeros([self.num_classes])
@@ -81,7 +86,8 @@ class Model:
         """
 
         N = len(outputs)
-        predictions = np.argmax(outputs, axis=1)
+        predictions = np.argmax(outputs, axis=1).reshape(N, 1)
+
         correct = predictions == labels
         return np.mean(correct)
 
@@ -193,7 +199,8 @@ def main(mnist_data_folder):
     # Visualize data 
     num_results = 20
     outputs = model.call(test_inputs[0:num_results])
-    visualize_results(test_inputs[0:num_results], outputs, test_labels[0:num_results])
+
+    visualize_results(test_inputs[0:num_results], outputs, test_labels[0:num_results].reshape((num_results)))
 
     print("end of assignment 1")
 
