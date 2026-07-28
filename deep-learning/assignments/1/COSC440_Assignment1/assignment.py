@@ -29,8 +29,8 @@ class Model:
         self.batch_size = 100
         self.learning_rate = 0.5
 
-        self.W = np.full([self.num_classes, self.input_size], 0.0)
-        self.b = np.full([self.num_classes], 0.0)
+        self.W = np.zeros([self.num_classes, self.input_size])
+        self.b = np.zeros([self.num_classes])
 
     def call(self, inputs):
         """
@@ -55,22 +55,18 @@ class Model:
         :param labels: true labels
         :return: gradient for weights, and gradient for biases
         """
-        classes = np.array([x for x in range(self.num_classes)])
-        bests = np.argmax(outputs, axis=1).reshape((self.batch_size, 1))
+        N = outputs.shape[0]
+        classes = np.arange(self.num_classes)
+        labels = labels.reshape((N, 1))
 
-        conditions = [
-            (labels == classes) & (bests != classes),
-            (labels != classes) & (bests == classes),
-        ]
+        bests = np.argmax(outputs, axis=1).reshape((N, 1))
 
-        choices = [
-            1,
-            -1
-        ]
+        condition1 = (labels == classes) & (bests != classes)
+        condition2 = (labels != classes) & (bests == classes)
 
-        Y = np.select(conditions, choices, default=0)
+        Y = np.select([condition1, condition2], [1, -1], default=0)
 
-        dW = (inputs.T @ Y) / self.batch_size
+        dW = (Y.T @ inputs) / N
         dB = np.mean(Y, axis=0)
 
         return dW, dB
@@ -85,7 +81,7 @@ class Model:
         """
 
         N = len(outputs)
-        predictions = np.argmax(outputs, axis=1).reshape((N, 1))
+        predictions = np.argmax(outputs, axis=1)
         correct = predictions == labels
         return np.mean(correct)
 
@@ -98,8 +94,8 @@ class Model:
         :return: None
         """
         # TODO: change the weights and biases of the model to descent the gradient
-        self.W += gradW.T * self.learning_rate
-        self.b += gradB.T * self.learning_rate
+        self.W += gradW * self.learning_rate
+        self.b += gradB * self.learning_rate
 
 
 
