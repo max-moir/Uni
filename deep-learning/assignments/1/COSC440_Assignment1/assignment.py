@@ -85,11 +85,8 @@ class Model:
         :return: Float (0,1) that contains batch accuracy
         """
 
-        N = len(outputs)
-        predictions = np.argmax(outputs, axis=1).reshape(N, 1)
-
-        correct = predictions == labels
-        return np.mean(correct)
+        predictions = np.argmax(outputs, axis=1).reshape(len(outputs), 1)
+        return np.mean(predictions == labels)
 
     def gradient_descent(self, gradW, gradB):
         """
