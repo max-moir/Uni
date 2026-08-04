@@ -81,7 +81,7 @@ class ModelPart1:
                                                          dtype=tf.float32,
                                                          stddev=0.1),
                               name="W2")
-        self.B2 = tf.Variable(tf.random.truncated_normal([second_layer_input, second_layer_output],
+        self.B2 = tf.Variable(tf.random.truncated_normal([1, second_layer_output],
                                                          dtype=tf.float32,
                                                          stddev=0.1),
                               name="B2")
@@ -95,9 +95,8 @@ class ModelPart1:
         :return: logits - a matrix of shape (num_inputs, num_classes); during training, it would be (batch_size, 2)
         """
         inputs = np.reshape(inputs, [inputs.shape[0],-1])
-        print(inputs.shape)
-
-        x = linear_unit(inputs, self.W1, self.B1)
+        layer1 = tf.nn.relu(linear_unit(inputs, self.W1, self.B1))
+        x = linear_unit(layer1, self.W2, self.B2)
         return x
 
 
@@ -227,7 +226,7 @@ def main(cifar10_data_folder):
 	test_inputs, test_labels = get_data(cifar10_data_folder + 'test', CLASS_CAT, CLASS_DOG)
 
 	# Init model
-	model = ModelPart0()
+	model = ModelPart1()
 
 	num_examples = len(train_inputs)
 
