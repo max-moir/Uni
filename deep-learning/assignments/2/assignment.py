@@ -245,7 +245,7 @@ def main(cifar10_data_folder):
 
 	num_results = 10
 	probabilities = model.call(test_inputs[0:num_results])
-	visualize_results(train_inputs[0:num_results], probabilities[0:num_results], test_labels, "dog", "cat")
+	visualize_results(test_inputs[0:num_results], probabilities[0:num_results], test_labels, "cat", "dog")
 
 
 
