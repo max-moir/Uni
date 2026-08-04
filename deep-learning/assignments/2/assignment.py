@@ -66,7 +66,13 @@ def loss(logits, labels):
 	:return: the loss of the model as a Tensor
 	"""
 
-	pass
+	return tf.nn.softmax_cross_entropy_with_logits(
+		labels,
+		logits,
+		axis=-1,
+	)
+
+
 
 def accuracy(logits, labels):
 	"""
@@ -100,18 +106,20 @@ def train(model, train_inputs, train_labels):
 
     # Train model
 	for start in range(0, len(train_inputs), model.batch_size):
-		inputs = train_inputs[start:start+model.batch_size]
+		inputs = tf.Variable(train_inputs[start:start+model.batch_size])
 		labels = train_labels[start:start+model.batch_size]
-		probabilities = model.call(inputs)
-		tf.nn.softmax_cross_entropy_with_logits
-		print(probabilities)
 
 
+		with tf.GradientTape() as tape:
 
-	# 	gradientsW, gradientsB = model.back_propagation(inputs, probabilities, labels)
-	# 	model.gradient_descent(gradientsW, gradientsB)
+			# Linear layer
+			logits = model.call(inputs)
 
-	return 
+			# Softmax / Loss
+			cur_loss = loss(logits, labels)
+
+		grad = tape.gradient(cur_loss, model.trainable_variables)
+		model.optimizer.apply_gradients(zip(grad, model.trainable_variables))
 
 
 
@@ -176,7 +184,7 @@ def main(cifar10_data_folder):
 	# Init model
 	model = ModelPart0()
 
-	TOTAL_EPOCHS = 1
+	TOTAL_EPOCHS = 25
 	num_examples = len(train_inputs)
 
 	indices = tf.range(num_examples)
@@ -187,12 +195,13 @@ def main(cifar10_data_folder):
 		tf.gather(train_labels, indices)
 		train(model, train_inputs, train_labels)
 
+		accuracy = test(model, test_inputs, test_labels)
+		print(f"Epoch: {epoch}, accuracy: {accuracy}")
 
 
-    # Test the accuracy of the model
-    # accuracy = test(model, test_inputs, test_labels)
-
-    # Visualize data 
+	num_results = 15
+	probabilities = model.call(test_inputs[0:num_results])
+	visualize_results(train_inputs, probabilities, train_labels, "dog", "cat")
 
 
 
