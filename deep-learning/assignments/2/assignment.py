@@ -2,16 +2,14 @@ from __future__ import absolute_import
 from matplotlib import pyplot as plt
 from preprocess import get_data
 from convolution import conv2d
-
-
 import os
 
-# Supress messages for now
-os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 
 import tensorflow as tf
 import numpy as np
 import random
+
+TOTAL_EPOCHS = 25
 
 
 def linear_unit(x, W, b):
@@ -55,6 +53,53 @@ class ModelPart0:
         inputs = np.reshape(inputs, [inputs.shape[0],-1])
         x = linear_unit(inputs, self.W1, self.B1)
         return x
+class ModelPart1:
+    def __init__(self):
+        """
+        This model class contains a single layer network similar to Assignment 1.
+        """
+
+        self.batch_size = 64
+        self.num_classes = 2
+        self.optimizer = tf.keras.optimizers.Adam(learning_rate=0.001)
+
+        first_layer_input = 32 * 32 * 3
+        first_layer_output = 256
+        second_layer_input = first_layer_output
+        second_layer_output = 2
+
+        self.W1 = tf.Variable(tf.random.truncated_normal([first_layer_input, first_layer_output],
+                                                         dtype=tf.float32,
+                                                         stddev=0.1),
+                              name="W1")
+        self.B1 = tf.Variable(tf.random.truncated_normal([1, first_layer_output],
+                                                         dtype=tf.float32,
+                                                         stddev=0.1),
+                              name="B1")
+
+        self.W2 = tf.Variable(tf.random.truncated_normal([second_layer_input, second_layer_output],
+                                                         dtype=tf.float32,
+                                                         stddev=0.1),
+                              name="W2")
+        self.B2 = tf.Variable(tf.random.truncated_normal([second_layer_input, second_layer_output],
+                                                         dtype=tf.float32,
+                                                         stddev=0.1),
+                              name="B2")
+
+        self.trainable_variables = [self.W1, self.W2, self.B1, self.B2]
+
+    def call(self, inputs):
+        """
+        Runs a forward pass on an input batch of images.
+        :param inputs: images, shape of (num_inputs, 32, 32, 3); during training, the shape is (batch_size, 32, 32, 3)
+        :return: logits - a matrix of shape (num_inputs, num_classes); during training, it would be (batch_size, 2)
+        """
+        inputs = np.reshape(inputs, [inputs.shape[0],-1])
+        print(inputs.shape)
+
+        x = linear_unit(inputs, self.W1, self.B1)
+        return x
+
 
 def loss(logits, labels):
 	"""
@@ -184,7 +229,6 @@ def main(cifar10_data_folder):
 	# Init model
 	model = ModelPart0()
 
-	TOTAL_EPOCHS = 25
 	num_examples = len(train_inputs)
 
 	indices = tf.range(num_examples)
@@ -199,9 +243,9 @@ def main(cifar10_data_folder):
 		print(f"Epoch: {epoch}, accuracy: {accuracy}")
 
 
-	num_results = 15
+	num_results = 10
 	probabilities = model.call(test_inputs[0:num_results])
-	visualize_results(train_inputs, probabilities, train_labels, "dog", "cat")
+	visualize_results(train_inputs[0:num_results], probabilities[0:num_results], test_labels, "dog", "cat")
 
 
 
