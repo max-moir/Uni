@@ -1,2 +1,6 @@
 **/CIFAR_data/
 **/MNIST_data/
+**/.venv/
+
+__pycache__/
+*.pyc

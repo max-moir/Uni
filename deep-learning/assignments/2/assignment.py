@@ -110,11 +110,13 @@ def loss(logits, labels):
 	:return: the loss of the model as a Tensor
 	"""
 
-	return tf.nn.softmax_cross_entropy_with_logits(
+	per_loss = tf.nn.softmax_cross_entropy_with_logits(
 		labels,
 		logits,
 		axis=-1,
 	)
+
+	return tf.reduce_mean(per_loss)
 
 
 
@@ -234,8 +236,8 @@ def main(cifar10_data_folder):
 
 	for epoch in range(TOTAL_EPOCHS):
 		tf.random.shuffle(indices)
-		tf.gather(train_inputs, indices)
-		tf.gather(train_labels, indices)
+		train_inputs = tf.gather(train_inputs, indices)
+		train_labels = tf.gather(train_labels, indices)
 		train(model, train_inputs, train_labels)
 
 		accuracy = test(model, test_inputs, test_labels)
