@@ -52,8 +52,7 @@ def pre_process_data(inputs, labels, first_class, second_class):
 	inputs = np.transpose(inputs, axes=(0, 2, 3, 1))
 
 	# Make labels one hot vectors
-	labels[labels == first_class] = 0
-	labels[labels == second_class] = 1
+	labels = labels == second_class
 	labels = tf.one_hot(labels, depth=2)
 
 	return inputs, labels

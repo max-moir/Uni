@@ -96,7 +96,27 @@ def train(model, train_inputs, train_labels):
 	:return: None
 	'''
 
-	pass
+
+
+    # Train model
+	for start in range(0, len(train_inputs), model.batch_size):
+		inputs = train_inputs[start:start+model.batch_size]
+		labels = train_labels[start:start+model.batch_size]
+
+		print(np.shape(inputs))
+		print(np.shape(labels))
+
+		exit()
+		probabilities = model.call(train_inputs)
+
+
+
+	# 	gradientsW, gradientsB = model.back_propagation(inputs, probabilities, labels)
+	# 	model.gradient_descent(gradientsW, gradientsB)
+
+	return 
+
+
 
 def test(model, test_inputs, test_labels):
 	"""
@@ -153,10 +173,29 @@ def main(cifar10_data_folder):
 	'''
 
 	# Read in CIFAR10 data (limited to 2 classes)
-	test_data = get_data(cifar10_data_folder + 'test', CLASS_CAT, CLASS_DOG)
-	# train_data = get_data(cifar10_data_folder + 'train', CLASS_CAT, CLASS_DOG)
+	train_inputs, train_labels= get_data(cifar10_data_folder + 'train', CLASS_CAT, CLASS_DOG)
+	test_inputs, test_labels = get_data(cifar10_data_folder + 'test', CLASS_CAT, CLASS_DOG)
+
+	# Init model
+	model = ModelPart0()
+
+	TOTAL_EPOCHS = 1
+	num_examples = len(train_inputs)
+
+	indices = tf.range(num_examples)
+
+	for epoch in range(TOTAL_EPOCHS):
+		tf.random.shuffle(indices)
+		tf.gather(train_inputs, indices)
+		tf.gather(train_labels, indices)
+		train(model, train_inputs, train_labels)
 
 
+
+    # Test the accuracy of the model
+    # accuracy = test(model, test_inputs, test_labels)
+
+    # Visualize data 
 
 
 
