@@ -1,1 +1,4 @@
+# Ignore large files
 CIFAR_data/
+.venv/
+.vscode/
