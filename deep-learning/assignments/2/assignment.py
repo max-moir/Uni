@@ -102,12 +102,8 @@ def train(model, train_inputs, train_labels):
 	for start in range(0, len(train_inputs), model.batch_size):
 		inputs = train_inputs[start:start+model.batch_size]
 		labels = train_labels[start:start+model.batch_size]
-
-		print(np.shape(inputs))
-		print(np.shape(labels))
-
-		exit()
 		probabilities = model.call(train_inputs)
+		print(probabilities)
 
 
 
