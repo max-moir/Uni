@@ -102,7 +102,8 @@ def train(model, train_inputs, train_labels):
 	for start in range(0, len(train_inputs), model.batch_size):
 		inputs = train_inputs[start:start+model.batch_size]
 		labels = train_labels[start:start+model.batch_size]
-		probabilities = model.call(train_inputs)
+		probabilities = model.call(inputs)
+		tf.nn.softmax_cross_entropy_with_logits
 		print(probabilities)
 
 
