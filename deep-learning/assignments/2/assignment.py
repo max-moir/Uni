@@ -49,7 +49,7 @@ class ModelPart0:
         # Remember that
         # shape of input = (num_inputs (or batch_size), in_height, in_width, in_channels)
 
-		# this reshape "flattens" the image data
+        # this reshape "flattens" the image data
         inputs = np.reshape(inputs, [inputs.shape[0],-1])
         x = linear_unit(inputs, self.W1, self.B1)
         return x
@@ -101,114 +101,227 @@ class ModelPart1:
 
 
 def loss(logits, labels):
-	"""
-	Calculates the cross-entropy loss after one forward pass.
-	:param logits: during training, a matrix of shape (batch_size, self.num_classes)
-	containing the result of multiple convolution and feed forward layers
-	Softmax is applied in this function.
-	:param labels: during training, matrix of shape (batch_size, self.num_classes) containing the train labels
-	:return: the loss of the model as a Tensor
-	"""
+    """
+    Calculates the cross-entropy loss after one forward pass.
+    :param logits: during training, a matrix of shape (batch_size, self.num_classes)
+    containing the result of multiple convolution and feed forward layers
+    Softmax is applied in this function.
+    :param labels: during training, matrix of shape (batch_size, self.num_classes) containing the train labels
+    :return: the loss of the model as a Tensor
+    """
 
-	per_loss = tf.nn.softmax_cross_entropy_with_logits(
-		labels,
-		logits,
-		axis=-1,
-	)
+    per_loss = tf.nn.softmax_cross_entropy_with_logits(
+        labels,
+        logits,
+        axis=-1,
+    )
 
-	return tf.reduce_mean(per_loss)
+    return tf.reduce_mean(per_loss)
+
+
+class ModelPart3:
+    def __init__(self):
+        """
+        This model class contains a single layer network similar to Assignment 1.
+        """
+
+        self.batch_size = 64
+        self.num_classes = 2
+        self.optimizer = tf.keras.optimizers.Adam(learning_rate=0.001)
+
+
+        # These are for the linear layers
+        first_layer_input = 8 * 8 * 64
+        first_layer_output = 256
+        second_layer_input = first_layer_output
+        second_layer_output = 2
+
+        self.W1 = tf.Variable(tf.random.truncated_normal([first_layer_input, first_layer_output],
+                                                         dtype=tf.float32,
+                                                         stddev=0.1),
+                              name="W1")
+        self.B1 = tf.Variable(tf.random.truncated_normal([1, first_layer_output],
+                                                         dtype=tf.float32,
+                                                         stddev=0.1),
+                              name="B1")
+
+        self.W2 = tf.Variable(tf.random.truncated_normal([second_layer_input, second_layer_output],
+                                                         dtype=tf.float32,
+                                                         stddev=0.1),
+                              name="W2")
+        self.B2 = tf.Variable(tf.random.truncated_normal([1, second_layer_output],
+                                                         dtype=tf.float32,
+                                                         stddev=0.1),
+                              name="B2")
+
+        self.filters0 = tf.Variable(tf.random.truncated_normal([3, 3, 3,  16], stddev=0.1))
+        self.filters1 = tf.Variable(tf.random.truncated_normal([3, 3, 16, 32], stddev=0.1))
+        self.filters2 = tf.Variable(tf.random.truncated_normal([3, 3, 32, 64], stddev=0.1))
+
+        self.trainable_variables = [self.W1, self.W2, self.B1, self.B2, self.filters0, self.filters1, self.filters2]
+
+
+
+
+    def call(self, inputs):
+        """
+        Runs a forward pass on an input batch of images.
+        :param inputs: images, shape of (num_inputs, 32, 32, 3); during training, the shape is (batch_size, 32, 32, 3)
+        :return: logits - a matrix of shape (num_inputs, num_classes); during training, it would be (batch_size, 2)
+        """
+
+
+
+        # Convolution and RelU layer 1 
+        layer = tf.nn.conv2d(
+            inputs,
+            self.filters0,
+            strides=[1, 1, 1, 1],
+            padding="SAME"
+        )
+
+        layer = tf.nn.relu(layer)
+
+        layer = tf.nn.max_pool2d(
+            layer, ksize=2, strides=2, padding='VALID', 
+        )
+
+        # Convolution and RelU layer 2
+        layer = tf.nn.conv2d(
+            layer,
+            self.filters1,
+            strides=[1, 1, 1, 1],
+            padding="SAME"
+        )
+
+        layer = tf.nn.relu(layer)
+
+        layer = tf.nn.max_pool2d(
+            layer, ksize=2, strides=2, padding='VALID', 
+        )
+        
+        # Convolution and RelU layer 3
+        layer = tf.nn.conv2d(
+            layer,
+            self.filters2,
+            strides=[1, 1, 1, 1],
+            padding="SAME"
+        )
+
+        layer = tf.nn.relu(layer)
+
+        # Linear layers
+        layer = tf.reshape(layer, [tf.shape(inputs)[0], -1])
+
+
+        layer = tf.nn.relu(linear_unit(layer, self.W1, self.B1))
+
+        layer = linear_unit(layer, self.W2, self.B2)
+        return layer
+
 
 
 
 def accuracy(logits, labels):
-	"""
-	Calculates the model's prediction accuracy by comparing
-	logits to correct labels – no need to modify this.
-	:param logits: a matrix of size (num_inputs, self.num_classes); during training, this will be (batch_size, self.num_classes)
-	containing the result of multiple convolution and feed forward layers
-	:param labels: matrix of size (num_labels, self.num_classes) containing the answers, during training, this will be (batch_size, self.num_classes)
+    """
+    Calculates the model's prediction accuracy by comparing
+    logits to correct labels – no need to modify this.
+    :param logits: a matrix of size (num_inputs, self.num_classes); during training, this will be (batch_size, self.num_classes)
+    containing the result of multiple convolution and feed forward layers
+    :param labels: matrix of size (num_labels, self.num_classes) containing the answers, during training, this will be (batch_size, self.num_classes)
 
-	NOTE: DO NOT EDIT
+    NOTE: DO NOT EDIT
 
-	:return: the accuracy of the model as a Tensor
-	"""
-	correct_predictions = tf.equal(tf.argmax(logits, 1), tf.argmax(labels, 1))
-	return tf.reduce_mean(tf.cast(correct_predictions, tf.float32))
+    :return: the accuracy of the model as a Tensor
+    """
+    correct_predictions = tf.equal(tf.argmax(logits, 1), tf.argmax(labels, 1))
+    return tf.reduce_mean(tf.cast(correct_predictions, tf.float32))
 
 def train(model, train_inputs, train_labels):
-	'''
-	Trains the model on all of the inputs and labels for one epoch. You should shuffle your inputs
-	and labels - ensure that they are shuffled in the same order using tf.gather.
-	You should batch your inputs.
-	:param model: the initialized model to use for the forward pass and backward pass
-	:param train_inputs: train inputs (all inputs to use for training),
-	shape (num_inputs, width, height, num_channels)
-	:param train_labels: train labels (all labels to use for training),
-	shape (num_labels, num_classes)
-	:return: None
-	'''
+    '''
+    Trains the model on all of the inputs and labels for one epoch. You should shuffle your inputs
+    and labels - ensure that they are shuffled in the same order using tf.gather.
+    You should batch your inputs.
+    :param model: the initialized model to use for the forward pass and backward pass
+    :param train_inputs: train inputs (all inputs to use for training),
+    shape (num_inputs, width, height, num_channels)
+    :param train_labels: train labels (all labels to use for training)      inputs = tf.Variable(train_inputs[start:start+model.batch_size])
+        labels = train_labels[start:start+model.batch_size]
+
+
+        with tf.GradientTape() as tape:
+
+            # Linear layer
+            logits = model.call(inputs)
+
+            # Softmax / Loss
+            cur_loss = loss(logits, labels)
+
+        grad = tape.gradient(cur_loss, model.trainable_variables)
+        model.optimizer.apply_gradients(zip(grad, model.trainable_variables))
+
+    '''
 
 
 
     # Train model
-	for start in range(0, len(train_inputs), model.batch_size):
-		inputs = tf.Variable(train_inputs[start:start+model.batch_size])
-		labels = train_labels[start:start+model.batch_size]
 
+    for start in range(0, len(train_inputs), model.batch_size):
+        inputs = tf.Variable(train_inputs[start:start+model.batch_size])
+        labels = train_labels[start:start+model.batch_size]
 
-		with tf.GradientTape() as tape:
+        with tf.GradientTape() as tape:
+            # Linear layer
+            logits = model.call(inputs)
 
-			# Linear layer
-			logits = model.call(inputs)
+            # Softmax / Loss
+            cur_loss = loss(logits, labels)
 
-			# Softmax / Loss
-			cur_loss = loss(logits, labels)
-
-		grad = tape.gradient(cur_loss, model.trainable_variables)
-		model.optimizer.apply_gradients(zip(grad, model.trainable_variables))
+        grad = tape.gradient(cur_loss, model.trainable_variables)
+        model.optimizer.apply_gradients(zip(grad, model.trainable_variables))
 
 
 
 def test(model, test_inputs, test_labels):
-	"""
-	Tests the model on the test inputs and labels.
-	:param test_inputs: test data (all images to be tested),
-	shape (num_inputs, width, height, num_channels)
-	:param test_labels: test labels (all corresponding labels),
-	shape (num_labels, num_classes)
-	:return: test accuracy - this can be the average accuracy across
-	all batches or the sum as long as you eventually divide it by batch_size
-	"""
-	return accuracy(model.call(test_inputs), test_labels)
+    """
+    Tests the model on the test inputs and labels.
+    :param test_inputs: test data (all images to be tested),
+    shape (num_inputs, width, height, num_channels)
+    :param test_labels: test labels (all corresponding labels),
+    shape (num_labels, num_classes)
+    :return: test accuracy - this can be the average accuracy across
+    all batches or the sum as long as you eventually divide it by batch_size
+    """
+    return accuracy(model.call(test_inputs), test_labels)
 
 
 def visualize_results(image_inputs, probabilities, image_labels, first_label, second_label):
-	"""
-	Uses Matplotlib to visualize the results of our model.
-	:param image_inputs: image data from get_data(), limited to 10 images, shape (10, 32, 32, 3)
-	:param probabilities: the output of model.call(), shape (10, num_classes)
-	:param image_labels: the labels from get_data(), shape (10, num_classes)
-	:param first_label: the name of the first class, "dog"
-	:param second_label: the name of the second class, "cat"
+    """
+    Uses Matplotlib to visualize the results of our model.
+    :param image_inputs: image data from get_data(), limited to 10 images, shape (10, 32, 32, 3)
+    :param probabilities: the output of model.call(), shape (10, num_classes)
+    :param image_labels: the labels from get_data(), shape (10, num_classes)
+    :param first_label: the name of the first class, "dog"
+    :param second_label: the name of the second class, "cat"
 
-	NOTE: DO NOT EDIT
+    NOTE: DO NOT EDIT
 
-	:return: doesn't return anything, a plot should pop-up
-	"""
-	predicted_labels = np.argmax(probabilities, axis=1)
-	num_images = image_inputs.shape[0]
+    :return: doesn't return anything, a plot should pop-up
+    """
+    predicted_labels = np.argmax(probabilities, axis=1)
+    num_images = image_inputs.shape[0]
 
-	fig, axs = plt.subplots(ncols=num_images)
-	fig.suptitle("PL = Predicted Label\nAL = Actual Label")
-	for ind, ax in enumerate(axs):
-			ax.imshow(image_inputs[ind], cmap="Greys")
-			pl = first_label if predicted_labels[ind] == 0.0 else second_label
-			al = first_label if np.argmax(image_labels[ind], axis=0) == 0 else second_label
-			ax.set(title="PL: {}\nAL: {}".format(pl, al))
-			plt.setp(ax.get_xticklabels(), visible=False)
-			plt.setp(ax.get_yticklabels(), visible=False)
-			ax.tick_params(axis='both', which='both', length=0)
-	plt.show()
+    fig, axs = plt.subplots(ncols=num_images)
+    fig.suptitle("PL = Predicted Label\nAL = Actual Label")
+    for ind, ax in enumerate(axs):
+            ax.imshow(image_inputs[ind], cmap="Greys")
+            pl = first_label if predicted_labels[ind] == 0.0 else second_label
+            al = first_label if np.argmax(image_labels[ind], axis=0) == 0 else second_label
+            ax.set(title="PL: {}\nAL: {}".format(pl, al))
+            plt.setp(ax.get_xticklabels(), visible=False)
+            plt.setp(ax.get_yticklabels(), visible=False)
+            ax.tick_params(axis='both', which='both', length=0)
+    plt.show()
 
 
 
@@ -217,63 +330,47 @@ def visualize_results(image_inputs, probabilities, image_labels, first_label, se
 CLASS_CAT = 3
 CLASS_DOG = 5
 def main(cifar10_data_folder):
-	'''
-	Read in CIFAR10 data (limited to 2 classes), initialize your model, and train and
-	test your model for a number of epochs. We recommend that you train for
-	25 epochs.
-	You should receive a final accuracy on the testing examples for cat and dog
-	of ~60% for Part1 and ~70% for Part3.
-	:return: None
-	'''
+    '''
+    Read in CIFAR10 data (limited to 2 classes), initialize your model, and train and
+    test your model for a number of epochs. We recommend that you train for
+    25 epochs.
+    You should receive a final accuracy on the testing examples for cat and dog
+    of ~60% for Part1 and ~70% for Part3.
+    :return: None
+    '''
 
-	# Read in CIFAR10 data (limited to 2 classes)
-	train_inputs, train_labels= get_data(cifar10_data_folder + 'train', CLASS_CAT, CLASS_DOG)
-	test_inputs, test_labels = get_data(cifar10_data_folder + 'test', CLASS_CAT, CLASS_DOG)
+    # Read in CIFAR10 data (limited to 2 classes)
+    train_inputs, train_labels= get_data(cifar10_data_folder + 'train', CLASS_CAT, CLASS_DOG)
+    test_inputs, test_labels = get_data(cifar10_data_folder + 'test', CLASS_CAT, CLASS_DOG)
 
+    # Init model
+    model = ModelPart3()
 
+    num_examples = len(train_inputs)
 
-	imgs = np.array([[3, 5, 3, 3], [5, 1, 4, 5], [2, 5, 0, 1], [3, 3, 2, 1]], dtype=np.float32)
-	imgs = np.reshape(imgs, (1, 4, 4, 1))
-	filters = tf.Variable(tf.random.truncated_normal([3, 3, 1, 1],
-														dtype=tf.float32,
-														stddev=1e-1),
-							name="filters")
-	my_conv = conv2d(imgs, filters, strides=[1, 1, 1, 1], padding="VALID")
-	tf_conv = tf.nn.conv2d(imgs, filters, [1, 1, 1, 1], padding="VALID")
-	print(my_conv)
-	print(tf_conv)
+    indices = tf.range(num_examples)
 
+    for epoch in range(TOTAL_EPOCHS):
+        indices = tf.random.shuffle(indices)
+        train_inputs = tf.gather(train_inputs, indices)
+        train_labels = tf.gather(train_labels, indices)
+        train(model, train_inputs, train_labels)
 
+        accuracy = test(model, test_inputs, test_labels)
+        print(f"Epoch: {epoch}, accuracy: {accuracy}")
 
-	exit() 
-	# Init model
-	model = ModelPart1()
+    acc = test(model, test_inputs, test_labels)
+    print(f"Overall accuracy: {acc}")
 
-	num_examples = len(train_inputs)
-
-	indices = tf.range(num_examples)
-
-	for epoch in range(TOTAL_EPOCHS):
-		tf.random.shuffle(indices)
-		train_inputs = tf.gather(train_inputs, indices)
-		train_labels = tf.gather(train_labels, indices)
-		train(model, train_inputs, train_labels)
-
-		accuracy = test(model, test_inputs, test_labels)
-		print(f"Epoch: {epoch}, accuracy: {accuracy}")
-
-
-	num_results = 10
-	probabilities = model.call(test_inputs[0:num_results])
-	visualize_results(test_inputs[0:num_results], probabilities[0:num_results], test_labels, "cat", "dog")
-
-
+    num_results = 10
+    probabilities = model.call(test_inputs[0:num_results])
+    visualize_results(test_inputs[0:num_results], probabilities[0:num_results], test_labels, "cat", "dog")
 
 
 
 if __name__ == '__main__':
     local_home = os.path.expanduser("~")  # on my system this is /Users/jat171
 
-	# TODO : Change this path back after I'm finished.
+    # TODO : Change this path back after I'm finished.
     cifar_data_folder = local_home + '/Uni/deep-learning/assignments/2/CIFAR_data/'
     main(cifar_data_folder)

@@ -53,8 +53,8 @@ def conv2d(inputs, filters, strides, padding):
 			for x in range(output_width):
 				area = inputs[i, y:y + filter_height, x:x+filter_width, :] 
 				for channel in range(filter_out_channels):
-					filter = filters[:, :, :, channel]
-					outputs[i, y, x, channel] = np.sum(area * filter)
+					f = filters[:, :, :, channel]
+					outputs[i, y, x, channel] = np.sum(area * f)
 
 	return outputs
 

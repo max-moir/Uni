@@ -1,1 +1,37 @@
 README CNN_CIFAR
+
+Q1:
+
+No, it should work out of the box.
+
+Q2:
+
+A multi-layer linear+ReLU neural network does not satisfy translational invariance, meaning one would only learn to classify digits in positions it had already seen.
+If the dataset is formatted in a way in which digit location is normalised, a multi-layer linear+ReLU network may train more quickly.
+A CNN using max pooling is able to give invariance to small translations in the images, which would give it higher accuracy on datasets with translation.
+
+Q3:
+
+You could use:
+
+output = R(x_1-1.24)+R(-x_1-1.24)+R(x_2-1.24)+R(-x_2-1.24) < 1.76
+
+I played around with the network visualiser, but worked this answer out using desmos.
+
+Q4:
+
+a)
+Cesare Lobroso claims that forehead slope, earsize, asymmetries in the face and long arms all contribute to criminality.
+The facial features that Xiaolin and Xi focused on were upper lip curvature, distance between eyes, and angle of lines from the tip of the nose to the corner of the mouth.
+They also claim that facial structure is more variable in criminals than law abiding citizens.
+
+b)
+Variables that are related to the conditions that photos were taken under might influence the output of this algorithm.
+Potentially, IDs taken of criminals occur at facilities with different camera quality (maybe because of external socio-economic reasons), and the algorithm is learning about this, rather than structure.
+Perhaps the expression of criminals is more defensive, or variaton in facial features from pressure or fighting could differentiate criminals as well.
+Although the reported results are high, the sample size of 1856 Chinese men is too narrow to deem this algorithm effective, the article itself notes further research is required.
+
+c)
+The main consequence that misclassification in a deployment of this algorithm might cause is unfairly profiling law abiding citizens based on stereotypes.
+Just because someone may have similar facial structure to criminals does not mean they should be treated any differently before commiting a crime.
+This algorithm may be used as justification for suspicion of a completely innocent individual, on the grounds they look similiar to people who have commited crimes in the past.
