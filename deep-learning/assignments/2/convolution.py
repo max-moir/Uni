@@ -15,25 +15,49 @@ def conv2d(inputs, filters, strides, padding):
 	:param padding: either "SAME" or "VALID", capitalization matters
 	:return: outputs, NumPy array or Tensor with shape [num_examples, output_height, output_width, output_channels]
 	"""
-	num_examples = None
-	in_height = None
-	in_width = None
-	input_in_channels = None
 
-	filter_height = None
-	filter_width = None
-	filter_in_channels = None
-	filter_out_channels = None
+	num_examples = inputs.shape[0]
+	in_height = inputs.shape[1]
+	in_width = inputs.shape[2]
+	input_in_channels = inputs.shape[3]
 
-	num_examples_stride = None
-	strideY = None
-	strideX = None
-	channels_stride = None
+	filter_height = filters.shape[0]
+	filter_width = filters.shape[1]
+	filter_in_channels = filters.shape[2]
+	filter_out_channels = filters.shape[3]
+
+	num_examples_stride = strides[0]
+	strideY = strides[1]
+	strideX = strides[2]
+	channels_stride = strides[3]
+
+	assert(input_in_channels == filter_in_channels)
+	assert(padding == "SAME" or padding == "VALID")
+
+	padX = 0 if padding == "VALID" else math.floor((filter_width  - 1) / 2)
+	padY = 0 if padding == "VALID" else math.floor((filter_height - 1) / 2)
+
+	output_height = (in_height + 2 * padY - filter_height) // strideY + 1 
+	output_width  = (in_width  + 2 * padX - filter_width)  // strideX + 1
 
 	# Cleaning padding input
+	inputs = np.pad(inputs,((0, 0),(padY, padY),(padX, padX),(0, 0),),mode="constant")
 
 	# Calculate output dimensions
+	outputs = np.zeros(
+		(num_examples, output_height, output_width, filter_out_channels)
+	)
 
-	pass
+	for i in range(num_examples):
+		for y in range(output_height):
+			for x in range(output_width):
+				area = inputs[i, y:y + filter_height, x:x+filter_width, :] 
+				for channel in range(filter_out_channels):
+					filter = filters[:, :, :, channel]
+					outputs[i, y, x, channel] = np.sum(area * filter)
+
+	return outputs
+
+
 
 

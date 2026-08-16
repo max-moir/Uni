@@ -211,6 +211,9 @@ def visualize_results(image_inputs, probabilities, image_labels, first_label, se
 	plt.show()
 
 
+
+
+
 CLASS_CAT = 3
 CLASS_DOG = 5
 def main(cifar10_data_folder):
@@ -227,6 +230,22 @@ def main(cifar10_data_folder):
 	train_inputs, train_labels= get_data(cifar10_data_folder + 'train', CLASS_CAT, CLASS_DOG)
 	test_inputs, test_labels = get_data(cifar10_data_folder + 'test', CLASS_CAT, CLASS_DOG)
 
+
+
+	imgs = np.array([[3, 5, 3, 3], [5, 1, 4, 5], [2, 5, 0, 1], [3, 3, 2, 1]], dtype=np.float32)
+	imgs = np.reshape(imgs, (1, 4, 4, 1))
+	filters = tf.Variable(tf.random.truncated_normal([3, 3, 1, 1],
+														dtype=tf.float32,
+														stddev=1e-1),
+							name="filters")
+	my_conv = conv2d(imgs, filters, strides=[1, 1, 1, 1], padding="VALID")
+	tf_conv = tf.nn.conv2d(imgs, filters, [1, 1, 1, 1], padding="VALID")
+	print(my_conv)
+	print(tf_conv)
+
+
+
+	exit() 
 	# Init model
 	model = ModelPart1()
 
