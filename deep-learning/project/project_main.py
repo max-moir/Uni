@@ -5,6 +5,8 @@ from tensorflow import keras
 from geometry import TIGREDataset
 import skimage.io
 
+
+
 def rays_to_points(rays, n_points, near, far):
     """
     Computes the sample points for the given rays. For the base implementation, sample uniform distances such
@@ -106,7 +108,12 @@ class MultiScaleVoxelModel(tf.keras.Model):
         Input: tensor of float32, shape [N, 3] of N points in 3-D space normalized such that all points are [0,1)
         Output: tensor of int32, shape [N] of N flattened positions
         """
-        return None
+        divisor = 2**(depth+1)
+        coords = scaled_values
+        coords = tf.cast(tf.floor(coords[:] * divisor), dtype= tf.int32)
+        flattened = coords[:, 0] + coords[:, 1] * divisor + coords[:, 2] * (divisor ** 2)
+        return flattened
+
 
     def call(self, inputs):
         embeddings_list = []
