@@ -45,11 +45,13 @@ def ray_attenuation(attenuations, distances, magnitudes, near, far):
     :param far: float, the farthest distance to region of interest
     :return: tensor of floats [n_rays] which is the attenuation value for each ray
     """
+    attenuations = tf.cast(attenuations ,distances.dtype)
+
     heights = (attenuations[:, 1:] + attenuations[:, :-1]) / 2
     dx = distances[1:] - distances[:-1]
     areas = heights * dx
     sums = tf.reduce_sum(areas, axis = -1)
-    return sums * magnitudes
+    return tf.cast(sums * magnitudes, tf.float32)
 
 class MultiScaleVoxelModel(tf.keras.Model):
     """
